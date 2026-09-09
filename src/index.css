@@ -24,8 +24,8 @@
   --glass-bg-heavy: rgba(57, 62, 70, 0.75);
   --glass-border: rgba(238, 238, 238, 0.08); /* #eeeeee */
   --glass-border-active: rgba(0, 173, 181, 0.3); /* #00adb5 */
-  --glass-blur: 24px;
-  --glass-blur-heavy: 48px;
+  --glass-blur: 12px;
+  --glass-blur-heavy: 24px;
   --glass-highlight: inset 0 1px 0 rgba(238, 238, 238, 0.1);
   --glass-window-bg: rgba(34, 40, 49, 0.6);   /* #222831 */
 
@@ -311,7 +311,6 @@ body {
   position: absolute;
   border-radius: 50%;
   opacity: 0.85;
-  filter: blur(80px);
   will-change: transform;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;

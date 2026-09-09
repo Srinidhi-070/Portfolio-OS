@@ -77,6 +77,8 @@ export const Window: React.FC<WindowProps> = ({ windowState }) => {
   const appMeta = APPS_METADATA.find(a => a.id === windowState.appId);
   const IconComp = appMeta ? (ICON_MAP[appMeta.icon] || LayoutDashboard) : LayoutDashboard;
 
+  const windowRef = useRef<HTMLDivElement>(null);
+
   // Dragging logic
   const handleMouseDownHeader = (e: React.MouseEvent) => {
     if (windowState.isMaximized) return;
@@ -105,33 +107,48 @@ export const Window: React.FC<WindowProps> = ({ windowState }) => {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
+      if (isDragging && windowRef.current) {
+        const dx = e.clientX - dragStartRef.current.x;
+        const dy = e.clientY - dragStartRef.current.y;
+        const newX = Math.max(10, Math.min(dragStartRef.current.winX + dx, window.innerWidth - 100));
+        const newY = Math.max(38, Math.min(dragStartRef.current.winY + dy, window.innerHeight - 80));
+        windowRef.current.style.left = `${newX}px`;
+        windowRef.current.style.top = `${newY}px`;
+      } else if (isResizing && windowRef.current) {
+        const dw = e.clientX - resizeStartRef.current.startX;
+        const dh = e.clientY - resizeStartRef.current.startY;
+        const newW = Math.max(380, Math.min(resizeStartRef.current.startW + dw, window.innerWidth - 20));
+        const newH = Math.max(280, Math.min(resizeStartRef.current.startH + dh, window.innerHeight - 80));
+        windowRef.current.style.width = `${newW}px`;
+        windowRef.current.style.height = `${newH}px`;
+      }
+    };
+
+    const handleMouseUp = (e: MouseEvent) => {
       if (isDragging) {
         const dx = e.clientX - dragStartRef.current.x;
         const dy = e.clientY - dragStartRef.current.y;
         const newX = Math.max(10, Math.min(dragStartRef.current.winX + dx, window.innerWidth - 100));
         const newY = Math.max(38, Math.min(dragStartRef.current.winY + dy, window.innerHeight - 80));
         updateWindowPosition(windowState.id, { x: newX, y: newY });
+        setIsDragging(false);
       } else if (isResizing) {
         const dw = e.clientX - resizeStartRef.current.startX;
         const dh = e.clientY - resizeStartRef.current.startY;
         const newW = Math.max(380, Math.min(resizeStartRef.current.startW + dw, window.innerWidth - 20));
         const newH = Math.max(280, Math.min(resizeStartRef.current.startH + dh, window.innerHeight - 80));
         updateWindowSize(windowState.id, { width: newW, height: newH });
+        setIsResizing(false);
       }
     };
 
-    const handleMouseUp = () => {
-      setIsDragging(false);
-      setIsResizing(false);
-    };
-
     if (isDragging || isResizing) {
-      window.addEventListener('mousemove', handleMouseMove);
-      window.addEventListener('mouseup', handleMouseUp);
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
     }
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseup', handleMouseUp);
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
     };
   }, [isDragging, isResizing, windowState.id, updateWindowPosition, updateWindowSize]);
 
@@ -183,13 +200,14 @@ export const Window: React.FC<WindowProps> = ({ windowState }) => {
 
   return (
     <div
+      ref={windowRef}
       onClick={() => focusWindow(windowState.id)}
       style={{
         ...stylePosition,
         borderColor: isActive ? 'var(--accent)' : 'var(--glass-border)',
         boxShadow: isActive ? '0 0 0 1px var(--accent-subtle), 0 25px 50px -12px rgba(0, 0, 0, 0.5)' : '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
       }}
-      className={`fixed flex flex-col rounded-xl overflow-hidden transition-all duration-150 glass-card border-2`}
+      className={`fixed flex flex-col rounded-xl overflow-hidden glass-card border-2 ${(isDragging || isResizing) ? '' : 'transition-all duration-150'}`}
     >
       {/* Header Bar */}
       <div
