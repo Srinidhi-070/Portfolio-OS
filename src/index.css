@@ -20,8 +20,8 @@
   --hover-surprise: var(--accent);
 
   /* ColorHunt #2763 (Dark Teal) */
-  --glass-bg: rgba(34, 40, 49, 0.55);      /* #222831 */
-  --glass-bg-heavy: rgba(34, 40, 49, 0.85);
+  --glass-bg: rgba(34, 40, 49, 0.75);      /* #222831 */
+  --glass-bg-heavy: rgba(34, 40, 49, 0.90);
   --glass-border: rgba(238, 238, 238, 0.1); /* #eeeeee */
   --glass-border-active: rgba(0, 173, 181, 0.4); /* #00adb5 */
   --glass-blur: 32px;
@@ -54,10 +54,9 @@
   --radius-2xl: 24px;
 }
 
-/* ── Light Theme Overrides — ColorHunt #2251 ── */
 .arctic-light {
-  --glass-bg: rgba(249, 247, 247, 0.65);     /* #f9f7f7 */
-  --glass-bg-heavy: rgba(249, 247, 247, 0.9);
+  --glass-bg: rgba(249, 247, 247, 0.80);     /* #f9f7f7 */
+  --glass-bg-heavy: rgba(249, 247, 247, 0.95);
   --glass-border: rgba(17, 45, 78, 0.15);    /* #112d4e */
   --glass-border-active: rgba(63, 114, 175, 0.5); /* #3f72af */
   --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.8);
