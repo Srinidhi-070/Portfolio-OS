@@ -566,26 +566,25 @@ export const EXPERIENCES: ExperienceItem[] = [
   {
     id: 'exp-namaah-atlas',
     role: 'Product Operations Intern',
-    company: 'Namaah ATLAS (Early-Stage AI Startup)',
+    company: 'Namaah ATLAS',
     type: 'Internship',
-    period: 'May 2026 – Present',
-    location: 'Remote',
-    description: 'Led product operations in a lean startup environment, coordinating cross-functional teams across research, engineering, and design.',
+    period: 'May 2026 - Sep 2026',
+    location: 'Bengaluru, India',
+    description: 'Developed product operations workflows, support runbooks, and application manuals for the ATLAS ecosystem.',
     responsibilities: [
-      'Led product operations in a lean startup environment, coordinating cross-functional teams across research, engineering, and design.',
-      'Managed roadmap tracking, release readiness activities, documentation, operational workflows, and stakeholder communication.',
-      'Conducted AI ecosystem research and contributed to product strategy, monetization planning, and platform governance initiatives.',
-      'Supported Alpha launch planning and execution through dependency tracking, risk management, and process optimization.'
+      'Developed product operations workflows, support runbooks, and application manuals for the ATLAS ecosystem, translating technical architectures into structured documentation for business stakeholders.',
+      'Coordinated with engineering teams to manage application rollout pre-work, tracking module dependencies and standardizing operational processes to ensure seamless cross-functional deployment.',
+      'Monitored development progress across application modules, tracking pending tasks and standardizing internal workflows to improve operational efficiency.'
     ],
     achievements: [
-      'Spearheaded operational readiness and roadmap tracking for early-stage startup Alpha release.',
-      'Conducted AI ecosystem research influencing monetization planning and platform governance.'
+      'Spearheaded operational readiness and standardized internal workflows for seamless application rollout.',
+      'Translated complex technical architectures into structured documentation for business stakeholders.'
     ],
     impactMetrics: [
-      { label: 'Startup Stage', value: 'Early Alpha' },
-      { label: 'Team Scope', value: 'Cross-Functional' }
+      { label: 'Workflows', value: 'Standardized' },
+      { label: 'Deployment', value: 'Cross-Functional' }
     ],
-    skills: ['Product Operations', 'AI Ecosystem Research', 'Roadmap Tracking', 'Release Management', 'Process Optimization']
+    skills: ['Product Operations', 'Technical Documentation', 'Workflow Standardization', 'Cross-Functional Coordination']
   },
   {
     id: 'exp-schneider',
