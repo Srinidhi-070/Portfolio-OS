@@ -1,0 +1,6 @@
+{
+  "name": "Portfolio OS",
+  "description": "An immersive desktop operating system portfolio experience showcasing Srinidhi N S - AI & Data Science Graduate and Aspiring AI Engineer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,171 @@
+import React from 'react';
+import { useOS } from '../../context/OSContext';
+import { WALLPAPERS } from '../../data/portfolioData';
+import { AccentColor, ThemeMode } from '../../types';
+import {
+  SlidersHorizontal,
+  Volume2,
+  VolumeX,
+  Sparkles,
+  Lock,
+  X,
+  Palette,
+  Check,
+  Sun,
+  Moon
+} from 'lucide-react';
+
+export const QuickSettings: React.FC = () => {
+  const {
+    isQuickSettingsOpen,
+    setIsQuickSettingsOpen,
+    theme,
+    setTheme,
+    accentColor,
+    setAccentColor,
+    wallpaper,
+    setWallpaper,
+    soundEnabled,
+    setSoundEnabled,
+    setLocked,
+    openApp
+  } = useOS();
+
+  if (!isQuickSettingsOpen) return null;
+
+  const isLight = theme === 'arctic-light';
+
+  const ACCENTS: { id: AccentColor; name: string; bg: string }[] = [
+    { id: 'emerald', name: 'Emerald', bg: '#10b981' },
+    { id: 'violet', name: 'Violet', bg: '#8b5cf6' },
+    { id: 'cyan', name: 'Cyan', bg: '#06b6d4' },
+    { id: 'amber', name: 'Amber', bg: '#f59e0b' },
+    { id: 'rose', name: 'Rose', bg: '#f43f5e' },
+    { id: 'indigo', name: 'Indigo', bg: '#6366f1' }
+  ];
+
+  return (
+    <div
+      onClick={() => setIsQuickSettingsOpen(false)}
+      className="fixed inset-0 z-[70] bg-black/20 backdrop-blur-xs flex justify-end animate-fade-in"
+    >
+      <div
+        onClick={e => e.stopPropagation()}
+        className="w-full max-w-sm h-full border-l shadow-2xl glass-panel-heavy p-4 flex flex-col transition-colors duration-200 animate-slide-in-right os-scrollbar"
+        style={{ borderColor: 'var(--glass-border)', color: 'var(--text-primary)' }}
+      >
+        {/* Header */}
+        <div className="flex items-center justify-between pb-3 border-b" style={{ borderColor: 'var(--glass-border)' }}>
+          <div className="flex items-center gap-2 font-bold text-sm">
+            <SlidersHorizontal className="w-4 h-4 accent-text" /> Quick Control
+          </div>
+          <button
+            onClick={() => setIsQuickSettingsOpen(false)}
+            className="p-1 rounded-lg opacity-70 hover:opacity-100 hover:bg-black/5 dark:hover:bg-white/10"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+
+        <div className="flex-1 overflow-y-auto py-4 space-y-5 os-scrollbar">
+          {/* Theme Mode Toggle */}
+          <div className="glass-card flex items-center justify-between p-3 rounded-xl border">
+            <div className="flex items-center gap-2.5">
+              {isLight ? (
+                <Sun className="w-4 h-4 text-amber-500" />
+              ) : (
+                <Moon className="w-4 h-4 text-indigo-400" />
+              )}
+              <div>
+                <div className="text-xs font-semibold">Dark Theme Mode</div>
+                <div className="text-[10px] opacity-70">
+                  {isLight ? 'Frosted Light Active' : 'Elegant Dark Active'}
+                </div>
+              </div>
+            </div>
+            <button
+              onClick={() => setTheme(isLight ? 'obsidian' : 'arctic-light')}
+              className="w-10 h-5 rounded-full p-0.5 transition-colors"
+              style={{ backgroundColor: !isLight ? 'var(--accent)' : 'var(--surface-3)' }}
+              title="Toggle Dark / Light Theme"
+            >
+              <div className={`w-4 h-4 rounded-full bg-white shadow-xs transition-transform ${!isLight ? 'translate-x-5' : 'translate-x-0'}`} />
+            </button>
+          </div>
+
+          {/* Sound Toggle */}
+          <div className="glass-card flex items-center justify-between p-3 rounded-xl border">
+            <div className="flex items-center gap-2.5">
+              {soundEnabled ? <Volume2 className="w-4 h-4 accent-text" /> : <VolumeX className="w-4 h-4 opacity-40" />}
+              <div>
+                <div className="text-xs font-semibold">Audio Feedback</div>
+                <div className="text-[10px] opacity-70">Synthesized UI clicks</div>
+              </div>
+            </div>
+            <button
+              onClick={() => setSoundEnabled(!soundEnabled)}
+              className="w-10 h-5 rounded-full p-0.5 transition-colors"
+              style={{ backgroundColor: soundEnabled ? 'var(--accent)' : 'var(--surface-3)' }}
+            >
+              <div className={`w-4 h-4 rounded-full bg-white shadow-xs transition-transform ${soundEnabled ? 'translate-x-5' : 'translate-x-0'}`} />
+            </button>
+          </div>
+
+          {/* Accent Color Palette */}
+          <div>
+            <div className="text-xs font-semibold mb-2 flex items-center gap-1.5" style={{ color: 'var(--text-secondary)' }}>
+              <Palette className="w-3.5 h-3.5 text-cyan-400" /> System Accent Color
+            </div>
+            <div className="grid grid-cols-6 gap-2">
+              {ACCENTS.map(acc => (
+                <button
+                  key={acc.id}
+                  onClick={() => setAccentColor(acc.id)}
+                  className={`w-9 h-9 rounded-xl flex items-center justify-center transition-transform hover:scale-110 ring-1 ring-white/15 ${accentColor === acc.id ? 'ring-2 ring-white scale-105' : 'hover:ring-white/40'}`}
+                  style={{ backgroundColor: acc.bg }}
+                  title={acc.name}
+                >
+                  {accentColor === acc.id && <Check className="w-4 h-4 text-white font-bold" />}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Wallpapers Quick Selector */}
+          <div>
+            <div className="text-xs font-semibold mb-2 flex items-center justify-between" style={{ color: 'var(--text-secondary)' }}>
+              <span className="flex items-center gap-1.5"><Sparkles className="w-3.5 h-3.5 text-amber-400" /> Desktop Wallpaper</span>
+              <button onClick={() => { openApp('settings'); setIsQuickSettingsOpen(false); }} className="text-[10px] accent-text hover:underline">Full Settings</button>
+            </div>
+            <div className="space-y-2">
+              {WALLPAPERS.map(wp => (
+                <button
+                  key={wp.id}
+                  onClick={() => setWallpaper(wp)}
+                   className={`w-full p-2 rounded-xl border text-left flex items-center justify-between gap-2 transition-all`}
+                   style={{
+                     backgroundColor: wallpaper.id === wp.id ? 'var(--surface-2)' : 'var(--surface-0)',
+                     borderColor: wallpaper.id === wp.id ? 'var(--glass-border)' : 'transparent',
+                     color: wallpaper.id === wp.id ? 'var(--text-primary)' : 'var(--text-secondary)'
+                   }}
+                 >
+                   <span className="text-xs font-medium truncate">{wp.name}</span>
+                   <div className={`w-6 h-6 rounded-full border shrink-0 ring-1 ring-white/20 ${wp.previewBg}`} />
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* System Lock Action */}
+          <button
+            onClick={() => { setLocked(true); setIsQuickSettingsOpen(false); }}
+            className="w-full py-2.5 rounded-xl text-amber-500 border hover:bg-amber-500/10 text-xs font-semibold flex items-center justify-center gap-2 transition-colors"
+            style={{ borderColor: 'rgba(245,158,11,0.3)', backgroundColor: 'rgba(245,158,11,0.1)' }}
+          >
+            <Lock className="w-4 h-4" /> Lock System Session
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
