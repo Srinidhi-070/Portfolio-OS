@@ -2,6 +2,7 @@ import React from 'react';
 import { createPortal } from 'react-dom';
 import { PERSONAL_INFO, EDUCATION, EXPERIENCES } from '../../data/portfolioData';
 import { useOS } from '../../context/OSContext';
+import bannerImg from '../../assets/images/banner.png';
 import { X, Mail, Phone, MapPin, Github, Linkedin, Award, Briefcase, GraduationCap, ExternalLink, Sparkles, FileText, Terminal as TerminalIcon } from 'lucide-react';
 
 interface UserProfileModalProps {
@@ -39,8 +40,9 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({ isOpen, onCl
 
         <div className="overflow-y-auto os-scrollbar flex-1">
         {/* Modal Header Banner */}
-        <div className="relative h-32 w-full overflow-hidden accent-bg-subtle opacity-90">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/60" />
+        <div className="relative h-32 w-full overflow-hidden">
+          <img src={bannerImg} alt="Banner" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/80" />
         </div>
 
         {/* Profile Card Body */}

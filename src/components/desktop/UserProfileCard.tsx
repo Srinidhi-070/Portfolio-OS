@@ -1,6 +1,7 @@
 import React from 'react';
 import { PERSONAL_INFO } from '../../data/portfolioData';
 import { useOS } from '../../context/OSContext';
+import bannerImg from '../../assets/images/banner.png';
 import { User, Mail, Phone, MapPin, Github, Linkedin, FileText, Sparkles, ExternalLink, Award } from 'lucide-react';
 
 interface UserProfileCardProps {
@@ -19,8 +20,9 @@ export const UserProfileCard: React.FC<UserProfileCardProps> = ({ compact = fals
   return (
     <div className="w-full glass-card overflow-hidden transition-all duration-200">
       {/* Header Banner */}
-      <div className="relative h-20 w-full flex items-end p-3 accent-bg-subtle">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+      <div className="relative h-20 w-full flex items-end p-3 overflow-hidden">
+        <img src={bannerImg} alt="Banner" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/10" />
       </div>
 
       <div className="p-4 relative -mt-8 space-y-3">
