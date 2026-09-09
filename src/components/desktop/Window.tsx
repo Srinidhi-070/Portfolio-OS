@@ -207,7 +207,7 @@ export const Window: React.FC<WindowProps> = ({ windowState }) => {
         borderColor: isActive ? 'var(--accent)' : 'var(--glass-border)',
         boxShadow: isActive ? '0 0 0 1px var(--accent-subtle), 0 25px 50px -12px rgba(0, 0, 0, 0.5)' : '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
       }}
-      className={`fixed flex flex-col rounded-xl overflow-hidden glass-card border-2 ${(isDragging || isResizing) ? '' : 'transition-all duration-150'}`}
+      className={`fixed flex flex-col rounded-xl overflow-hidden glass-panel ${(isDragging || isResizing) ? '' : 'transition-all duration-150'}`}
     >
       {/* Header Bar */}
       <div
@@ -270,7 +270,7 @@ export const Window: React.FC<WindowProps> = ({ windowState }) => {
 
       {/* App Body Content — translucent so the mesh shows through the glass */}
       <div className="flex-1 overflow-auto relative os-scrollbar"
-           style={{ backgroundColor: 'var(--glass-window-bg)', color: 'var(--text-primary)' }}>
+           style={{ color: 'var(--text-primary)' }}>
         {renderAppContent()}
       </div>
 
