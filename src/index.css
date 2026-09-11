@@ -511,3 +511,14 @@ body {
   body { background: white !important; color: black !important; }
   .mesh-bg, .glass-panel, .glass-card { background: white !important; backdrop-filter: none !important; border: 1px solid #ddd !important; }
 }
+@keyframes ripple {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+.animate-ripple {
+  animation: ripple 3s ease calc(var(--i, 0) * .2s) infinite;
+}
