@@ -568,7 +568,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     role: 'Product Operations Intern',
     company: 'Namaah ATLAS',
     type: 'Internship',
-    period: 'May 2026 - Sep 2026',
+    period: 'March 2026 - September 2026',
     location: 'Bengaluru, India',
     description: 'Developed product operations workflows, support runbooks, and application manuals for the ATLAS ecosystem.',
     responsibilities: [
