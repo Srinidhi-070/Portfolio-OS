@@ -519,3 +519,16 @@ body {
 .animate-window-popup {
   animation: window-popup 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+@keyframes cell-ripple {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; background-color: var(--accent); }
+  100% { opacity: 0.4; }
+}
+.animate-cell-ripple {
+  animation: cell-ripple var(--duration, 200ms) ease-out var(--delay, 0ms) 1;
+}
+.mask-radial-at-top {
+  mask-image: radial-gradient(circle at top, white, transparent);
+  -webkit-mask-image: radial-gradient(circle at top, white, transparent);
+}
