@@ -207,7 +207,7 @@ export const Window: React.FC<WindowProps> = ({ windowState }) => {
         borderColor: isActive ? 'var(--accent)' : 'var(--glass-border)',
         boxShadow: isActive ? '0 0 0 1px var(--accent-subtle), 0 25px 50px -12px rgba(0, 0, 0, 0.5)' : '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
       }}
-      className={`fixed flex flex-col rounded-xl overflow-hidden glass-panel ${(isDragging || isResizing) ? '' : 'transition-all duration-150'}`}
+      className={`fixed flex flex-col rounded-xl overflow-hidden glass-panel animate-window-popup ${(isDragging || isResizing) ? '' : 'transition-all duration-150'}`}
     >
       {/* Header Bar */}
       <div
