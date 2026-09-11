@@ -55,9 +55,9 @@ export const Desktop: React.FC = () => {
       <InteractiveBackground />
 
       {/* Main Desktop Grid Layout */}
-      <div className="relative z-10 w-full h-full p-4 md:p-6 grid grid-cols-[auto_1fr] gap-6 overflow-hidden">
+      <div className="relative z-10 w-full h-full p-4 md:p-6 grid grid-cols-[auto_1fr] gap-6 overflow-hidden pointer-events-none">
         {/* Left Column: Pinned Desktop Icons Grid */}
-        <div className="flex flex-row sm:flex-col flex-wrap gap-2 sm:gap-4 max-h-[calc(100vh-110px)] overflow-y-auto scrollbar-none content-start pb-16">
+        <div className="flex flex-row sm:flex-col flex-wrap gap-2 sm:gap-4 max-h-[calc(100vh-110px)] overflow-y-auto scrollbar-none content-start pb-16 pointer-events-auto">
           {APPS_METADATA.map(app => {
             const IconComp = ICON_MAP[app.icon] || LayoutDashboard;
             return (
