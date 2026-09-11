@@ -23,8 +23,8 @@ export const TerminalApp: React.FC = () => {
       output: (
         <div className="space-y-1 text-slate-300" style={{ fontFamily: 'var(--font-mono)' }}>
           <div className="font-extrabold text-emerald-400">Welcome to Warp Terminal v2.5 — Portfolio OS CLI</div>
-          <div className="text-xs">Type <span className="text-amber-300 font-bold">help</span> to list commands or type <span className="text-cyan-300 font-bold">ai &lt;question&gt;</span> to chat with Gemini 3.6 AI.</div>
-          <div className="text-xs text-slate-500">Try running: <span className="text-emerald-400">sudo hire-me</span> or <span className="text-emerald-400">cat about.txt</span></div>
+          <div className="text-xs">Type <span className="text-amber-300 font-bold">help</span> to list commands or just chat naturally with the <span className="text-cyan-300 font-bold">Srinidhi OS Assistant</span>!</div>
+          <div className="text-xs text-slate-500">Try asking: <span className="text-emerald-400">"make me a sandwich"</span> or <span className="text-emerald-400">sudo hire-me</span></div>
         </div>
       ),
       time: new Date().toLocaleTimeString()
@@ -138,26 +138,49 @@ export const TerminalApp: React.FC = () => {
         outputNode = <div className="text-rose-400 text-xs" style={{ fontFamily: 'var(--font-mono)' }}>Unknown app '{targetApp}'. Try: open projects</div>;
       }
     } else {
-      // Default: Pass to Gemini API for AI Chat response!
+      // Default: Simulated AI / Pre-fed Responses!
+      const queryText = mainCmd === 'ai' ? arg : trimmed;
+      const q = queryText.toLowerCase();
+      let responseText = "";
+
+      if (q.includes('make me a sandwich')) {
+        responseText = "I'm a portfolio OS, not a deli. Sudo make it yourself 🥪.";
+      } else if (q.includes('sudo rm -rf')) {
+        responseText = "Nice try! I've already backed up my portfolio to a floppy disk 💾.";
+      } else if (q.includes('who are you') || q.includes('who is srinidhi')) {
+        responseText = "I am Srinidhi's simulated AI assistant! Srinidhi is an AI & Data Science Graduate and Product Operations Intern who builds interactive OS-style portfolios just like this one.";
+      } else if (q.match(/^(hi|hello|hey|yo)/)) {
+        responseText = "Hello there! My Gemini API brain is currently disconnected, so I'm running on pre-programmed caffeine ☕. How can I help you explore this portfolio?";
+      } else if (q.includes('hire')) {
+        responseText = "Executing hire sequence... Target acquired. Prepare the offer letter! 💼\nYou can contact him directly using the Contact App or via nssrinidhi72884@gmail.com";
+      } else if (q.includes('joke')) {
+        responseText = "Why do programmers prefer dark mode? Because light attracts bugs! 🐛\n(Also, wait till you see the light mode of this OS... my creator clearly didn't get the memo).";
+      } else if (q.includes('matrix')) {
+        responseText = "Wake up, Neo... The Portfolio OS has you 🐇.";
+      } else if (q.includes('ping')) {
+        responseText = "Pong! 0 packets transmitted, 0 received, 100% simulated packet loss.";
+      } else if (q.includes('sudo')) {
+        responseText = "Srinidhi has not placed you in the sudoers file. This incident will be reported to a very angry text log 📝.";
+      } else if (q.includes('date') || q.includes('time')) {
+        responseText = `Checking my internal simulated clock... it appears to be ${new Date().toLocaleString()}. But time is just an illusion in this OS.`;
+      } else if (q.includes('why') || q.includes('broken')) {
+        responseText = "It's a feature, not a bug.";
+      } else {
+        responseText = `Unrecognized command or question: '${queryText}'.\n\n(Note: My live AI brain is currently offline for maintenance. Try typing 'help' for core commands, or ask me for a 'joke'!)`;
+      }
+
       setIsAiLoading(true);
       const newHistoryItem: HistoryItem = {
         id: Math.random().toString(),
         command: trimmed,
-        output: <div className="text-cyan-400 text-xs flex items-center gap-2" style={{ fontFamily: 'var(--font-mono)' }}><Sparkles className="w-3.5 h-3.5 animate-spin" /> Gemini AI Processing...</div>,
+        output: <div className="text-cyan-400 text-xs flex items-center gap-2" style={{ fontFamily: 'var(--font-mono)' }}><Sparkles className="w-3.5 h-3.5 animate-spin" /> Processing simulated response...</div>,
         time
       };
       setHistory(prev => [...prev, newHistoryItem]);
       setInput('');
 
-      try {
-        const queryText = mainCmd === 'ai' ? arg : trimmed;
-        const res = await fetch('/api/ai-terminal', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ prompt: queryText })
-        });
-        const json = await res.json();
-
+      // Simulate a realistic processing delay
+      setTimeout(() => {
         setHistory(prev =>
           prev.map(item =>
             item.id === newHistoryItem.id
@@ -166,30 +189,18 @@ export const TerminalApp: React.FC = () => {
                   output: (
                     <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-xs text-slate-200 leading-relaxed space-y-1" style={{ fontFamily: 'var(--font-mono)' }}>
                       <div className="text-emerald-400 font-bold flex items-center gap-1.5 mb-1">
-                        <Sparkles className="w-3.5 h-3.5 text-cyan-400" /> Srinidhi AI Assistant:
+                        <Sparkles className="w-3.5 h-3.5 text-cyan-400" /> Srinidhi OS Assistant:
                       </div>
-                      <div className="whitespace-pre-wrap">{json.text || json.error}</div>
+                      <div className="whitespace-pre-wrap">{responseText}</div>
                     </div>
                   )
                 }
               : item
           )
         );
-      } catch (err) {
-        setHistory(prev =>
-          prev.map(item =>
-            item.id === newHistoryItem.id
-              ? {
-                  ...item,
-                  output: <div className="text-rose-400 text-xs" style={{ fontFamily: 'var(--font-mono)' }}>Failed to query Gemini AI. Check connection.</div>
-                }
-              : item
-          )
-        );
-      } finally {
         setIsAiLoading(false);
-      }
-      return;
+      }, 800);
+      return; // Return early because history is updated asynchronously
     }
 
     setHistory(prev => [...prev, { id: Math.random().toString(), command: trimmed, output: outputNode, time }]);
