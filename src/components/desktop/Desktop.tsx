@@ -59,14 +59,14 @@ export const Desktop: React.FC = () => {
       {/* Main Desktop Grid Layout */}
       <div className={`relative z-10 w-full h-full p-4 md:p-6 grid grid-cols-[auto_1fr] gap-6 overflow-hidden pointer-events-none transition-all duration-500 ease-out ${hasOpenWindows ? 'opacity-30 blur-[8px] scale-[0.97]' : 'opacity-100 blur-0 scale-100'}`}>
         {/* Left Column: Pinned Desktop Icons Grid */}
-        <div className="flex flex-row sm:flex-col flex-wrap gap-2 sm:gap-4 max-h-[calc(100vh-110px)] overflow-y-auto scrollbar-none content-start pb-16 pointer-events-auto">
+        <div className="flex flex-row sm:flex-col flex-wrap gap-2 sm:gap-4 max-h-[calc(100vh-110px)] overflow-y-auto scrollbar-none content-start pb-16 pointer-events-none">
           {APPS_METADATA.map(app => {
             const IconComp = ICON_MAP[app.icon] || LayoutDashboard;
             return (
               <button
                 key={app.id}
                 onClick={() => openApp(app.id)}
-                className="group flex flex-col items-center justify-center w-16 sm:w-24 p-1.5 sm:p-2 rounded-xl transition-all duration-150 focus:outline-none shrink-0 glass-card-interactive"
+                className="group flex flex-col items-center justify-center w-16 sm:w-24 p-1.5 sm:p-2 rounded-xl transition-all duration-150 focus:outline-none shrink-0 glass-card-interactive pointer-events-auto"
                 style={{ background: 'transparent', borderColor: 'transparent' }}
                 onMouseOver={(e) => { 
                   e.currentTarget.style.background = 'var(--surface-1)'; 
@@ -92,14 +92,14 @@ export const Desktop: React.FC = () => {
         </div>
 
         {/* Right Desktop Floating Widgets (User Profile & Scratchpad Cards) */}
-        <div className="hidden lg:flex flex-col gap-4 items-end justify-start pr-4 pointer-events-auto max-w-md ml-auto">
+        <div className="hidden lg:flex flex-col gap-4 items-end justify-start pr-4 pointer-events-none max-w-md ml-auto">
           {/* User Section Profile Card */}
-          <div className="w-96 sm:w-[26rem] animate-fade-in slide-in-from-right-4 duration-300 glass-card">
+          <div className="w-96 sm:w-[26rem] animate-fade-in slide-in-from-right-4 duration-300 glass-card pointer-events-auto">
             <UserProfileCard compact={false} />
           </div>
 
           {/* Sticky Notes Widget */}
-          <div className="w-96 sm:w-[26rem] rounded-2xl glass-card p-4 shadow-2xl backdrop-blur-xl">
+          <div className="w-96 sm:w-[26rem] rounded-2xl glass-card p-4 shadow-2xl backdrop-blur-xl pointer-events-auto">
             <div className="flex items-center justify-between pb-2 border-b" style={{ borderColor: 'var(--glass-border)' }}>
               <div className="flex items-center gap-1.5 font-bold text-xs" style={{ color: 'var(--accent)' }}>
                 <Pin className="w-3.5 h-3.5" style={{ color: 'var(--accent)' }} /> Desktop Scratchpad
