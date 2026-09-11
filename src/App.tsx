@@ -8,6 +8,7 @@ import { BootScreen } from './components/desktop/BootScreen';
 import { LockScreen } from './components/desktop/LockScreen';
 import { CommandPalette } from './components/desktop/CommandPalette';
 import { NotificationsCenter } from './components/desktop/NotificationsCenter';
+import { AnimatePresence } from 'framer-motion';
 import { QuickSettings } from './components/desktop/QuickSettings';
 
 const OSContent: React.FC = () => {
@@ -30,9 +31,11 @@ const OSContent: React.FC = () => {
       <Desktop />
 
       {/* Active Application Windows */}
-      {windows.map(win => (
-        <Window key={win.id} windowState={win} />
-      ))}
+      <AnimatePresence>
+        {windows.map(win => (
+          <Window key={win.id} windowState={win} />
+        ))}
+      </AnimatePresence>
 
       {/* Dock */}
       <Dock />

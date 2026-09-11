@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { motion } from 'framer-motion';
 import { WindowState } from '../../types';
 import { useOS } from '../../context/OSContext';
 import { APPS_METADATA } from '../../data/portfolioData';
@@ -199,15 +200,19 @@ export const Window: React.FC<WindowProps> = ({ windowState }) => {
       };
 
   return (
-    <div
-      ref={windowRef}
+    <motion.div
+      initial={{ opacity: 0, scale: 0.85, y: 10 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.85, y: 10 }}
+      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+      ref={windowRef as any}
       onClick={() => focusWindow(windowState.id)}
       style={{
         ...stylePosition,
         borderColor: isActive ? 'var(--accent)' : 'var(--glass-border)',
         boxShadow: isActive ? '0 0 0 1px var(--accent-subtle), 0 25px 50px -12px rgba(0, 0, 0, 0.5)' : '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
       }}
-      className={`fixed flex flex-col rounded-xl overflow-hidden glass-panel animate-window-popup ${(isDragging || isResizing) ? '' : 'transition-all duration-150'}`}
+      className={`fixed flex flex-col rounded-xl overflow-hidden glass-panel ${(isDragging || isResizing) ? '' : 'transition-all duration-150'}`}
     >
       {/* Header Bar */}
       <div
@@ -287,6 +292,6 @@ export const Window: React.FC<WindowProps> = ({ windowState }) => {
           <div className="w-1.5 h-1.5 border-r-2 border-b-2 border-current" />
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
