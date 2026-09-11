@@ -40,13 +40,15 @@ const ICON_MAP: Record<string, React.FC<{ className?: string }>> = {
 };
 
 export const Desktop: React.FC = () => {
-  const { openApp, wallpaper, accentColor, theme } = useOS();
+  const { openApp, wallpaper, accentColor, theme, windows } = useOS();
   const isLight = theme === 'arctic-light';
   const accent = getAccentClasses(accentColor);
 
   const [stickyNote, setStickyNote] = useState<string>(
     "🚀 Portfolio OS Quick Notes:\n• Check out GuardianVoice (AI Voice Scam Detector)\n• Try 'sudo hire-me' in Warp Terminal!\n• Explore 16+ GitHub Repositories"
   );
+
+  const hasOpenWindows = windows.some(w => !w.isMinimized);
 
   return (
     <div className="relative w-full h-[calc(100vh-32px)] overflow-hidden select-none transition-colors duration-200"
@@ -55,7 +57,7 @@ export const Desktop: React.FC = () => {
       <InteractiveBackground />
 
       {/* Main Desktop Grid Layout */}
-      <div className="relative z-10 w-full h-full p-4 md:p-6 grid grid-cols-[auto_1fr] gap-6 overflow-hidden pointer-events-none">
+      <div className={`relative z-10 w-full h-full p-4 md:p-6 grid grid-cols-[auto_1fr] gap-6 overflow-hidden pointer-events-none transition-all duration-500 ease-out ${hasOpenWindows ? 'opacity-30 blur-[8px] scale-[0.97]' : 'opacity-100 blur-0 scale-100'}`}>
         {/* Left Column: Pinned Desktop Icons Grid */}
         <div className="flex flex-row sm:flex-col flex-wrap gap-2 sm:gap-4 max-h-[calc(100vh-110px)] overflow-y-auto scrollbar-none content-start pb-16 pointer-events-auto">
           {APPS_METADATA.map(app => {

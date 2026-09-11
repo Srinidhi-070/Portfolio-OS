@@ -20,8 +20,8 @@
   --hover-surprise: var(--accent);
 
   /* ColorHunt #2763 (Dark Teal) */
-  --glass-bg: rgba(34, 40, 49, 0.88);      /* #222831 */
-  --glass-bg-heavy: rgba(34, 40, 49, 0.95);
+  --glass-bg: rgba(30, 35, 42, 1);      /* #222831 */
+  --glass-bg-heavy: rgba(20, 25, 30, 1);
   --glass-border: rgba(238, 238, 238, 0.1); /* #eeeeee */
   --glass-border-active: rgba(0, 173, 181, 0.4); /* #00adb5 */
   --glass-blur: 32px;
@@ -55,8 +55,8 @@
 }
 
 .arctic-light {
-  --glass-bg: rgba(249, 247, 247, 0.90);     /* #f9f7f7 */
-  --glass-bg-heavy: rgba(249, 247, 247, 0.96);
+  --glass-bg: rgba(249, 247, 247, 1);     /* #f9f7f7 */
+  --glass-bg-heavy: rgba(240, 240, 240, 1);
   --glass-border: rgba(17, 45, 78, 0.15);    /* #112d4e */
   --glass-border-active: rgba(63, 114, 175, 0.5); /* #3f72af */
   --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.8);
@@ -140,24 +140,24 @@ body {
 
 .glass-panel {
   background: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur)) saturate(150%);
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(150%);
+  backdrop-filter: blur(var(--glass-blur)) saturate(200%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(200%);
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-highlight);
 }
 
 .glass-panel-heavy {
   background: var(--glass-bg-heavy);
-  backdrop-filter: blur(var(--glass-blur-heavy)) saturate(150%);
-  -webkit-backdrop-filter: blur(var(--glass-blur-heavy)) saturate(150%);
+  backdrop-filter: blur(var(--glass-blur-heavy)) saturate(200%);
+  -webkit-backdrop-filter: blur(var(--glass-blur-heavy)) saturate(200%);
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-highlight);
 }
 
 .glass-card {
   background: var(--surface-1);
-  backdrop-filter: blur(10px) saturate(150%);
-  -webkit-backdrop-filter: blur(10px) saturate(150%);
+  backdrop-filter: blur(10px) saturate(200%);
+  -webkit-backdrop-filter: blur(10px) saturate(200%);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--glass-highlight);
