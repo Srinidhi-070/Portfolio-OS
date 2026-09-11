@@ -23,14 +23,14 @@ export const BackgroundRippleEffect = ({
       ref={ref}
       className={cn(
         "absolute inset-0 h-full w-full",
-        "[--cell-border-color:var(--glass-border)] [--cell-fill-color:transparent] [--cell-shadow-color:var(--accent)]"
+        "[--cell-border-color:rgba(128,128,128,0.25)] [--cell-fill-color:transparent] [--cell-shadow-color:var(--accent)]"
       )}
     >
       <div className="relative h-full w-full overflow-hidden">
         <div className="pointer-events-none absolute inset-0 z-[2] h-full w-full overflow-hidden" />
         <DivGrid
           key={`base-${rippleKey}`}
-          className="mask-radial-at-top opacity-60"
+          className="opacity-100"
           rows={rows}
           cols={cols}
           cellSize={cellSize}
@@ -113,7 +113,7 @@ const DivGrid = ({
           <div
             key={idx}
             className={cn(
-              "cell relative border-[0.5px] opacity-20 transition-opacity duration-150 hover:opacity-80 hover:bg-[var(--surface-3)]",
+              "cell relative border transition-opacity duration-150 hover:bg-[var(--surface-3)]",
               clickedCell && "animate-cell-ripple [animation-fill-mode:none]",
               !interactive && "pointer-events-none"
             )}

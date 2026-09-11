@@ -521,12 +521,17 @@ body {
 }
 
 @keyframes cell-ripple {
-  0% { opacity: 0.4; }
+  0% { opacity: 0.2; background-color: transparent; }
   50% { opacity: 1; background-color: var(--accent); }
-  100% { opacity: 0.4; }
+  100% { opacity: 0.2; background-color: transparent; }
 }
 .animate-cell-ripple {
-  animation: cell-ripple var(--duration, 200ms) ease-out var(--delay, 0ms) 1;
+  animation-name: cell-ripple;
+  animation-duration: var(--duration, 200ms);
+  animation-timing-function: ease-out;
+  animation-delay: var(--delay, 0ms);
+  animation-iteration-count: 1;
+  animation-fill-mode: none;
 }
 .mask-radial-at-top {
   mask-image: radial-gradient(circle at top, white, transparent);
