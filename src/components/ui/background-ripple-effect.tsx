@@ -3,9 +3,9 @@ import React, { useMemo, useRef, useState } from "react";
 import { cn } from "../../lib/utils";
 
 export const BackgroundRippleEffect = ({
-  rows = 25,
-  cols = 45,
-  cellSize = 56,
+  rows = 14,
+  cols = 24,
+  cellSize = 80,
 }: {
   rows?: number;
   cols?: number;
@@ -68,9 +68,9 @@ type CellStyle = React.CSSProperties & {
 
 const DivGrid = ({
   className,
-  rows = 7,
-  cols = 30,
-  cellSize = 56,
+  rows = 14,
+  cols = 24,
+  cellSize = 80,
   borderColor = "#3f3f46",
   fillColor = "rgba(14,165,233,0.3)",
   clickedCell = null,
@@ -113,7 +113,7 @@ const DivGrid = ({
           <div
             key={idx}
             className={cn(
-              "cell relative border-[0.5px] opacity-20 transition-all duration-150 will-change-transform hover:bg-[var(--surface-3)]",
+              "cell relative border-[0.5px] opacity-20 transition-opacity duration-150 hover:opacity-80 hover:bg-[var(--surface-3)]",
               clickedCell && "animate-cell-ripple [animation-fill-mode:none]",
               !interactive && "pointer-events-none"
             )}
