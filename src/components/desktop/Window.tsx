@@ -190,7 +190,7 @@ export const Window: React.FC<WindowProps> = ({ windowState }) => {
   const isSmallScreen = typeof window !== 'undefined' && window.innerWidth < 640;
 
   const stylePosition = (windowState.isMaximized || isSmallScreen)
-    ? { top: '32px', left: '0px', width: '100vw', height: 'calc(100vh - 32px - 64px)', zIndex: windowState.zIndex }
+    ? { top: '32px', left: '0px', width: '100vw', height: 'calc(100dvh - 32px - 64px)', zIndex: windowState.zIndex }
     : {
         top: `${Math.max(38, Math.min(windowState.position.y, window.innerHeight - 100))}px`,
         left: `${Math.max(10, Math.min(windowState.position.x, window.innerWidth - 100))}px`,

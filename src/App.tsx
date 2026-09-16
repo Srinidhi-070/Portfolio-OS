@@ -23,7 +23,7 @@ const OSContent: React.FC = () => {
   }
 
   return (
-    <div className={`relative w-screen h-screen overflow-hidden select-none font-sans ${theme === 'arctic-light' ? 'arctic-light' : ''}`} style={{ background: 'var(--surface-0)', color: 'var(--text-primary)', fontFamily: 'var(--font-sans)' }}>
+    <div className={`relative w-screen h-[100dvh] overflow-hidden select-none font-sans ${theme === 'arctic-light' ? 'arctic-light' : ''}`} style={{ background: 'var(--surface-0)', color: 'var(--text-primary)', fontFamily: 'var(--font-sans)' }}>
       {/* Top Bar */}
       <TopBar />
 

@@ -60,7 +60,7 @@ export const Desktop: React.FC = () => {
 
   return (
     <div 
-      className="relative w-full h-[calc(100vh-32px)] overflow-hidden select-none transition-colors duration-200"
+      className="relative w-full h-[calc(100dvh-32px)] overflow-hidden select-none transition-colors duration-200"
       style={{ color: 'var(--text-primary)' }}
       onContextMenu={handleContextMenu}
     >
@@ -78,7 +78,7 @@ export const Desktop: React.FC = () => {
       {/* Main Desktop Grid Layout */}
       <div className={`relative z-10 w-full h-full p-4 md:p-6 grid grid-cols-[auto_1fr] gap-6 overflow-hidden pointer-events-none transition-all duration-500 ease-out ${hasOpenWindows ? 'opacity-30 blur-[8px] scale-[0.97]' : 'opacity-100 blur-0 scale-100'}`}>
         {/* Left Column: Pinned Desktop Icons Grid */}
-        <div className="flex flex-row sm:flex-col flex-wrap gap-2 sm:gap-4 max-h-[calc(100vh-110px)] overflow-y-auto scrollbar-none content-start pb-16 pointer-events-none">
+        <div className="flex flex-row sm:flex-col flex-wrap gap-2 sm:gap-4 max-h-[calc(100dvh-110px)] overflow-y-auto scrollbar-none content-start pb-16 pointer-events-none">
           {APPS_METADATA.map(app => {
             const IconComp = ICON_MAP[app.icon] || LayoutDashboard;
             return (
