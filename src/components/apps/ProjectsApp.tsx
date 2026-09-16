@@ -20,7 +20,7 @@ import {
   BarChart2,
   Tag
 } from 'lucide-react';
-import { SearchField } from '@heroui/react';
+
 
 interface ProjectsAppProps {
   initialParams?: { projectId?: string };
@@ -123,27 +123,25 @@ export const ProjectsApp: React.FC<ProjectsAppProps> = ({ initialParams }) => {
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
           {/* Top Search & Filter Bar */}
-          <div className="p-4 border-b border-[var(--glass-border)] glass-card flex items-center gap-3" style={{ border: 'none', borderBottom: '1px solid var(--glass-border)', borderRadius: 0 }}>
-            {/* @ts-ignore */}
-            <SearchField 
-              fullWidth
-              value={searchQuery}
-              onChange={setSearchQuery}
-              className="w-full relative flex-1"
-            >
-              {/* @ts-ignore */}
-              <SearchField.Group className="flex items-center w-full rounded-xl glass-input border border-[var(--glass-border)] text-xs focus:outline-none">
-                <SearchField.SearchIcon className="w-4 h-4 ml-3 text-[var(--text-tertiary)]" />
-                {/* @ts-ignore */}
-                <SearchField.Input
-                  // @ts-ignore
-                  placeholder="Search 16+ repositories by title, keyword, or tech..."
-                  className="w-full pl-2 pr-4 py-2 bg-transparent text-[var(--text-primary)] focus:outline-none"
-                />
-                {/* @ts-ignore */}
-                <SearchField.ClearButton className="mr-3 opacity-60 hover:opacity-100 text-[var(--text-primary)]" />
-              </SearchField.Group>
-            </SearchField>
+          <div className="p-4 border-b border-[var(--glass-border)] flex items-center gap-3" style={{ border: 'none', borderBottom: '1px solid var(--glass-border)', borderRadius: 0, backgroundColor: 'var(--surface-1)' }}>
+            <div className="flex items-center w-full rounded-xl glass-input border border-[var(--glass-border)] text-xs focus-within:border-[var(--accent)] transition-colors">
+              <Search className="w-4 h-4 ml-3 text-[var(--text-tertiary)] shrink-0" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search 16+ repositories by title, keyword, or tech..."
+                className="w-full pl-2 pr-4 py-2 bg-transparent text-[var(--text-primary)] focus:outline-none"
+              />
+              {searchQuery.length > 0 && (
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="mr-3 p-1 rounded-md opacity-60 hover:opacity-100 hover:bg-[var(--surface-3)] transition-all text-[var(--text-primary)] shrink-0"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              )}
+            </div>
           </div>
 
         {/* Projects Cards Grid */}

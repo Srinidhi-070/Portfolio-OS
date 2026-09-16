@@ -104,7 +104,7 @@ export const SettingsApp: React.FC = () => {
               }`}
             >
               <div className="flex items-center justify-between font-bold text-xs">
-                <span className={theme === t.id ? 'accent-text' : (isLight ? 'text-slate-800' : 'text-slate-200')}>{t.name}</span>
+                <span className={theme === t.id ? 'accent-text' : 'text-[var(--text-primary)]'}>{t.name}</span>
                 {theme === t.id && <Check className="w-4 h-4 accent-text font-bold" />}
               </div>
               <p className={`text-[11px] mt-1 leading-relaxed `}>{t.desc}</p>
@@ -155,7 +155,7 @@ export const SettingsApp: React.FC = () => {
               }`}
             >
               <div>
-                <div className={`text-xs font-bold ${wallpaper.id === wp.id ? 'accent-text' : (isLight ? 'text-slate-800' : 'text-slate-200')}`}>{wp.name}</div>
+                <div className={`text-xs font-bold ${wallpaper.id === wp.id ? 'accent-text' : 'text-[var(--text-primary)]'}`}>{wp.name}</div>
                 <div className={`text-[10px] `}>Gradient Canvas</div>
               </div>
               <div className={`w-6 h-6 rounded-full border shadow-sm ${wp.previewBg}`} />

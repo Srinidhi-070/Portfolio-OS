@@ -19,11 +19,11 @@ export const ResumeApp: React.FC = () => {
 
   return (
     <div className={`p-4 sm:p-6 max-w-4xl mx-auto space-y-6 select-none transition-colors duration-200 ${
-      isLight ? 'text-slate-900' : 'text-slate-100'
+      'text-[var(--text-primary)]'
     }`}>
       {/* Top Action Header */}
       <div className={`flex flex-wrap items-center justify-between pb-4 border-b print:hidden ${
-        isLight ? 'border-slate-200' : 'border-slate-800'
+        'border-[var(--glass-border)]'
       }`}>
         <div>
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/15 text-teal-600 dark:text-teal-300 border border-teal-500/30 text-xs font-semibold mb-2">
@@ -36,7 +36,7 @@ export const ResumeApp: React.FC = () => {
           <button
             onClick={copyEmail}
             className={`px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 btn-ghost border ${
-              isLight ? 'border-slate-300 text-slate-800 hover:bg-slate-200' : 'border-slate-700 text-slate-200 hover:bg-slate-800'
+              'border-[var(--glass-border)] text-[var(--text-primary)] hover:bg-[var(--surface-2)]'
             }`}
           >
             {copied ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
@@ -54,9 +54,9 @@ export const ResumeApp: React.FC = () => {
       </div>
 
       {/* Printable Resume Document Container */}
-      <div className={`glass-card p-8 space-y-6 shadow-2xl transition-colors duration-200 print:bg-white print:text-slate-900 print:border-0 print:p-0`}>
+      <div className={`glass-card p-8 space-y-6 shadow-2xl transition-colors duration-200 print:bg-white print:text-black print:border-0 print:p-0`}>
         {/* Resume Title Header */}
-        <div className={`border-b pb-6 print:border-slate-300 `}>
+        <div className={`border-b pb-6 print:border-black `}>
           <div className="flex flex-wrap justify-between items-start gap-4">
             <div className="flex items-center gap-4">
               <img
@@ -65,7 +65,7 @@ export const ResumeApp: React.FC = () => {
                 className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover object-top border-2 border-emerald-500/60 shadow-lg shrink-0"
               />
               <div>
-                <h1 className={`text-2xl sm:text-3xl font-black tracking-tight print:text-slate-900 `}>
+                <h1 className={`text-2xl sm:text-3xl font-black tracking-tight print:text-black `}>
                   {PERSONAL_INFO.name}
                 </h1>
                 <div className="text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-500 print:text-emerald-700 mt-0.5">
@@ -80,7 +80,7 @@ export const ResumeApp: React.FC = () => {
                 target="_blank"
                 rel="noreferrer"
                 className={`p-2 rounded-lg border text-xs font-mono flex items-center gap-1.5 transition-colors btn-ghost ${
-                  isLight ? 'border-slate-300 text-slate-700' : 'border-slate-700 text-slate-300'
+                  'border-[var(--glass-border)] text-[var(--text-primary)]'
                 }`}
               >
                 <Github className="w-3.5 h-3.5" /> GitHub <ExternalLink className="w-3 h-3 opacity-60" />
@@ -90,7 +90,7 @@ export const ResumeApp: React.FC = () => {
                 target="_blank"
                 rel="noreferrer"
                 className={`p-2 rounded-lg border text-xs font-mono flex items-center gap-1.5 transition-colors btn-ghost ${
-                  isLight ? 'border-slate-300 text-slate-700' : 'border-slate-700 text-slate-300'
+                  'border-[var(--glass-border)] text-[var(--text-primary)]'
                 }`}
               >
                 <Linkedin className="w-3.5 h-3.5" /> LinkedIn <ExternalLink className="w-3 h-3 opacity-60" />
@@ -98,7 +98,7 @@ export const ResumeApp: React.FC = () => {
             </div>
           </div>
 
-          <div className={`flex flex-wrap gap-x-4 gap-y-1 mt-4 text-xs font-mono print:text-slate-600 `}>
+          <div className={`flex flex-wrap gap-x-4 gap-y-1 mt-4 text-xs font-mono print:text-black `}>
             <span><strong className="font-semibold">Email:</strong> {PERSONAL_INFO.email}</span>
             <span>•</span>
             <span><strong className="font-semibold">GitHub:</strong> github.com/Srinidhi-070</span>
@@ -111,44 +111,38 @@ export const ResumeApp: React.FC = () => {
 
         {/* Executive Summary */}
         <div className="space-y-2">
-          <h3 className={`text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-500 print:text-emerald-800 border-b pb-1 print:border-slate-300 ${
-            isLight ? 'border-slate-200' : 'border-slate-700/50'
-          }`}>
+          <h3 className={`text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-500 print:text-emerald-800 border-b pb-1 print:border-black border-[var(--glass-border)]`}>
             Professional Summary
           </h3>
-          <p className={`text-xs leading-relaxed print:text-slate-800 `}>
+          <p className={`text-xs leading-relaxed print:text-black `}>
             {PERSONAL_INFO.bio}
           </p>
         </div>
 
         {/* Technical Competencies */}
         <div className="space-y-2">
-          <h3 className={`text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-500 print:text-emerald-800 border-b pb-1 print:border-slate-300 ${
-            isLight ? 'border-slate-200' : 'border-slate-700/50'
-          }`}>
+          <h3 className={`text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-500 print:text-emerald-800 border-b pb-1 print:border-black border-[var(--glass-border)]`}>
             Technical Competencies
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
-            <div className={`glass-surface p-2.5 rounded-lg border print:border-slate-200 print:bg-white`}>
-              <span className={`font-bold print:text-slate-900 `}>AI & Deep Learning:</span> PyTorch, TensorFlow, OpenCV, YOLOv8, MediaPipe, Scikit-Learn, Gemini API, RAG, WebRTC VLM
+            <div className={`glass-surface p-2.5 rounded-lg border print:border-black print:bg-white`}>
+              <span className={`font-bold print:text-black `}>AI & Deep Learning:</span> PyTorch, TensorFlow, OpenCV, YOLOv8, MediaPipe, Scikit-Learn, Gemini API, RAG, WebRTC VLM
             </div>
-            <div className={`glass-surface p-2.5 rounded-lg border print:border-slate-200 print:bg-white`}>
-              <span className={`font-bold print:text-slate-900 `}>Backend & Web:</span> Python (FastAPI, Flask), Node.js, Express, TypeScript, React 19, Next.js, Tailwind CSS
+            <div className={`glass-surface p-2.5 rounded-lg border print:border-black print:bg-white`}>
+              <span className={`font-bold print:text-black `}>Backend & Web:</span> Python (FastAPI, Flask), Node.js, Express, TypeScript, React 19, Next.js, Tailwind CSS
             </div>
-            <div className={`glass-surface p-2.5 rounded-lg border print:border-slate-200 print:bg-white`}>
-              <span className={`font-bold print:text-slate-900 `}>Databases & Cloud:</span> PostgreSQL, Vector DBs (FAISS, Chroma), Docker, GCP Cloud Run, Kafka, Prometheus
+            <div className={`glass-surface p-2.5 rounded-lg border print:border-black print:bg-white`}>
+              <span className={`font-bold print:text-black `}>Databases & Cloud:</span> PostgreSQL, Vector DBs (FAISS, Chroma), Docker, GCP Cloud Run, Kafka, Prometheus
             </div>
-            <div className={`glass-surface p-2.5 rounded-lg border print:border-slate-200 print:bg-white`}>
-              <span className={`font-bold print:text-slate-900 `}>Product Operations:</span> Bug Triage Automation, Jira, QA Test Suites, Telemetry Dashboards, Technical SOPs
+            <div className={`glass-surface p-2.5 rounded-lg border print:border-black print:bg-white`}>
+              <span className={`font-bold print:text-black `}>Product Operations:</span> Bug Triage Automation, Jira, QA Test Suites, Telemetry Dashboards, Technical SOPs
             </div>
           </div>
         </div>
 
         {/* Experience */}
         <div className="space-y-4">
-          <h3 className={`text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-500 print:text-emerald-800 border-b pb-1 print:border-slate-300 ${
-            isLight ? 'border-slate-200' : 'border-slate-700/50'
-          }`}>
+          <h3 className={`text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-500 print:text-emerald-800 border-b pb-1 print:border-black border-[var(--glass-border)]`}>
             Experience & Internships
           </h3>
 
@@ -158,11 +152,11 @@ export const ResumeApp: React.FC = () => {
                 <span >
                   {exp.role} — <span className="text-emerald-600 dark:text-emerald-500 print:text-emerald-700">{exp.company}</span>
                 </span>
-                <span className={`font-mono text-[11px] print:text-slate-600 `}>
+                <span className={`font-mono text-[11px] print:text-black `}>
                   {exp.period}
                 </span>
               </div>
-              <ul className={`space-y-1 pl-4 list-disc print:text-slate-800 `}>
+              <ul className={`space-y-1 pl-4 list-disc print:text-black `}>
                 {exp.responsibilities.map((r, i) => (
                   <li key={i}>{r}</li>
                 ))}
@@ -173,17 +167,15 @@ export const ResumeApp: React.FC = () => {
 
         {/* Key Featured AI Projects */}
         <div className="space-y-3">
-          <h3 className={`text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-500 print:text-emerald-800 border-b pb-1 print:border-slate-300 ${
-            isLight ? 'border-slate-200' : 'border-slate-700/50'
-          }`}>
+          <h3 className={`text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-500 print:text-emerald-800 border-b pb-1 print:border-black border-[var(--glass-border)]`}>
             Key Engineering Projects
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
             {PROJECTS.filter(p => p.featured).map(p => (
-              <div key={p.id} className={`glass-surface p-3 rounded-xl border print:bg-slate-50 print:border-slate-200`}>
-                <div className={`font-bold print:text-slate-900 `}>{p.title}</div>
-                <div className={`text-[11px] mt-0.5 print:text-slate-700 `}>{p.shortDescription}</div>
+              <div key={p.id} className={`glass-surface p-3 rounded-xl border print:bg-[var(--surface-2)]50 print:border-black`}>
+                <div className={`font-bold print:text-black `}>{p.title}</div>
+                <div className={`text-[11px] mt-0.5 print:text-black `}>{p.shortDescription}</div>
                 <div className="text-[10px] text-emerald-600 dark:text-emerald-500 print:text-emerald-800 font-mono mt-1 font-medium">
                   Stack: {p.techStack.join(', ')}
                 </div>
@@ -194,20 +186,18 @@ export const ResumeApp: React.FC = () => {
 
         {/* Education */}
         <div className="space-y-2">
-          <h3 className={`text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-500 print:text-emerald-800 border-b pb-1 print:border-slate-300 ${
-            isLight ? 'border-slate-200' : 'border-slate-700/50'
-          }`}>
+          <h3 className={`text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-500 print:text-emerald-800 border-b pb-1 print:border-black border-[var(--glass-border)]`}>
             Education
           </h3>
           {EDUCATION.map(edu => (
             <div key={edu.id} className="flex justify-between items-baseline text-xs font-bold">
               <div>
                 <div >{edu.degree}</div>
-                <div className={`text-[11px] font-normal print:text-slate-600 `}>
+                <div className={`text-[11px] font-normal print:text-black `}>
                   {edu.institution}
                 </div>
               </div>
-              <div className={`text-right font-mono print:text-slate-600 `}>
+              <div className={`text-right font-mono print:text-black `}>
                 <div>{edu.period}</div>
                 <div className="text-[10px] text-emerald-600 dark:text-emerald-500 print:text-emerald-700 font-semibold">{edu.grade}</div>
               </div>
@@ -218,5 +208,7 @@ export const ResumeApp: React.FC = () => {
     </div>
   );
 };
+
+
 
 

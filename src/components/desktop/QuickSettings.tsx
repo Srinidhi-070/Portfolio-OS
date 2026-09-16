@@ -61,7 +61,7 @@ export const QuickSettings: React.FC = () => {
           </div>
           <button
             onClick={() => setIsQuickSettingsOpen(false)}
-            className="p-1 rounded-lg opacity-70 hover:opacity-100 hover:bg-black/5 dark:hover:bg-white/10"
+            className="p-1 rounded-lg opacity-70 hover:opacity-100 hover:bg-[var(--surface-2)]"
           >
             <X className="w-4 h-4" />
           </button>
@@ -169,3 +169,4 @@ export const QuickSettings: React.FC = () => {
     </div>
   );
 };
+

@@ -183,7 +183,7 @@ export const Window: React.FC<WindowProps> = ({ windowState }) => {
       case 'settings':
         return <SettingsApp />;
       default:
-        return <div className="p-6 text-slate-300">App instance loading...</div>;
+        return <div className="p-6 text-[var(--text-secondary)]">App instance loading...</div>;
     }
   };
 
@@ -225,7 +225,7 @@ export const Window: React.FC<WindowProps> = ({ windowState }) => {
         <div className="flex items-center gap-1 mr-6" onMouseDown={e => e.stopPropagation()}>
           <button
             onClick={e => { e.stopPropagation(); minimizeWindow(windowState.id); }}
-            className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors hover:bg-white/10"
+            className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors hover:bg-[var(--surface-2)]"
             style={{ color: 'var(--text-secondary)' }}
             title="Minimize"
           >
@@ -233,7 +233,7 @@ export const Window: React.FC<WindowProps> = ({ windowState }) => {
           </button>
           <button
             onClick={e => { e.stopPropagation(); maximizeWindow(windowState.id); }}
-            className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors hover:bg-white/10"
+            className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors hover:bg-[var(--surface-2)]"
             style={{ color: 'var(--text-secondary)' }}
             title="Maximize"
           >
@@ -295,3 +295,4 @@ export const Window: React.FC<WindowProps> = ({ windowState }) => {
     </motion.div>
   );
 };
+

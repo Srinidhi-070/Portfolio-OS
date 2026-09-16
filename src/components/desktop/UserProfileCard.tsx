@@ -58,7 +58,7 @@ export const UserProfileCard: React.FC<UserProfileCardProps> = ({ compact = fals
         <div className="grid grid-cols-2 gap-1.5 pt-1 text-[10px] font-mono">
           <button
             onClick={copyEmail}
-            className="p-1.5 rounded-lg border flex items-center gap-1.5 truncate text-left transition-colors glass-surface hover:bg-black/5 dark:hover:bg-white/5"
+            className="p-1.5 rounded-lg border flex items-center gap-1.5 truncate text-left transition-colors glass-surface hover:bg-[var(--surface-2)]"
             style={{ borderColor: 'var(--glass-border)', color: 'var(--text-primary)' }}
           >
             <Mail className="w-3 h-3 text-cyan-400 shrink-0" />
@@ -69,7 +69,7 @@ export const UserProfileCard: React.FC<UserProfileCardProps> = ({ compact = fals
             href={PERSONAL_INFO.github}
             target="_blank"
             rel="noreferrer"
-            className="p-1.5 rounded-lg border flex items-center gap-1.5 truncate transition-colors glass-surface hover:bg-black/5 dark:hover:bg-white/5"
+            className="p-1.5 rounded-lg border flex items-center gap-1.5 truncate transition-colors glass-surface hover:bg-[var(--surface-2)]"
             style={{ borderColor: 'var(--glass-border)', color: 'var(--text-primary)' }}
           >
             <Github className="w-3 h-3 shrink-0" style={{ color: 'var(--text-secondary)' }} />
@@ -87,7 +87,7 @@ export const UserProfileCard: React.FC<UserProfileCardProps> = ({ compact = fals
           </button>
           <button
             onClick={() => openApp('contact')}
-            className="py-1.5 px-3 rounded-xl text-xs font-semibold border transition-all glass-surface hover:bg-black/5 dark:hover:bg-white/5"
+            className="py-1.5 px-3 rounded-xl text-xs font-semibold border transition-all glass-surface hover:bg-[var(--surface-2)]"
             style={{ borderColor: 'var(--glass-border)', color: 'var(--text-primary)' }}
           >
             Contact
@@ -97,3 +97,4 @@ export const UserProfileCard: React.FC<UserProfileCardProps> = ({ compact = fals
     </div>
   );
 };
+

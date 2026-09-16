@@ -55,7 +55,7 @@ export const ContextMenu: React.FC<ContextMenuProps> = ({ x, y, onClose }) => {
       className="fixed z-50 w-48 glass-panel-heavy rounded-xl shadow-2xl py-2 overflow-hidden border border-[var(--glass-border)] animate-fade-in pointer-events-auto"
       style={{ left: safeX, top: safeY }}
     >
-      <div className="px-3 py-1.5 text-[10px] font-bold text-slate-400 uppercase tracking-wider border-b border-[var(--glass-border)] mb-1">
+      <div className="px-3 py-1.5 text-[10px] font-bold text-[var(--text-tertiary)] uppercase tracking-wider border-b border-[var(--glass-border)] mb-1">
         Portfolio OS
       </div>
       {menuItems.map((item, idx) => {

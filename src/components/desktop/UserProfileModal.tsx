@@ -31,7 +31,7 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({ isOpen, onCl
         {/* Modal Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-xl transition-colors z-20 glass-surface hover:bg-black/10 dark:hover:bg-white/10"
+          className="absolute top-4 right-4 p-2 rounded-xl transition-colors z-20 glass-surface hover:bg-[var(--surface-2)]"
           style={{ color: 'var(--text-primary)' }}
           aria-label="Close Profile"
         >
@@ -79,7 +79,7 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({ isOpen, onCl
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-xl border text-xs font-medium flex items-center gap-1.5 transition-colors glass-surface hover:bg-black/5 dark:hover:bg-white/5"
+                className="p-2.5 rounded-xl border text-xs font-medium flex items-center gap-1.5 transition-colors glass-surface hover:bg-[var(--surface-2)]"
                 style={{ borderColor: 'var(--glass-border)' }}
               >
                 <Github className="w-4 h-4" />
@@ -89,7 +89,7 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({ isOpen, onCl
                 href={PERSONAL_INFO.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-xl border text-xs font-medium flex items-center gap-1.5 transition-colors glass-surface hover:bg-black/5 dark:hover:bg-white/5"
+                className="p-2.5 rounded-xl border text-xs font-medium flex items-center gap-1.5 transition-colors glass-surface hover:bg-[var(--surface-2)]"
                 style={{ borderColor: 'var(--glass-border)' }}
               >
                 <Linkedin className="w-4 h-4" />
@@ -102,7 +102,7 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({ isOpen, onCl
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 p-3 rounded-xl border glass-surface" style={{ borderColor: 'var(--glass-border)' }}>
             <button
               onClick={() => handleCopy(PERSONAL_INFO.phone, 'Phone number')}
-              className="p-2 rounded-lg text-left transition-colors flex items-center gap-2 text-xs hover:bg-black/5 dark:hover:bg-white/5"
+              className="p-2 rounded-lg text-left transition-colors flex items-center gap-2 text-xs hover:bg-[var(--surface-2)]"
             >
               <Phone className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
               <div className="truncate">
@@ -113,7 +113,7 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({ isOpen, onCl
 
             <button
               onClick={() => handleCopy(PERSONAL_INFO.email, 'Email address')}
-              className="p-2 rounded-lg text-left transition-colors flex items-center gap-2 text-xs hover:bg-black/5 dark:hover:bg-white/5"
+              className="p-2 rounded-lg text-left transition-colors flex items-center gap-2 text-xs hover:bg-[var(--surface-2)]"
             >
               <Mail className="w-3.5 h-3.5 text-cyan-500 shrink-0" />
               <div className="truncate">
@@ -194,7 +194,7 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({ isOpen, onCl
                   openApp('terminal');
                   onClose();
                 }}
-                className="px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 border transition-colors glass-surface hover:bg-black/5 dark:hover:bg-white/5"
+                className="px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 border transition-colors glass-surface hover:bg-[var(--surface-2)]"
                 style={{ borderColor: 'var(--glass-border)' }}
               >
                 <TerminalIcon className="w-3.5 h-3.5" /> Warp CLI
@@ -208,3 +208,4 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({ isOpen, onCl
     document.body
   );
 };
+

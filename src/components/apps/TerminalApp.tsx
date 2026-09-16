@@ -21,10 +21,10 @@ export const TerminalApp: React.FC = () => {
       id: 'init-1',
       command: 'welcome',
       output: (
-        <div className="space-y-1 text-slate-300" style={{ fontFamily: 'var(--font-mono)' }}>
+        <div className="space-y-1 text-[var(--text-secondary)]" style={{ fontFamily: 'var(--font-mono)' }}>
           <div className="font-extrabold text-emerald-400">Welcome to Warp Terminal v2.5 — Portfolio OS CLI</div>
           <div className="text-xs">Type <span className="text-amber-300 font-bold">help</span> to list commands or just chat naturally with the <span className="text-cyan-300 font-bold">Srinidhi OS Assistant</span>!</div>
-          <div className="text-xs text-slate-500">Try asking: <span className="text-emerald-400">"make me a sandwich"</span> or <span className="text-emerald-400">sudo hire-me</span></div>
+          <div className="text-xs text-[var(--text-tertiary)]">Try asking: <span className="text-emerald-400">"make me a sandwich"</span> or <span className="text-emerald-400">sudo hire-me</span></div>
         </div>
       ),
       time: new Date().toLocaleTimeString()
@@ -61,7 +61,7 @@ export const TerminalApp: React.FC = () => {
       return;
     } else if (mainCmd === 'help') {
       outputNode = (
-        <div className="space-y-1 text-xs text-slate-300" style={{ fontFamily: 'var(--font-mono)' }}>
+        <div className="space-y-1 text-xs text-[var(--text-secondary)]" style={{ fontFamily: 'var(--font-mono)' }}>
           <div className="text-emerald-400 font-bold mb-1">AVAILABLE COMMANDS:</div>
           <div>• <span className="text-amber-300 font-bold">help</span> : Show this help menu</div>
           <div>• <span className="text-amber-300 font-bold">whoami</span> / <span className="text-amber-300 font-bold">bio</span> : Display Srinidhi's profile</div>
@@ -77,9 +77,9 @@ export const TerminalApp: React.FC = () => {
       );
     } else if (mainCmd === 'whoami' || mainCmd === 'bio') {
       outputNode = (
-        <div className="space-y-1.5 text-xs text-slate-200" style={{ fontFamily: 'var(--font-mono)' }}>
-          <div className="font-bold text-white text-sm">{PERSONAL_INFO.name} — {PERSONAL_INFO.title}</div>
-          <p className="text-slate-300 leading-relaxed">{PERSONAL_INFO.bio}</p>
+        <div className="space-y-1.5 text-xs text-[var(--text-secondary)]" style={{ fontFamily: 'var(--font-mono)' }}>
+          <div className="font-bold text-[var(--text-primary)] text-sm">{PERSONAL_INFO.name} — {PERSONAL_INFO.title}</div>
+          <p className="text-[var(--text-secondary)] leading-relaxed">{PERSONAL_INFO.bio}</p>
           <div className="text-emerald-400">Email: {PERSONAL_INFO.email}</div>
         </div>
       );
@@ -89,10 +89,10 @@ export const TerminalApp: React.FC = () => {
           <div className="text-amber-400 font-bold">FEATURED REPOSITORIES (16 Total):</div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {PROJECTS.map(p => (
-              <div key={p.id} className="p-2 rounded bg-slate-900/60 border border-slate-800">
+              <div key={p.id} className="p-2 rounded glass-surface border border-[var(--glass-border)]">
                 <div className="text-emerald-300 font-bold">{p.title}</div>
-                <div className="text-slate-400 text-[10px]">{p.category}</div>
-                <div className="text-slate-500 text-[10px] mt-1">{p.techStack.slice(0, 3).join(', ')}</div>
+                <div className="text-[var(--text-tertiary)] text-[10px]">{p.category}</div>
+                <div className="text-[var(--text-tertiary)] text-[10px] mt-1">{p.techStack.slice(0, 3).join(', ')}</div>
               </div>
             ))}
           </div>
@@ -106,7 +106,7 @@ export const TerminalApp: React.FC = () => {
           <div className="p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-emerald-200 space-y-2" style={{ fontFamily: 'var(--font-mono)' }}>
             <div className="text-emerald-400 font-extrabold text-sm">🎉 PERMISSION GRANTED: HIRING PROTOCOL ACTIVATED</div>
             <p className="text-xs">
-              Srinidhi N S is available for AI Engineering & Product Operations roles. Direct email: <span className="text-white font-bold">nssrinidhi72884@gmail.com</span>
+              Srinidhi N S is available for AI Engineering & Product Operations roles. Direct email: <span className="text-[var(--text-primary)] font-bold">nssrinidhi72884@gmail.com</span>
             </p>
           </div>
         );
@@ -118,7 +118,7 @@ export const TerminalApp: React.FC = () => {
       const fileData = TERMINAL_FILES[fileName];
       if (fileData) {
         outputNode = (
-          <div className="p-3 rounded bg-slate-900/60 border border-slate-800 text-xs text-slate-300 whitespace-pre-wrap leading-relaxed" style={{ fontFamily: 'var(--font-mono)' }}>
+          <div className="p-3 rounded glass-surface border border-[var(--glass-border)] text-xs text-[var(--text-secondary)] whitespace-pre-wrap leading-relaxed" style={{ fontFamily: 'var(--font-mono)' }}>
             {fileData}
           </div>
         );
@@ -206,7 +206,7 @@ export const TerminalApp: React.FC = () => {
               ? {
                   ...item,
                   output: (
-                    <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-xs text-slate-200 leading-relaxed space-y-1" style={{ fontFamily: 'var(--font-mono)' }}>
+                    <div className="p-3 rounded-xl glass-surface border border-[var(--glass-border)] text-xs text-[var(--text-secondary)] leading-relaxed space-y-1" style={{ fontFamily: 'var(--font-mono)' }}>
                       <div className="text-emerald-400 font-bold flex items-center gap-1.5 mb-1">
                         <Sparkles className="w-3.5 h-3.5 text-cyan-400" /> Srinidhi OS Assistant:
                       </div>
@@ -234,7 +234,7 @@ export const TerminalApp: React.FC = () => {
   return (
     <div
       onClick={() => inputRef.current?.focus()}
-      className="h-full text-slate-100 p-4 flex flex-col justify-between overflow-hidden select-none"
+      className="h-full text-[var(--text-primary)] p-4 flex flex-col justify-between overflow-hidden select-none"
       style={{ fontFamily: 'var(--font-mono)' }}
     >
       {/* Terminal History Log Stream */}
@@ -243,18 +243,18 @@ export const TerminalApp: React.FC = () => {
           <div key={item.id} className="space-y-1.5">
             <div className="flex items-center gap-2 text-xs">
               <span className="text-emerald-400 font-bold">srinidhi@port-os</span>
-              <span className="text-slate-600">:~#</span>
-              <span className="text-white font-bold">{item.command}</span>
-              <span className="text-[10px] text-slate-600 ml-auto">{item.time}</span>
+              <span className="text-[var(--text-tertiary)]">:~#</span>
+              <span className="text-[var(--text-primary)] font-bold">{item.command}</span>
+              <span className="text-[10px] text-[var(--text-tertiary)] ml-auto">{item.time}</span>
             </div>
-            <div className="pl-3 border-l-2 border-slate-800/80">{item.output}</div>
+            <div className="pl-3 border-l-2 border-[var(--glass-border)]">{item.output}</div>
           </div>
         ))}
         <div ref={bottomRef} />
       </div>
 
       {/* Terminal Input Bar */}
-      <form onSubmit={handleFormSubmit} className="mt-3 pt-3 border-t border-slate-800/80 flex items-center gap-2">
+      <form onSubmit={handleFormSubmit} className="mt-3 pt-3 border-t border-[var(--glass-border)] flex items-center gap-2">
         <span className="text-emerald-400 font-bold text-xs">srinidhi@port-os:~#</span>
         <input
           ref={inputRef}
@@ -263,7 +263,7 @@ export const TerminalApp: React.FC = () => {
           onChange={e => setInput(e.target.value)}
           onKeyDown={e => soundEngine.playTerminalKey()}
           placeholder="Type command (e.g. help, whoami, projects, ai ...)"
-          className="flex-1 bg-transparent border-none text-xs text-slate-100 placeholder-slate-600 focus:outline-none"
+          className="flex-1 bg-transparent border-none text-xs text-[var(--text-primary)] placeholder-slate-600 focus:outline-none"
           style={{ fontFamily: 'var(--font-mono)' }}
           autoFocus
         />
@@ -278,3 +278,4 @@ export const TerminalApp: React.FC = () => {
     </div>
   );
 };
+
