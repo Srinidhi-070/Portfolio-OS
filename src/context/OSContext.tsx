@@ -62,20 +62,28 @@ const OSContext = createContext<OSContextType | undefined>(undefined);
 const INITIAL_NOTIFICATIONS: SystemNotification[] = [
   {
     id: 'n1',
-    title: 'Welcome to Portfolio OS v2.5',
-    message: 'Press Ctrl + K anytime to open Global Search. Explore projects, skills & terminal!',
+    title: 'Welcome to Portfolio OS! 👋',
+    message: 'Double-click any desktop icon to open apps, or use the bottom Dock to navigate quickly.',
     time: 'Just now',
     read: false,
     type: 'success'
   },
   {
     id: 'n2',
-    title: 'GuardianVoice AI Loaded',
-    message: 'Voice Scam Detection deep learning model initialized with 96.4% precision.',
+    title: 'Pro Tip: Try Right-Clicking! 🖱️',
+    message: 'Right-click anywhere on the empty desktop background to access quick settings, theme toggler, and view source.',
+    time: '1m ago',
+    read: false,
+    type: 'info'
+  },
+  {
+    id: 'n3',
+    title: 'Hidden Terminal Secrets 🤫',
+    message: 'Open the Terminal app and type "ai joke", "sudo hire-me", or "ai skills" for some fun surprises!',
     time: '2m ago',
     read: false,
-    type: 'info',
-    actionAppId: 'projects'
+    type: 'alert',
+    actionAppId: 'terminal'
   }
 ];
 

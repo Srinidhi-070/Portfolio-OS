@@ -14,10 +14,33 @@ export const GitHubApp: React.FC = () => {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch('/api/github');
-      if (!res.ok) throw new Error('Failed to load GitHub metrics');
-      const json = await res.json();
-      setData(json);
+      const username = 'Srinidhi-070';
+      const [userRes, reposRes] = await Promise.all([
+        fetch(`https://api.github.com/users/${username}`),
+        fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated`)
+      ]);
+      
+      if (!userRes.ok || !reposRes.ok) throw new Error('Failed to load GitHub metrics');
+      
+      const userData = await userRes.json();
+      const allRepos = await reposRes.json();
+      
+      let totalStars = 0;
+      const languages = new Set();
+      
+      allRepos.forEach((repo: any) => {
+        totalStars += repo.stargazers_count;
+        if (repo.language) languages.add(repo.language);
+      });
+      
+      const formattedData = {
+        user: userData,
+        totalStars,
+        languages: Array.from(languages),
+        repos: allRepos.filter((r: any) => !r.fork).slice(0, 6)
+      };
+      
+      setData(formattedData);
     } catch (err: any) {
       setError(err.message);
     } finally {
