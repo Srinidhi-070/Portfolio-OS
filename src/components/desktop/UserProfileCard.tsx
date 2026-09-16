@@ -18,7 +18,7 @@ export const UserProfileCard: React.FC<UserProfileCardProps> = ({ compact = fals
   };
 
   return (
-    <div className="w-full glass-card overflow-hidden transition-all duration-200">
+    <div className="w-full transition-all duration-200">
       {/* Header Banner */}
       <div className="relative h-20 w-full flex items-end p-3 overflow-hidden">
         <img src={bannerImg} alt="Banner" className="absolute inset-0 w-full h-full object-cover" />

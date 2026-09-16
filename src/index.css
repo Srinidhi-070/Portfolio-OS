@@ -588,3 +588,43 @@ body {
   mask-image: radial-gradient(circle at top, white, transparent);
   -webkit-mask-image: radial-gradient(circle at top, white, transparent);
 }
+/* Solid 3D Widgets */
+.widget-3d {
+  background: var(--surface-0);
+  border-radius: 1.25rem;
+  border: 1px solid var(--glass-border);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 
+    0 15px 35px -5px rgba(0, 0, 0, 0.4),
+    0 5px 15px rgba(0, 0, 0, 0.2),
+    inset 0 2px 3px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.arctic-light .widget-3d {
+  background: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 1);
+  border-left: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 
+    0 15px 35px -5px rgba(0, 0, 0, 0.1),
+    0 5px 15px rgba(0, 0, 0, 0.05),
+    inset 0 2px 3px rgba(255, 255, 255, 1);
+}
+
+.widget-3d:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 
+    0 25px 45px -5px rgba(0, 0, 0, 0.5),
+    0 10px 20px rgba(0, 0, 0, 0.3),
+    inset 0 2px 3px rgba(255, 255, 255, 0.1);
+}
+
+.arctic-light .widget-3d:hover {
+  box-shadow: 
+    0 25px 45px -5px rgba(0, 0, 0, 0.15),
+    0 10px 20px rgba(0, 0, 0, 0.1),
+    inset 0 2px 3px rgba(255, 255, 255, 1);
+}

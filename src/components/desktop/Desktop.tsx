@@ -103,12 +103,12 @@ export const Desktop: React.FC = () => {
         {/* Right Desktop Floating Widgets (User Profile & Scratchpad Cards) */}
         <div className="hidden lg:flex flex-col gap-4 items-end justify-start pr-4 pointer-events-none max-w-md ml-auto">
           {/* User Section Profile Card */}
-          <div className="w-96 sm:w-[26rem] animate-fade-in slide-in-from-right-4 duration-300 glass-card pointer-events-auto">
+          <div className="w-96 sm:w-[26rem] animate-fade-in slide-in-from-right-4 duration-300 widget-3d pointer-events-auto">
             <UserProfileCard compact={false} />
           </div>
 
           {/* Sticky Notes Widget */}
-          <div className="w-96 sm:w-[26rem] rounded-2xl glass-card p-4 shadow-2xl backdrop-blur-xl pointer-events-auto">
+          <div className="w-96 sm:w-[26rem] p-4 widget-3d pointer-events-auto">
             <div className="flex items-center justify-between pb-2 border-b" style={{ borderColor: 'var(--glass-border)' }}>
               <div className="flex items-center gap-1.5 font-bold text-xs" style={{ color: 'var(--accent)' }}>
                 <Pin className="w-3.5 h-3.5" style={{ color: 'var(--accent)' }} /> Desktop Scratchpad
