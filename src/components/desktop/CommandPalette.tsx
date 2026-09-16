@@ -11,8 +11,16 @@ import {
   FileText,
   Sparkles,
   ArrowRight,
-  X
+  X,
+  Moon,
+  Sun,
+  Monitor,
+  Code2,
+  User,
+  Settings,
+  ExternalLink
 } from 'lucide-react';
+import { SearchField } from '@heroui/react';
 
 export const CommandPalette: React.FC = () => {
   const { isSearchOpen, setIsSearchOpen, openApp, theme } = useOS();
@@ -139,25 +147,30 @@ export const CommandPalette: React.FC = () => {
             style={{ color: 'var(--text-primary)' }}
           >
             {/* Search Header Input */}
-            <div className="flex items-center gap-3 px-4 py-3.5 border-b" style={{ borderColor: 'var(--glass-border)', backgroundColor: 'var(--surface-0)' }}>
-              <Search className="w-5 h-5" style={{ color: 'var(--text-secondary)' }} />
-              <input
-                ref={inputRef}
-                type="text"
+            <div className="px-4 py-3.5 border-b" style={{ borderColor: 'var(--glass-border)', backgroundColor: 'var(--surface-0)' }}>
+              {/* @ts-ignore - React 19 / React Aria type mismatch */}
+              <SearchField 
+                fullWidth
                 value={query}
-                onChange={e => { setQuery(e.target.value); setSelectedIndex(0); }}
+                onChange={val => { setQuery(val); setSelectedIndex(0); }}
                 onKeyDown={handleKeyDown}
-                placeholder="Type to search projects, skills, commands, resume..."
-                className="flex-1 glass-input focus:outline-none bg-transparent"
-                style={{ color: 'var(--text-primary)' }}
-              />
-              <button
-                onClick={() => setIsSearchOpen(false)}
-                className="p-1 rounded-lg opacity-60 hover:opacity-100 transition-opacity"
-                style={{ color: 'var(--text-primary)' }}
+                className="w-full"
               >
-                <X className="w-4 h-4" />
-              </button>
+                {/* @ts-ignore */}
+                <SearchField.Group className="flex items-center gap-3 w-full bg-transparent">
+                  <SearchField.SearchIcon className="w-5 h-5 text-[var(--text-secondary)]" />
+                  {/* @ts-ignore */}
+                  <SearchField.Input
+                    // @ts-ignore
+                    ref={inputRef}
+                    // @ts-ignore
+                    placeholder="Type to search projects, skills, commands, resume..."
+                    className="flex-1 glass-input focus:outline-none bg-transparent text-[var(--text-primary)]"
+                  />
+                  {/* @ts-ignore */}
+                  <SearchField.ClearButton className="p-1 rounded-lg opacity-60 hover:opacity-100 transition-opacity text-[var(--text-primary)]" />
+                </SearchField.Group>
+              </SearchField>
             </div>
 
             {/* Results List */}

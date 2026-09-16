@@ -12,9 +12,10 @@ import {
   CheckCircle2,
   Search,
   Zap,
-  BarChart2,
-  Layers
+  Layers,
+  PieChart
 } from 'lucide-react';
+import { SearchField } from '@heroui/react';
 
 const CATEGORY_ICON_MAP: Record<string, React.FC<{ className?: string }>> = {
   BrainCircuit,
@@ -51,15 +52,26 @@ export const SkillsApp: React.FC = () => {
 
         {/* Search */}
         <div className="relative w-full md:w-64">
-          <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2" style={{ color: 'var(--text-tertiary)' }} />
-          <input
-            type="text"
+          {/* @ts-ignore */}
+          <SearchField 
+            fullWidth
             value={searchQuery}
-            onChange={e => setSearchQuery(e.target.value)}
-            placeholder="Search skills (e.g. PyTorch)..."
-            className="w-full pl-9 pr-3 py-2 rounded-xl glass-input border border-[var(--glass-border)] text-xs focus:outline-none"
-            style={{ color: 'var(--text-primary)' }}
-          />
+            onChange={setSearchQuery}
+            className="w-full"
+          >
+            {/* @ts-ignore */}
+            <SearchField.Group className="flex items-center w-full rounded-xl glass-input border border-[var(--glass-border)] text-xs focus:outline-none">
+              <SearchField.SearchIcon className="w-4 h-4 ml-3 text-[var(--text-tertiary)]" />
+              {/* @ts-ignore */}
+              <SearchField.Input
+                // @ts-ignore
+                placeholder="Search skills (e.g. PyTorch)..."
+                className="w-full pl-2 pr-3 py-2 bg-transparent text-[var(--text-primary)] focus:outline-none"
+              />
+              {/* @ts-ignore */}
+              <SearchField.ClearButton className="mr-3 opacity-60 hover:opacity-100 text-[var(--text-primary)]" />
+            </SearchField.Group>
+          </SearchField>
         </div>
       </div>
 

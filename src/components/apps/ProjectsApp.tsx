@@ -20,6 +20,7 @@ import {
   BarChart2,
   Tag
 } from 'lucide-react';
+import { SearchField } from '@heroui/react';
 
 interface ProjectsAppProps {
   initialParams?: { projectId?: string };
@@ -121,20 +122,29 @@ export const ProjectsApp: React.FC<ProjectsAppProps> = ({ initialParams }) => {
 
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
-        {/* Top Search & Filter Bar */}
-        <div className="p-4 border-b border-[var(--glass-border)] glass-card flex items-center gap-3" style={{ border: 'none', borderBottom: '1px solid var(--glass-border)', borderRadius: 0 }}>
-          <div className="relative flex-1">
-            <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2" style={{ color: 'var(--text-tertiary)' }} />
-            <input
-              type="text"
+          {/* Top Search & Filter Bar */}
+          <div className="p-4 border-b border-[var(--glass-border)] glass-card flex items-center gap-3" style={{ border: 'none', borderBottom: '1px solid var(--glass-border)', borderRadius: 0 }}>
+            {/* @ts-ignore */}
+            <SearchField 
+              fullWidth
               value={searchQuery}
-              onChange={e => setSearchQuery(e.target.value)}
-              placeholder="Search 16+ repositories by title, keyword, or tech..."
-              className="w-full pl-9 pr-4 py-2 rounded-xl glass-input border border-[var(--glass-border)] text-xs focus:outline-none"
-              style={{ color: 'var(--text-primary)' }}
-            />
+              onChange={setSearchQuery}
+              className="w-full relative flex-1"
+            >
+              {/* @ts-ignore */}
+              <SearchField.Group className="flex items-center w-full rounded-xl glass-input border border-[var(--glass-border)] text-xs focus:outline-none">
+                <SearchField.SearchIcon className="w-4 h-4 ml-3 text-[var(--text-tertiary)]" />
+                {/* @ts-ignore */}
+                <SearchField.Input
+                  // @ts-ignore
+                  placeholder="Search 16+ repositories by title, keyword, or tech..."
+                  className="w-full pl-2 pr-4 py-2 bg-transparent text-[var(--text-primary)] focus:outline-none"
+                />
+                {/* @ts-ignore */}
+                <SearchField.ClearButton className="mr-3 opacity-60 hover:opacity-100 text-[var(--text-primary)]" />
+              </SearchField.Group>
+            </SearchField>
           </div>
-        </div>
 
         {/* Projects Cards Grid */}
         <div className="flex-1 overflow-y-auto os-scrollbar p-4 md:p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
