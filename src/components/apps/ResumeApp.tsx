@@ -2,17 +2,13 @@ import React, { useState } from 'react';
 import { PERSONAL_INFO, PROJECTS, EXPERIENCES, EDUCATION } from '../../data/portfolioData';
 import { useOS } from '../../context/OSContext';
 import srinidhiPhoto from '../../assets/srinidhi_headshot.jpg';
-import { FileText, Printer, Mail, Github, Linkedin, CheckCircle2, Copy, Check, ExternalLink, Award, Download } from 'lucide-react';
+import { FileText, Mail, Github, Linkedin, CheckCircle2, Copy, Check, ExternalLink, Award, Download } from 'lucide-react';
 
 export const ResumeApp: React.FC = () => {
   const { theme, addNotification } = useOS();
   const isLight = theme === 'arctic-light';
 
   const [copied, setCopied] = useState(false);
-
-  const handlePrint = () => {
-    window.print();
-  };
 
   const copyEmail = () => {
     navigator.clipboard.writeText(PERSONAL_INFO.email);
@@ -54,15 +50,6 @@ export const ResumeApp: React.FC = () => {
           >
             <Download className="w-4 h-4" /> Download Resume
           </a>
-
-          <button
-            onClick={handlePrint}
-            className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 border print:hidden btn-ghost ${
-              isLight ? 'border-slate-300 text-slate-800 hover:bg-slate-200' : 'border-slate-700 text-slate-200 hover:bg-slate-800'
-            }`}
-          >
-            <Printer className="w-4 h-4" /> Print / Save as PDF
-          </button>
         </div>
       </div>
 

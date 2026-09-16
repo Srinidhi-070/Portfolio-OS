@@ -39,6 +39,8 @@ const ICON_MAP: Record<string, React.FC<{ className?: string }>> = {
   Sliders
 };
 
+import { ContextMenu } from './ContextMenu';
+
 export const Desktop: React.FC = () => {
   const { openApp, wallpaper, accentColor, theme, windows } = useOS();
   const isLight = theme === 'arctic-light';
@@ -47,14 +49,31 @@ export const Desktop: React.FC = () => {
   const [stickyNote, setStickyNote] = useState<string>(
     "🚀 Portfolio OS Quick Notes:\n• Check out GuardianVoice (AI Voice Scam Detector)\n• Try 'sudo hire-me' in Warp Terminal!\n• Explore 16+ GitHub Repositories"
   );
+  const [contextMenu, setContextMenu] = useState<{ x: number; y: number } | null>(null);
 
   const hasOpenWindows = windows.some(w => !w.isMinimized);
 
+  const handleContextMenu = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setContextMenu({ x: e.pageX, y: e.pageY });
+  };
+
   return (
-    <div className="relative w-full h-[calc(100vh-32px)] overflow-hidden select-none transition-colors duration-200"
-         style={{ color: 'var(--text-primary)' }}>
+    <div 
+      className="relative w-full h-[calc(100vh-32px)] overflow-hidden select-none transition-colors duration-200"
+      style={{ color: 'var(--text-primary)' }}
+      onContextMenu={handleContextMenu}
+    >
       {/* Background ready for user's custom background animation */}
       <InteractiveBackground />
+      
+      {contextMenu && (
+        <ContextMenu 
+          x={contextMenu.x} 
+          y={contextMenu.y} 
+          onClose={() => setContextMenu(null)} 
+        />
+      )}
 
       {/* Main Desktop Grid Layout */}
       <div className={`relative z-10 w-full h-full p-4 md:p-6 grid grid-cols-[auto_1fr] gap-6 overflow-hidden pointer-events-none transition-all duration-500 ease-out ${hasOpenWindows ? 'opacity-30 blur-[8px] scale-[0.97]' : 'opacity-100 blur-0 scale-100'}`}>
