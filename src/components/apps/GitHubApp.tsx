@@ -80,6 +80,15 @@ export const GitHubApp: React.FC = () => {
           <RefreshCw className="w-8 h-8 text-purple-400 animate-spin mx-auto" />
           <div className="text-xs text-slate-400 font-mono">Fetching GitHub API data for Srinidhi-070...</div>
         </div>
+      ) : error ? (
+        <div className="py-20 text-center space-y-3">
+          <div className="text-red-500 font-bold">Failed to fetch metrics</div>
+          <div className="text-xs text-slate-400 font-mono max-w-sm mx-auto">
+            GitHub public API limits unauthenticated requests to 60 per hour. Please try again later.
+            <br />
+            (Error: {error})
+          </div>
+        </div>
       ) : data ? (
         <div className="space-y-6">
           {/* User Profile Metrics Banner */}
@@ -139,7 +148,7 @@ export const GitHubApp: React.FC = () => {
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {data.repositories.map((repo: any) => (
+              {data.repos.map((repo: any) => (
                 <a
                   key={repo.id}
                   href={repo.html_url}
