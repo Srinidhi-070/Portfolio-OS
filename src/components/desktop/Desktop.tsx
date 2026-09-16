@@ -66,23 +66,13 @@ export const Desktop: React.FC = () => {
               <button
                 key={app.id}
                 onClick={() => openApp(app.id)}
-                className="group flex flex-col items-center justify-center w-16 sm:w-24 p-1.5 sm:p-2 rounded-xl transition-all duration-150 focus:outline-none shrink-0 glass-card-interactive pointer-events-auto"
+                className="group flex flex-col items-center justify-center w-16 sm:w-24 p-1.5 sm:p-2 rounded-xl focus:outline-none shrink-0 pointer-events-auto"
                 style={{ background: 'transparent', borderColor: 'transparent' }}
-                onMouseOver={(e) => { 
-                  e.currentTarget.style.background = 'var(--surface-1)'; 
-                  e.currentTarget.style.borderColor = 'var(--glass-border)'; 
-                  e.currentTarget.style.backdropFilter = 'blur(var(--glass-blur))';
-                }}
-                onMouseOut={(e) => { 
-                  e.currentTarget.style.background = 'transparent'; 
-                  e.currentTarget.style.borderColor = 'transparent'; 
-                  e.currentTarget.style.backdropFilter = 'none';
-                }}
               >
-                <div className={`app-tile w-10 h-10 sm:w-12 sm:h-12 transition-transform duration-200`}>
-                  <IconComp className="w-5 h-5 sm:w-6 sm:h-6" />
+                <div className={`app-tile w-12 h-12 sm:w-14 sm:h-14`}>
+                  <IconComp className="w-6 h-6 sm:w-7 sm:h-7" />
                 </div>
-                <span className="mt-1 sm:mt-1.5 text-[9px] sm:text-[10px] font-medium text-center tracking-tight drop-shadow-xs line-clamp-1 group-hover:font-semibold"
+                <span className="mt-2 sm:mt-2.5 text-[10px] sm:text-[11px] font-medium text-center tracking-wide drop-shadow-md line-clamp-1 group-hover:font-semibold"
                       style={{ color: 'var(--text-primary)' }}>
                   {app.shortTitle || app.title}
                 </span>
