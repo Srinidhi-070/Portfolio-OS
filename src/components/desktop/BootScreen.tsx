@@ -18,7 +18,7 @@ export const BootScreen: React.FC = () => {
     "Loading PyTorch & CUDA 12.2 Kernel Extensions...",
     "Initializing Neural Speech Processing (GuardianVoice)...",
     "Starting Vision Language Stream Engine (WebRTC VLM)...",
-    "Connecting Gemini 3.6 Flash AI Engine...",
+    "Initializing Portfolio Assistant Engine...",
     "System Authorization Granted. Launching Desktop UI..."
   ];
 

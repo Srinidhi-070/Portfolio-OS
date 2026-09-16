@@ -472,12 +472,12 @@ export const PROJECTS: Project[] = [
     overview: 'An ambitious desktop operating system interface inspired by Ubuntu GNOME, Arc, Warp Terminal, and Raycast, presenting projects, skills, and resume in an interactive window environment.',
     features: [
       'Full desktop window system (Open, Close, Minimize, Maximize, Z-index stack, Dragging).',
-      'Interactive Warp Terminal with bash commands, neofetch, and Gemini AI assistant integration.',
+        'Interactive Warp Terminal with bash commands, neofetch, and simulated AI assistant.',
       'Global Command Palette (Ctrl+K) searching all system content instantly.',
       'Customizable themes, wallpapers, sound feedback, and live GitHub API metrics.'
     ],
-    architecture: 'React 19 -> Express + Vite Full-Stack -> Gemini API -> Web Audio API -> Framer Motion -> Tailwind CSS v4',
-    techStack: ['TypeScript', 'React 19', 'Express', 'Gemini API', 'Tailwind CSS', 'Motion', 'Lucide Icons'],
+    architecture: 'React 19 -> Vite Full-Stack -> Web Audio API -> Framer Motion -> Tailwind CSS v4',
+    techStack: ['TypeScript', 'React 19', 'Tailwind CSS', 'Motion', 'Lucide Icons'],
     challenges: 'Creating an intuitive, performant window manager with smooth gestures and keyboard navigation.',
     learnings: 'Pushed boundaries of creative web UI engineering, windowing state management, and full-stack integration.',
     stars: 25,

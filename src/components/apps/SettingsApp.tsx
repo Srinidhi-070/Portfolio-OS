@@ -181,7 +181,7 @@ export const SettingsApp: React.FC = () => {
           </div>
           <div className="glass-surface p-3 rounded-xl border border-[var(--glass-border)]">
             <div className={`text-[10px] `}>AI Engine</div>
-            <div className="font-mono text-amber-600 dark:text-amber-400 font-bold mt-0.5">Gemini 3.6 Flash</div>
+            <div className="font-mono text-amber-600 dark:text-amber-400 font-bold mt-0.5">Simulated AI</div>
           </div>
           <div className="glass-surface p-3 rounded-xl border border-[var(--glass-border)]">
             <div className={`text-[10px] `}>Environment</div>

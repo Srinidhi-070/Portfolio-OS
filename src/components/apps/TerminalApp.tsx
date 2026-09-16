@@ -71,7 +71,7 @@ export const TerminalApp: React.FC = () => {
           <div>• <span className="text-amber-300 font-bold">cat &lt;file&gt;</span> : Read terminal file (e.g., cat about.txt, cat projects.txt)</div>
           <div>• <span className="text-amber-300 font-bold">sudo hire-me</span> : Trigger interactive hiring proposal</div>
           <div>• <span className="text-amber-300 font-bold">open &lt;app&gt;</span> : Launch app (home, about, projects, skills, resume, contact)</div>
-          <div>• <span className="text-amber-300 font-bold">ai &lt;question&gt;</span> : Query Gemini 3.6 AI Assistant</div>
+          <div>• <span className="text-amber-300 font-bold">ai &lt;question&gt;</span> : Chat with the Portfolio Assistant</div>
           <div>• <span className="text-amber-300 font-bold">clear</span> : Clear screen</div>
         </div>
       );
@@ -150,11 +150,18 @@ export const TerminalApp: React.FC = () => {
       } else if (q.includes('who are you') || q.includes('who is srinidhi')) {
         responseText = "I am Srinidhi's simulated AI assistant! Srinidhi is an AI & Data Science Graduate and Product Operations Intern who builds interactive OS-style portfolios just like this one.";
       } else if (q.match(/^(hi|hello|hey|yo)/)) {
-        responseText = "Hello there! My Gemini API brain is currently disconnected, so I'm running on pre-programmed caffeine ☕. How can I help you explore this portfolio?";
-      } else if (q.includes('hire')) {
-        responseText = "Executing hire sequence... Target acquired. Prepare the offer letter! 💼\nYou can contact him directly using the Contact App or via nssrinidhi72884@gmail.com";
+        responseText = "Hello there! I'm the built-in Portfolio Assistant, running on 100% pre-programmed caffeine ☕. Try asking me about Srinidhi's 'skills', 'experience', 'projects', or ask me for a 'joke'!";
+      } else if (q.includes('hire') || q.includes('job') || q.includes('work')) {
+        responseText = "Executing hire sequence... Target acquired. Prepare the offer letter! 💼\nYou can contact Srinidhi directly using the Contact App, or email nssrinidhi72884@gmail.com";
       } else if (q.includes('joke')) {
-        responseText = "Why do programmers prefer dark mode? Because light attracts bugs! 🐛\n(Also, wait till you see the light mode of this OS... my creator clearly didn't get the memo).";
+        const jokes = [
+          "Why do programmers prefer dark mode? Because light attracts bugs! 🐛",
+          "There are 10 types of people in this world: Those who understand binary, and those who don't.",
+          "I'd tell you a joke about UDP, but you might not get it.",
+          "Why did the developer go broke? Because they used up all their cache!",
+          "A SQL query goes into a bar, walks up to two tables and asks: 'Can I join you?'"
+        ];
+        responseText = jokes[Math.floor(Math.random() * jokes.length)];
       } else if (q.includes('matrix')) {
         responseText = "Wake up, Neo... The Portfolio OS has you 🐇.";
       } else if (q.includes('ping')) {
@@ -165,8 +172,20 @@ export const TerminalApp: React.FC = () => {
         responseText = `Checking my internal simulated clock... it appears to be ${new Date().toLocaleString()}. But time is just an illusion in this OS.`;
       } else if (q.includes('why') || q.includes('broken')) {
         responseText = "It's a feature, not a bug.";
+      } else if (q.includes('skills') || q.includes('tech')) {
+        responseText = "Srinidhi specializes in Python, React, Next.js, AI/ML (TensorFlow, PyTorch), Node.js, and Cloud deployments! Type 'open skills' to see the full breakdown.";
+      } else if (q.includes('experience') || q.includes('internship')) {
+        responseText = "Srinidhi was a Product Operations Intern at Hiver, optimizing pipelines and automating QA! Type 'open experience' to see the details.";
+      } else if (q.includes('projects') || q.includes('portfolio')) {
+        responseText = "Srinidhi has built everything from AI Courtroom Simulators to AR Campus Navigation! Type 'open projects' to check out the portfolio gallery.";
+      } else if (q.includes('education') || q.includes('degree')) {
+        responseText = "Srinidhi holds a B.E. in Artificial Intelligence and Data Science from Dayananda Sagar Academy of Technology and Management (CGPA: 7.82).";
+      } else if (q.includes('music') || q.includes('spotify')) {
+        responseText = "I'm not equipped with speakers, but I can recommend some lo-fi beats to code to while you explore the portfolio! 🎧";
+      } else if (q.includes('secret') || q.includes('easter egg')) {
+        responseText = "You found a secret! 🎉 Did you know you can right-click anywhere on the desktop to open a custom OS context menu?";
       } else {
-        responseText = `Unrecognized command or question: '${queryText}'.\n\n(Note: My live AI brain is currently offline for maintenance. Try typing 'help' for core commands, or ask me for a 'joke'!)`;
+        responseText = `Hmm, I'm not sure how to respond to '${queryText}'.\n\nI'm a lightweight simulated assistant! Try asking about Srinidhi's 'skills', 'experience', 'projects', or just ask me to tell a 'joke'. You can also type 'help' for system commands!`;
       }
 
       setIsAiLoading(true);
