@@ -192,63 +192,53 @@ export const TopBar: React.FC = () => {
       </div>
 
       {/* Right: Quick Triggers & Indicators */}
-      <div className="flex items-center justify-end gap-1 sm:gap-1.5 shrink-0 z-10 flex-1">
+      <div className="flex items-center justify-end gap-0.5 sm:gap-1 shrink-0 z-10 flex-1">
         {/* Mobile Clock Fallback when center clock is hidden */}
         <span className="sm:hidden text-[11px] font-semibold pr-1">{timeStr}</span>
 
         {/* Global Search Trigger */}
         <button
           onClick={() => setIsSearchOpen(!isSearchOpen)}
-          className="flex items-center gap-1 px-1.5 sm:px-2 py-1 rounded-md border transition-colors glass-surface"
-          style={{ borderColor: 'var(--glass-border)', color: 'var(--text-secondary)' }}
-          onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'var(--surface-2)'}
-          onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'var(--surface-1)'}
+          className="flex items-center gap-1.5 px-2 py-1 rounded-md transition-colors focus:outline-none"
+          style={{ color: 'var(--text-secondary)' }}
+          onMouseOver={(e) => { e.currentTarget.style.backgroundColor = 'var(--surface-2)'; e.currentTarget.style.color = 'var(--text-primary)'; }}
+          onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'var(--text-secondary)'; }}
           title="Global Search (Ctrl + K)"
         >
-          <Search className="w-3.5 h-3.5 opacity-70" />
-          <span className="text-[10px] opacity-60 font-mono hidden xl:inline" style={{ fontFamily: 'var(--font-mono)' }}>Ctrl+K</span>
+          <Search className="w-3.5 h-3.5" />
+          <span className="text-[10px] font-medium hidden xl:inline">Search</span>
+          <span className="text-[9px] opacity-60 font-mono hidden xl:inline bg-[var(--surface-2)] px-1 rounded">Ctrl+K</span>
         </button>
 
         {/* Theme Toggle Button (Dark / Light) */}
         <button
           onClick={toggleThemeMode}
-          className="flex items-center gap-1 px-1.5 sm:px-2 py-1 rounded-md border transition-all"
-          style={{
-            backgroundColor: isLight ? 'rgba(245,158,11,0.1)' : 'rgba(99,102,241,0.15)',
-            borderColor: isLight ? 'rgba(245,158,11,0.3)' : 'rgba(99,102,241,0.3)',
-            color: isLight ? '#d97706' : '#a5b4fc'
-          }}
-          title={isLight ? 'Switch to Elegant Dark Mode' : 'Switch to Light Mode'}
+          className="flex items-center gap-1.5 px-2 py-1 rounded-md transition-colors focus:outline-none"
+          style={{ color: 'var(--text-secondary)' }}
+          onMouseOver={(e) => { e.currentTarget.style.backgroundColor = 'var(--surface-2)'; e.currentTarget.style.color = 'var(--text-primary)'; }}
+          onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'var(--text-secondary)'; }}
+          title={isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
         >
-          {isLight ? (
-            <>
-              <Sun className="w-3.5 h-3.5 text-amber-500" />
-              <span className="text-[10px] font-medium hidden md:inline">Light</span>
-            </>
-          ) : (
-            <>
-              <Moon className="w-3.5 h-3.5 text-indigo-400" />
-              <span className="text-[10px] font-medium hidden md:inline">Dark</span>
-            </>
-          )}
+          {isLight ? <Sun className="w-3.5 h-3.5" /> : <Moon className="w-3.5 h-3.5" />}
         </button>
 
         {/* Network Indicator */}
-        <div className="hidden sm:flex p-1.5 rounded-md transition-colors"
-          style={{ color: 'var(--accent)' }}
-          onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'var(--surface-2)'}
-          onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+        <div className="hidden sm:flex px-2 py-1 rounded-md transition-colors cursor-default"
+          style={{ color: 'var(--text-secondary)' }}
+          onMouseOver={(e) => { e.currentTarget.style.backgroundColor = 'var(--surface-2)'; e.currentTarget.style.color = 'var(--text-primary)'; }}
+          onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'var(--text-secondary)'; }}
           title="Online: Cloud Engine Connected">
           <Wifi className="w-3.5 h-3.5" />
         </div>
 
         {/* Battery Indicator */}
-        <div className="hidden md:flex p-1.5 rounded-md items-center gap-1 transition-colors"
-          onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'var(--surface-2)'}
-          onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+        <div className="hidden md:flex px-2 py-1 rounded-md items-center gap-1.5 transition-colors cursor-default"
+          style={{ color: 'var(--text-secondary)' }}
+          onMouseOver={(e) => { e.currentTarget.style.backgroundColor = 'var(--surface-2)'; e.currentTarget.style.color = 'var(--text-primary)'; }}
+          onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'var(--text-secondary)'; }}
           title="Battery: 98% (Power Source Attached)">
-          <Battery className="w-3.5 h-3.5" style={{ color: 'var(--accent)' }} />
-          <span className="text-[10px] hidden lg:inline opacity-70" style={{ color: 'var(--text-secondary)' }}>98%</span>
+          <Battery className="w-3.5 h-3.5" />
+          <span className="text-[10px] font-medium hidden lg:inline">98%</span>
         </div>
 
         {/* Quick Settings Dropdown Trigger */}
@@ -257,13 +247,13 @@ export const TopBar: React.FC = () => {
             setIsQuickSettingsOpen(!isQuickSettingsOpen);
             setIsNotificationsOpen(false);
           }}
-          className="p-1.5 rounded-md transition-colors"
+          className="px-2 py-1 rounded-md transition-colors focus:outline-none"
           style={{ 
             backgroundColor: isQuickSettingsOpen ? 'var(--surface-2)' : 'transparent',
             color: isQuickSettingsOpen ? 'var(--text-primary)' : 'var(--text-secondary)' 
           }}
-          onMouseOver={(e) => { e.currentTarget.style.backgroundColor = 'var(--surface-2)'; }}
-          onMouseOut={(e) => { e.currentTarget.style.backgroundColor = isQuickSettingsOpen ? 'var(--surface-2)' : 'transparent'; }}
+          onMouseOver={(e) => { e.currentTarget.style.backgroundColor = 'var(--surface-2)'; e.currentTarget.style.color = 'var(--text-primary)'; }}
+          onMouseOut={(e) => { e.currentTarget.style.backgroundColor = isQuickSettingsOpen ? 'var(--surface-2)' : 'transparent'; e.currentTarget.style.color = isQuickSettingsOpen ? 'var(--text-primary)' : 'var(--text-secondary)'; }}
           title="Quick Settings"
         >
           <SlidersHorizontal className="w-3.5 h-3.5" />
@@ -272,19 +262,18 @@ export const TopBar: React.FC = () => {
         {/* User Profile Quick Trigger Button */}
         <button
           onClick={() => setShowProfileModal(!showProfileModal)}
-          className="hidden lg:flex items-center gap-1.5 p-1 px-1.5 rounded-md transition-colors border glass-surface"
-          style={{ borderColor: 'var(--glass-border)', color: 'var(--text-primary)' }}
-          onMouseOver={(e) => { e.currentTarget.style.backgroundColor = 'var(--surface-2)'; }}
-          onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'var(--surface-1)'; }}
-          title="Srinidhi N S — View Developer Profile"
+          className="hidden lg:flex items-center gap-1.5 px-2 py-1 rounded-md transition-colors focus:outline-none"
+          style={{ color: 'var(--text-secondary)' }}
+          onMouseOver={(e) => { e.currentTarget.style.backgroundColor = 'var(--surface-2)'; e.currentTarget.style.color = 'var(--text-primary)'; }}
+          onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'var(--text-secondary)'; }}
+          title="Srinidhi N S - View Developer Profile"
         >
           <img
             src={srinidhiPhoto}
             alt={PERSONAL_INFO.name}
-            className="w-4 h-4 rounded-full object-cover object-top border"
-            style={{ borderColor: 'var(--accent)' }}
+            className="w-4 h-4 rounded-full object-cover object-top"
           />
-          <span className="text-[10px] font-semibold hidden xl:inline">Srinidhi</span>
+          <span className="text-[10px] font-medium hidden xl:inline">Srinidhi</span>
         </button>
 
         {/* Notifications Bell Trigger */}
@@ -293,18 +282,18 @@ export const TopBar: React.FC = () => {
             setIsNotificationsOpen(!isNotificationsOpen);
             setIsQuickSettingsOpen(false);
           }}
-          className="relative p-1.5 rounded-md transition-colors"
+          className="relative px-2 py-1 rounded-md transition-colors focus:outline-none"
           style={{ 
             backgroundColor: isNotificationsOpen ? 'var(--surface-2)' : 'transparent',
             color: isNotificationsOpen ? 'var(--text-primary)' : 'var(--text-secondary)' 
           }}
-          onMouseOver={(e) => { e.currentTarget.style.backgroundColor = 'var(--surface-2)'; }}
-          onMouseOut={(e) => { e.currentTarget.style.backgroundColor = isNotificationsOpen ? 'var(--surface-2)' : 'transparent'; }}
+          onMouseOver={(e) => { e.currentTarget.style.backgroundColor = 'var(--surface-2)'; e.currentTarget.style.color = 'var(--text-primary)'; }}
+          onMouseOut={(e) => { e.currentTarget.style.backgroundColor = isNotificationsOpen ? 'var(--surface-2)' : 'transparent'; e.currentTarget.style.color = isNotificationsOpen ? 'var(--text-primary)' : 'var(--text-secondary)'; }}
           title="Notifications Center"
         >
           <Bell className="w-3.5 h-3.5" />
           {unreadCount > 0 && (
-            <span className="absolute top-0.5 right-0.5 w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
+            <span className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
           )}
         </button>
       </div>
