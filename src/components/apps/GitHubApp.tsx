@@ -4,7 +4,7 @@ import { useOS } from '../../context/OSContext';
 
 export const GitHubApp: React.FC = () => {
   const { theme } = useOS();
-  const isLight = theme === 'vercel-light';
+  const isLight = theme === 'vercel-light' || theme === 'neo-brutal';
 
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<any>(null);

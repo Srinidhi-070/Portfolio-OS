@@ -33,7 +33,7 @@ export const QuickSettings: React.FC = () => {
 
   if (!isQuickSettingsOpen) return null;
 
-  const isLight = theme === 'vercel-light';
+  const isLight = theme === 'vercel-light' || theme === 'neo-brutal';
 
   const ACCENTS: { id: AccentColor; name: string; bg: string }[] = [
     { id: 'emerald', name: 'Emerald', bg: '#10b981' },

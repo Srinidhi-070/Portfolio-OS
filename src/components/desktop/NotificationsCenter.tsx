@@ -14,7 +14,7 @@ export const NotificationsCenter: React.FC = () => {
   } = useOS();
 
   if (!isNotificationsOpen) return null;
-  const isLight = theme === 'vercel-light';
+  const isLight = theme === 'vercel-light' || theme === 'neo-brutal';
 
   return (
     <div

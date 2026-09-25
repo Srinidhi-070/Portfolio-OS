@@ -6,7 +6,7 @@ import { Mail, Send, Github, Linkedin, Copy, Check, MessageSquare, Sparkles } fr
 
 export const ContactApp: React.FC = () => {
   const { theme, addNotification } = useOS();
-  const isLight = theme === 'vercel-light';
+  const isLight = theme === 'vercel-light' || theme === 'neo-brutal';
 
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [loading, setLoading] = useState(false);

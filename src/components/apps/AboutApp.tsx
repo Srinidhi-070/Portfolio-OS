@@ -23,7 +23,7 @@ import {
 export const AboutApp: React.FC = () => {
   const { openApp, accentColor, theme } = useOS();
   const accent = getAccentClasses(accentColor);
-  const isLight = theme === 'vercel-light';
+  const isLight = theme === 'vercel-light' || theme === 'neo-brutal';
 
   return (
     <div className={`p-4 sm:p-6 max-w-4xl mx-auto space-y-6 sm:space-y-8 `}>

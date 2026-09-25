@@ -5,7 +5,7 @@ import { useOS } from '../../context/OSContext';
 
 export const EducationApp: React.FC = () => {
   const { theme } = useOS();
-  const isLight = theme === 'vercel-light';
+  const isLight = theme === 'vercel-light' || theme === 'neo-brutal';
 
   return (
     <div className={`p-6 max-w-4xl mx-auto space-y-8 select-none `}>

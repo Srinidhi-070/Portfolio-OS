@@ -10,7 +10,7 @@ interface UserProfileCardProps {
 
 export const UserProfileCard: React.FC<UserProfileCardProps> = ({ compact = false }) => {
   const { openApp, theme, addNotification } = useOS();
-  const isLight = theme === 'vercel-light';
+  const isLight = theme === 'vercel-light' || theme === 'neo-brutal';
 
   const copyEmail = () => {
     navigator.clipboard.writeText(PERSONAL_INFO.email);

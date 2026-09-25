@@ -6,7 +6,7 @@ import { FileText, Mail, Github, Linkedin, CheckCircle2, Copy, Check, ExternalLi
 
 export const ResumeApp: React.FC = () => {
   const { theme, addNotification } = useOS();
-  const isLight = theme === 'vercel-light';
+  const isLight = theme === 'vercel-light' || theme === 'neo-brutal';
 
   const [copied, setCopied] = useState(false);
 

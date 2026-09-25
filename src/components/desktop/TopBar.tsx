@@ -49,7 +49,7 @@ export const TopBar: React.FC = () => {
   const [showSystemMenu, setShowSystemMenu] = useState(false);
   const [showProfileModal, setShowProfileModal] = useState(false);
 
-  const isLight = theme === 'vercel-light';
+  const isLight = theme === 'vercel-light' || theme === 'neo-brutal';
   const unreadCount = notifications.filter(n => !n.read).length;
 
   const activeWindow = windows.find(w => w.id === activeWindowId && !w.isMinimized);

@@ -25,7 +25,7 @@ import {
 export const HomeApp: React.FC = () => {
   const { openApp, accentColor, theme } = useOS();
   const accent = getAccentClasses(accentColor);
-  const isLight = theme === 'vercel-light';
+  const isLight = theme === 'vercel-light' || theme === 'neo-brutal';
 
   const featuredProjects = PROJECTS.filter(p => p.featured).slice(0, 4);
 

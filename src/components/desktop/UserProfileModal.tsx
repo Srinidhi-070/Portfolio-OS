@@ -12,7 +12,7 @@ interface UserProfileModalProps {
 
 export const UserProfileModal: React.FC<UserProfileModalProps> = ({ isOpen, onClose }) => {
   const { theme, openApp, addNotification } = useOS();
-  const isLight = theme === 'vercel-light';
+  const isLight = theme === 'vercel-light' || theme === 'neo-brutal';
 
   if (!isOpen) return null;
 

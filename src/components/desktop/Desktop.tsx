@@ -43,7 +43,7 @@ import { ContextMenu } from './ContextMenu';
 
 export const Desktop: React.FC = () => {
   const { openApp, wallpaper, accentColor, theme, windows } = useOS();
-  const isLight = theme === 'vercel-light';
+  const isLight = theme === 'vercel-light' || theme === 'neo-brutal';
   const accent = getAccentClasses(accentColor);
 
   const [stickyNote, setStickyNote] = useState<string>(

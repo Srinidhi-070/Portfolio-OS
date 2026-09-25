@@ -29,7 +29,7 @@ interface ProjectsAppProps {
 export const ProjectsApp: React.FC<ProjectsAppProps> = ({ initialParams }) => {
   const { accentColor, theme } = useOS();
   const accent = getAccentClasses(accentColor);
-  const isLight = theme === 'vercel-light';
+  const isLight = theme === 'vercel-light' || theme === 'neo-brutal';
 
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');

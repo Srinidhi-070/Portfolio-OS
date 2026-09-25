@@ -36,7 +36,7 @@ export const SettingsApp: React.FC = () => {
     accentColor: currentAccent
   } = useOS();
 
-  const isLight = theme === 'vercel-light';
+  const isLight = theme === 'vercel-light' || theme === 'neo-brutal';
 
   const THEMES: { id: ThemeMode; name: string; desc: string }[] = [
     { id: 'linear-dark', name: 'Linear Dark', desc: 'Ultra-modern OLED black with minimal zinc borders' },
