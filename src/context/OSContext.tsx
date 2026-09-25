@@ -105,8 +105,8 @@ export const OSProvider: React.FC<{ children: React.ReactNode }> = ({ children }
   const [notifications, setNotifications] = useState<SystemNotification[]>(INITIAL_NOTIFICATIONS);
 
   // Customization
-  const [theme, setTheme] = useState<ThemeMode>('linear-dark');
-  const [accentColor, setAccentColor] = useState<AccentColor>('cyan');
+  const [theme, setTheme] = useState<ThemeMode>('neo-brutal');
+  const [accentColor, setAccentColor] = useState<AccentColor>('tomato');
   const [wallpaper, setWallpaper] = useState<WallpaperOption>(WALLPAPERS[0]);
   const [soundEnabled, setSoundEnabledState] = useState<boolean>(true);
   const [reducedMotion, setReducedMotion] = useState<boolean>(false);
