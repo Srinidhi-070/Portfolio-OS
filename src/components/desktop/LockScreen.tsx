@@ -9,7 +9,7 @@ import { Lock, Unlock, ArrowRight, ShieldCheck, User } from 'lucide-react';
 export const LockScreen: React.FC = () => {
   const { setLocked, accentColor, theme } = useOS();
   const accent = getAccentClasses(accentColor);
-  const isLight = theme === 'arctic-light';
+  const isLight = theme === 'vercel-light';
 
   const [timeStr, setTimeStr] = useState<string>('');
   const [dateStr, setDateStr] = useState<string>('');

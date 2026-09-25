@@ -234,7 +234,7 @@ export const TerminalApp: React.FC = () => {
   return (
     <div
       onClick={() => inputRef.current?.focus()}
-      className="h-full bg-[#0a0a0a] text-white p-4 flex flex-col justify-between overflow-hidden select-none obsidian"
+      className="h-full bg-[#0a0a0a] text-white p-4 flex flex-col justify-between overflow-hidden select-none linear-dark"
       style={{ fontFamily: 'var(--font-mono)' }}
     >
       {/* Terminal History Log Stream */}

@@ -49,7 +49,7 @@ export const TopBar: React.FC = () => {
   const [showSystemMenu, setShowSystemMenu] = useState(false);
   const [showProfileModal, setShowProfileModal] = useState(false);
 
-  const isLight = theme === 'arctic-light';
+  const isLight = theme === 'vercel-light';
   const unreadCount = notifications.filter(n => !n.read).length;
 
   const activeWindow = windows.find(w => w.id === activeWindowId && !w.isMinimized);
@@ -67,7 +67,7 @@ export const TopBar: React.FC = () => {
   }, []);
 
   const toggleThemeMode = () => {
-    setTheme(isLight ? 'obsidian' : 'arctic-light');
+    setTheme(isLight ? 'linear-dark' : 'vercel-light');
   };
 
   return (

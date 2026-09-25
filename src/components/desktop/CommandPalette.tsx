@@ -27,7 +27,7 @@ export const CommandPalette: React.FC = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const isLight = theme === 'arctic-light';
+  const isLight = theme === 'vercel-light';
 
   useEffect(() => {
     if (isSearchOpen) {

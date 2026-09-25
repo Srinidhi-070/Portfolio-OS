@@ -105,7 +105,7 @@ export const OSProvider: React.FC<{ children: React.ReactNode }> = ({ children }
   const [notifications, setNotifications] = useState<SystemNotification[]>(INITIAL_NOTIFICATIONS);
 
   // Customization
-  const [theme, setTheme] = useState<ThemeMode>('obsidian');
+  const [theme, setTheme] = useState<ThemeMode>('linear-dark');
   const [accentColor, setAccentColor] = useState<AccentColor>('cyan');
   const [wallpaper, setWallpaper] = useState<WallpaperOption>(WALLPAPERS[0]);
   const [soundEnabled, setSoundEnabledState] = useState<boolean>(true);
@@ -119,14 +119,9 @@ export const OSProvider: React.FC<{ children: React.ReactNode }> = ({ children }
   // Apply CSS custom properties when theme / accent / wallpaper changes
   useEffect(() => {
     applyThemeVariables(theme, accentColor, wallpaper);
-    // Toggle light-theme class on <html> for CSS overrides
     const root = document.documentElement;
-    if (theme === 'arctic-light') {
-      root.classList.add('arctic-light');
-    } else {
-      root.classList.remove('arctic-light');
-    }
-    // Manual reduced-motion override (separate from OS-level preference)
+    root.classList.remove('linear-dark', 'vercel-light', 'dracula', 'monochrome', 'tokyo-night', 'arctic-light', 'obsidian', 'midnight-violet', 'cyber-blue', 'emerald-glass');
+    root.classList.add(theme);
     root.classList.toggle('reduce-motion', reducedMotion);
   }, [theme, accentColor, wallpaper, reducedMotion]);
 

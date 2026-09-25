@@ -7,7 +7,7 @@ import { Briefcase, Building, Calendar, MapPin, CheckCircle2, TrendingUp, Award,
 export const ExperienceApp: React.FC = () => {
   const { accentColor, theme } = useOS();
   const accent = getAccentClasses(accentColor);
-  const isLight = theme === 'arctic-light';
+  const isLight = theme === 'vercel-light';
 
   return (
     <div className={`p-6 max-w-4xl mx-auto space-y-8 select-none `}>

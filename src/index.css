@@ -36,14 +36,14 @@
   --radius-2xl: 24px;
 }
 
-/* 1. OBSIDIAN (Pure Neutral Dark) */
-:root, .obsidian {
+/* 1. LINEAR DARK */
+:root, .linear-dark {
   color-scheme: dark;
-  --glass-bg: #09090b;
-  --glass-bg-heavy: #000000;
+  --glass-bg: #111113;
+  --glass-bg-heavy: #09090b;
   --glass-border: #27272a;
-  --glass-border-active: #52525b;
-  --glass-window-bg: #09090b;
+  --glass-border-active: #3f3f46;
+  --glass-window-bg: #111113;
 
   --surface-0: #000000;
   --surface-1: #18181b;
@@ -52,98 +52,98 @@
   --card-bg: #18181b;
   --surface-hover: #27272a;
 
-  --text-primary: #ffffff;
+  --text-primary: #ededed;
   --text-secondary: #a1a1aa;
   --text-tertiary: #71717a;
   --text-inverse: #000000;
 }
 
-/* 2. ARCTIC LIGHT (Pure Neutral White) */
-.arctic-light {
+/* 2. VERCEL LIGHT */
+.vercel-light {
   color-scheme: light;
   --glass-bg: #ffffff;
-  --glass-bg-heavy: #f4f4f5;
-  --glass-border: #e4e4e7;
-  --glass-border-active: #a1a1aa;
+  --glass-bg-heavy: #fafafa;
+  --glass-border: #eaeaea;
+  --glass-border-active: #999999;
   --glass-window-bg: #ffffff;
 
-  --surface-0: #f4f4f5;
+  --surface-0: #fafafa;
   --surface-1: #ffffff;
-  --surface-2: #f4f4f5;
-  --surface-3: #e4e4e7;
+  --surface-2: #f5f5f5;
+  --surface-3: #eaeaea;
   --card-bg: #ffffff;
-  --surface-hover: #f4f4f5;
+  --surface-hover: #fafafa;
 
-  --text-primary: #09090b;
-  --text-secondary: #52525b;
-  --text-tertiary: #a1a1aa;
+  --text-primary: #000000;
+  --text-secondary: #666666;
+  --text-tertiary: #888888;
   --text-inverse: #ffffff;
 }
 
-/* 3. MIDNIGHT VIOLET (Deep Indigo/Violet Dark) */
-.midnight-violet {
+/* 3. DRACULA MODERN */
+.dracula {
   color-scheme: dark;
-  --glass-bg: #0a0714;
-  --glass-bg-heavy: #05030c;
-  --glass-border: #2e2252;
-  --glass-border-active: #5b469b;
-  --glass-window-bg: #0a0714;
+  --glass-bg: #282a36;
+  --glass-bg-heavy: #21222c;
+  --glass-border: #44475a;
+  --glass-border-active: #6272a4;
+  --glass-window-bg: #282a36;
 
-  --surface-0: #05030c;
-  --surface-1: #18122b;
-  --surface-2: #2e2252;
-  --surface-3: #43386e;
-  --card-bg: #18122b;
-  --surface-hover: #2e2252;
+  --surface-0: #191a21;
+  --surface-1: #282a36;
+  --surface-2: #44475a;
+  --surface-3: #6272a4;
+  --card-bg: #282a36;
+  --surface-hover: #44475a;
 
-  --text-primary: #ffffff;
-  --text-secondary: #a7a1c4;
-  --text-tertiary: #7b7596;
-  --text-inverse: #05030c;
+  --text-primary: #f8f8f2;
+  --text-secondary: #bfbfbf;
+  --text-tertiary: #6272a4;
+  --text-inverse: #282a36;
 }
 
-/* 4. CYBER BLUE (Deep Navy/Cyan Dark) */
-.cyber-blue {
+/* 4. TOKYO NIGHT */
+.tokyo-night {
   color-scheme: dark;
-  --glass-bg: #040b16;
-  --glass-bg-heavy: #02060d;
-  --glass-border: #1b3358;
-  --glass-border-active: #335d9c;
-  --glass-window-bg: #040b16;
+  --glass-bg: #1f2335;
+  --glass-bg-heavy: #1a1b26;
+  --glass-border: #292e42;
+  --glass-border-active: #3b4261;
+  --glass-window-bg: #1f2335;
 
-  --surface-0: #02060d;
-  --surface-1: #0f1e38;
-  --surface-2: #1b3358;
-  --surface-3: #2a497a;
-  --card-bg: #0f1e38;
-  --surface-hover: #1b3358;
+  --surface-0: #1a1b26;
+  --surface-1: #1f2335;
+  --surface-2: #292e42;
+  --surface-3: #3b4261;
+  --card-bg: #24283b;
+  --surface-hover: #292e42;
 
-  --text-primary: #ffffff;
-  --text-secondary: #93a7c6;
-  --text-tertiary: #647b9e;
-  --text-inverse: #02060d;
+  --text-primary: #c0caf5;
+  --text-secondary: #9aa5ce;
+  --text-tertiary: #565f89;
+  --text-inverse: #1a1b26;
 }
 
-/* 5. EMERALD FOREST (Deep Pine Dark) */
-.emerald-glass {
+/* 5. MONOCHROME */
+.monochrome {
   color-scheme: dark;
-  --glass-bg: #050f0b;
-  --glass-bg-heavy: #020805;
-  --glass-border: #173d2c;
-  --glass-border-active: #2b7051;
-  --glass-window-bg: #050f0b;
+  --glass-bg: #171717;
+  --glass-bg-heavy: #0a0a0a;
+  --glass-border: #404040;
+  --glass-border-active: #737373;
+  --glass-window-bg: #171717;
 
-  --surface-0: #020805;
-  --surface-1: #0d261b;
-  --surface-2: #173d2c;
-  --surface-3: #265942;
-  --card-bg: #0d261b;
-  --surface-hover: #173d2c;
+  --surface-0: #000000;
+  --surface-1: #171717;
+  --surface-2: #262626;
+  --surface-3: #404040;
+  --card-bg: #171717;
+  --surface-hover: #262626;
 
   --text-primary: #ffffff;
-  --text-secondary: #92b3a3;
-  --text-tertiary: #658a77;
-  --text-inverse: #020805;
+  --text-secondary: #a3a3a3;
+  --text-tertiary: #525252;
+  --text-inverse: #000000;
 }
 
 .glass-panel {
@@ -510,6 +510,7 @@
 @media print {
   body { background: white !important; color: black !important; }
   .mesh-bg, .glass-panel, .glass-card { background: white !important; }
+}
 
 @keyframes window-popup {
   0% { opacity: 0; transform: scale(0.85) translateY(10px); }

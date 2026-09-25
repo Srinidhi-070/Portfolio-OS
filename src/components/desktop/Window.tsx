@@ -68,7 +68,7 @@ export const Window: React.FC<WindowProps> = ({ windowState }) => {
     theme
   } = useOS();
 
-  const isLight = theme === 'arctic-light';
+  const isLight = theme === 'vercel-light';
   const [isDragging, setIsDragging] = useState(false);
   const [isResizing, setIsResizing] = useState(false);
   const dragStartRef = useRef<{ x: number; y: number; winX: number; winY: number }>({ x: 0, y: 0, winX: 0, winY: 0 });

@@ -36,14 +36,14 @@ export const SettingsApp: React.FC = () => {
     accentColor: currentAccent
   } = useOS();
 
-  const isLight = theme === 'arctic-light';
+  const isLight = theme === 'vercel-light';
 
   const THEMES: { id: ThemeMode; name: string; desc: string }[] = [
-    { id: 'obsidian', name: 'Obsidian Dark', desc: 'Sleek OLED deep black with high contrast text' },
-    { id: 'midnight-violet', name: 'Midnight Violet', desc: 'Subtle indigo violet dark workspace' },
-    { id: 'cyber-blue', name: 'Cyber Blue', desc: 'Deep navy glass tech theme' },
-    { id: 'emerald-glass', name: 'Emerald Glass', desc: 'Deep forest pine glass theme' },
-    { id: 'arctic-light', name: 'Arctic Light', desc: 'Pure neutral white frosted glass mode' }
+    { id: 'linear-dark', name: 'Linear Dark', desc: 'Ultra-modern OLED black with minimal zinc borders' },
+    { id: 'vercel-light', name: 'Vercel Light', desc: 'Crisp, high-contrast pure white interface' },
+    { id: 'dracula', name: 'Dracula Modern', desc: 'Deep purple-slate with high saturation accents' },
+    { id: 'tokyo-night', name: 'Tokyo Night', desc: 'Beautiful deep blue cyber aesthetic' },
+    { id: 'monochrome', name: 'Monochrome', desc: 'Pure grayscale brutalism' }
   ];
 
   const ACCENTS: { id: AccentColor; name: string; bg: string }[] = [

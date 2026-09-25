@@ -33,7 +33,7 @@ export const QuickSettings: React.FC = () => {
 
   if (!isQuickSettingsOpen) return null;
 
-  const isLight = theme === 'arctic-light';
+  const isLight = theme === 'vercel-light';
 
   const ACCENTS: { id: AccentColor; name: string; bg: string }[] = [
     { id: 'emerald', name: 'Emerald', bg: '#10b981' },
@@ -84,7 +84,7 @@ export const QuickSettings: React.FC = () => {
               </div>
             </div>
             <button
-              onClick={() => setTheme(isLight ? 'obsidian' : 'arctic-light')}
+              onClick={() => setTheme(isLight ? 'linear-dark' : 'vercel-light')}
               className="w-10 h-5 rounded-full p-0.5 transition-colors"
               style={{ backgroundColor: !isLight ? 'var(--accent)' : 'var(--surface-3)' }}
               title="Toggle Dark / Light Theme"

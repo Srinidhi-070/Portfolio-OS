@@ -13,7 +13,7 @@ export const ContextMenu: React.FC<ContextMenuProps> = ({ x, y, onClose }) => {
   const { theme, setTheme, openApp } = useOS();
   const menuRef = useRef<HTMLDivElement>(null);
   
-  const isLight = theme === 'arctic-light';
+  const isLight = theme === 'vercel-light';
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -26,7 +26,7 @@ export const ContextMenu: React.FC<ContextMenuProps> = ({ x, y, onClose }) => {
   }, [onClose]);
 
   const toggleTheme = () => {
-    setTheme(isLight ? 'obsidian' : 'arctic-light');
+    setTheme(isLight ? 'linear-dark' : 'vercel-light');
     onClose();
   };
 

@@ -28,11 +28,11 @@ const WALLPAPER_MESH: Record<string, { mesh1: string; mesh2: string; mesh3: stri
  * Keys must match the ThemeMode ids in src/types.ts.
  */
 const THEME_MESH: Record<string, { mesh1: string; mesh2: string; mesh3: string; mesh4: string }> = {
-  'obsidian':       { mesh1: '#4b5563', mesh2: '#1f2937', mesh3: '#9ca3af', mesh4: '#111827' },
-  'midnight-violet':{ mesh1: '#2e1065', mesh2: '#1e1b4b', mesh3: '#4c1d95', mesh4: '#0f172a' },
-  'cyber-blue':     { mesh1: '#0c4a6e', mesh2: '#082f49', mesh3: '#0e7490', mesh4: '#0f172a' },
-  'emerald-glass':  { mesh1: '#064e3b', mesh2: '#022c22', mesh3: '#10b981', mesh4: '#0f172a' },
-  'arctic-light':   { mesh1: '#cbd5e1', mesh2: '#94a3b8', mesh3: '#e2e8f0', mesh4: '#64748b' },
+  'linear-dark': { mesh1: '#27272a', mesh2: '#18181b', mesh3: '#3f3f46', mesh4: '#000000' },
+  'vercel-light':{ mesh1: '#e4e4e7', mesh2: '#f4f4f5', mesh3: '#d4d4d8', mesh4: '#ffffff' },
+  'dracula':     { mesh1: '#6272a4', mesh2: '#44475a', mesh3: '#ff79c6', mesh4: '#282a36' },
+  'monochrome':  { mesh1: '#404040', mesh2: '#262626', mesh3: '#525252', mesh4: '#171717' },
+  'tokyo-night': { mesh1: '#7aa2f7', mesh2: '#3d59a1', mesh3: '#bb9af7', mesh4: '#1a1b26' },
 };
 
 /**
@@ -57,7 +57,7 @@ export function applyThemeVariables(
   // overrides it when one is chosen. Falls back to the charcoal default.
   const themeMesh = THEME_MESH[theme];
   const wallpaperMesh = wallpaper?.id ? WALLPAPER_MESH[wallpaper.id] : undefined;
-  const mesh = wallpaperMesh || themeMesh || THEME_MESH['obsidian'];
+  const mesh = wallpaperMesh || themeMesh || THEME_MESH['linear-dark'];
   root.style.setProperty('--mesh-1', mesh.mesh1);
   root.style.setProperty('--mesh-2', mesh.mesh2);
   root.style.setProperty('--mesh-3', mesh.mesh3);

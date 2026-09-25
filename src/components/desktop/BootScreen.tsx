@@ -7,7 +7,7 @@ import { ShieldCheck, Cpu, Terminal, ArrowRight } from 'lucide-react';
 export const BootScreen: React.FC = () => {
   const { finishBoot, accentColor, theme } = useOS();
   const accent = getAccentClasses(accentColor);
-  const isLight = theme === 'arctic-light';
+  const isLight = theme === 'vercel-light';
 
   const [progress, setProgress] = useState(0);
   const [logs, setLogs] = useState<string[]>([]);

@@ -30,7 +30,7 @@ const CATEGORY_ICON_MAP: Record<string, React.FC<{ className?: string }>> = {
 export const SkillsApp: React.FC = () => {
   const { accentColor, theme } = useOS();
   const accent = getAccentClasses(accentColor);
-  const isLight = theme === 'arctic-light';
+  const isLight = theme === 'vercel-light';
 
   const [activeTab, setActiveTab] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
