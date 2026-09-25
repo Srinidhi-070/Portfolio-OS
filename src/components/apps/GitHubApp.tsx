@@ -116,31 +116,30 @@ export const GitHubApp: React.FC = () => {
             </a>
           </div>
 
-          {/* Quick Metrics Cards */}
+                    {/* Quick Metrics Cards */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <div className="glass-card p-4 text-center">
-              <BookOpen className="w-4 h-4 text-[var(--accent)] mx-auto mb-1" />
-              <div className={`text-2xl font-black `}>{data.user.public_repos}</div>
-              <div className={`text-[11px] `}>Public Repositories</div>
+            <div className="p-4 text-center rounded-[24px]" style={{ backgroundColor: '#ff5744', color: '#000000' }}>
+              <BookOpen className="w-5 h-5 mx-auto mb-1 text-black" />
+              <div className="text-3xl font-black">{data.user.public_repos}</div>
+              <div className="text-[11px] font-bold uppercase">Repositories</div>
             </div>
-            <div className="glass-card p-4 text-center">
-              <Star className="w-4 h-4 mx-auto mb-1" style={{ color: 'var(--accent)' }} />
-              <div className="text-2xl font-black" style={{ color: 'var(--accent)' }}>{data.totalStars}</div>
-              <div className={`text-[11px] `}>Total Stars Earned</div>
+            <div className="p-4 text-center rounded-[24px]" style={{ backgroundColor: '#6b4eff', color: '#ffffff' }}>
+              <Star className="w-5 h-5 mx-auto mb-1 text-white" />
+              <div className="text-3xl font-black">{data.totalStars}</div>
+              <div className="text-[11px] font-bold uppercase">Total Stars</div>
             </div>
-            <div className="glass-card p-4 text-center">
-              <Users className="w-4 h-4 mx-auto mb-1" style={{ color: 'var(--accent)' }} />
-              <div className={`text-2xl font-black `}>{data.user.followers}</div>
-              <div className={`text-[11px] `}>Followers</div>
+            <div className="p-4 text-center rounded-[24px]" style={{ backgroundColor: '#ffcc4d', color: '#000000' }}>
+              <Users className="w-5 h-5 mx-auto mb-1 text-black" />
+              <div className="text-3xl font-black">{data.user.followers}</div>
+              <div className="text-[11px] font-bold uppercase">Followers</div>
             </div>
-            <div className="glass-card p-4 text-center">
-              <Code2 className="w-4 h-4 mx-auto mb-1" style={{ color: 'var(--accent)' }} />
-              <div className="text-2xl font-black" style={{ color: 'var(--accent)' }}>{Object.keys(data.languages || {}).length}</div>
-              <div className={`text-[11px] `}>Languages Used</div>
+            <div className="p-4 text-center rounded-[24px]" style={{ backgroundColor: '#d4dcd2', color: '#000000' }}>
+              <Code2 className="w-5 h-5 mx-auto mb-1 text-black" />
+              <div className="text-3xl font-black">{Object.keys(data.languages || {}).length}</div>
+              <div className="text-[11px] font-bold uppercase">Languages</div>
             </div>
           </div>
 
-          {/* Repositories List */}
           <div className="space-y-3">
             <h3 className={`text-sm font-bold uppercase tracking-wider flex items-center justify-between `}>
               <span>Public Repositories</span>

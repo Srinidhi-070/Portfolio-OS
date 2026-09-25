@@ -12,6 +12,9 @@ const ACCENT_HSL: Record<AccentColor, { h: number; s: number; l: number }> = {
   amber:   { h: 39,  s: 95, l: 49 },
   rose:    { h: 350, s: 89, l: 60 },
   indigo:  { h: 239, s: 84, l: 67 },
+  tomato:  { h: 9,   s: 100, l: 64 }, // #ff5744
+  mustard: { h: 44,  s: 100, l: 65 }, // #ffcc4d
+  grape:   { h: 254, s: 100, l: 65 }, // #6b4eff
 };
 
 const WALLPAPER_MESH: Record<string, { mesh1: string; mesh2: string; mesh3: string; mesh4: string }> = {

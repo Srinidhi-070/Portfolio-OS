@@ -47,12 +47,14 @@ export const SettingsApp: React.FC = () => {
   ];
 
   const ACCENTS: { id: AccentColor; name: string; bg: string }[] = [
+    { id: 'tomato', name: 'Tomato', bg: 'bg-[#ff5744]' },
+    { id: 'mustard', name: 'Mustard', bg: 'bg-[#ffcc4d]' },
+    { id: 'grape', name: 'Grape', bg: 'bg-[#6b4eff]' },
     { id: 'emerald', name: 'Emerald', bg: 'bg-emerald-500' },
     { id: 'violet', name: 'Violet', bg: 'bg-violet-500' },
     { id: 'cyan', name: 'Cyan', bg: 'bg-cyan-500' },
     { id: 'amber', name: 'Amber', bg: 'bg-amber-500' },
     { id: 'rose', name: 'Rose', bg: 'bg-rose-500' },
-    { id: 'indigo', name: 'Indigo', bg: 'bg-indigo-500' }
   ];
 
   return (

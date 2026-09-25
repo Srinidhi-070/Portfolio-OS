@@ -166,34 +166,34 @@ export const HomeApp: React.FC = () => {
       </div>
 
       {/* Core Competency Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="p-4 rounded-2xl glass-card space-y-2">
-          <div className="w-9 h-9 glass-icon">
-            <Cpu className="w-5 h-5" />
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="p-5 rounded-[24px] space-y-3 shadow-sm hover:scale-[1.02] transition-transform cursor-pointer" style={{ backgroundColor: '#ff5744', color: '#000000' }}>
+          <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center">
+            <Cpu className="w-5 h-5 text-black" />
           </div>
-          <h4 className="text-sm font-bold" style={{ color: 'var(--text-primary)' }}>AI & Deep Learning</h4>
-          <p className="text-xs leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-            PyTorch & TensorFlow model architecture, transfer learning, MFCC audio scam detection & CNN plant diagnostic engines.
+          <h4 className="text-sm font-black tracking-tight">AI & DEEP LEARNING</h4>
+          <p className="text-xs leading-relaxed font-medium text-black/80">
+            PyTorch & TensorFlow model architecture, transfer learning, audio scam detection & diagnostic engines.
           </p>
         </div>
 
-        <div className="p-4 rounded-2xl glass-card space-y-2">
-          <div className="w-9 h-9 glass-icon">
-            <Boxes className="w-5 h-5" />
+        <div className="p-5 rounded-[24px] space-y-3 shadow-sm hover:scale-[1.02] transition-transform cursor-pointer" style={{ backgroundColor: '#6b4eff', color: '#ffffff' }}>
+          <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+            <Boxes className="w-5 h-5 text-white" />
           </div>
-          <h4 className="text-sm font-bold" style={{ color: 'var(--text-primary)' }}>Full-Stack & WebRTC</h4>
-          <p className="text-xs leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-            Sub-100ms low-latency media streams, WebGL Three.js spatial navigation, FastAPI microservices & React 19 UIs.
+          <h4 className="text-sm font-black tracking-tight">FULL-STACK & WEBRTC</h4>
+          <p className="text-xs leading-relaxed font-medium text-white/80">
+            Sub-100ms low-latency media streams, WebGL Three.js spatial navigation, FastAPI microservices.
           </p>
         </div>
 
-        <div className="p-4 rounded-2xl glass-card space-y-2">
-          <div className="w-9 h-9 glass-icon">
-            <ShieldCheck className="w-5 h-5" />
+        <div className="p-5 rounded-[24px] space-y-3 shadow-sm hover:scale-[1.02] transition-transform cursor-pointer" style={{ backgroundColor: '#ffcc4d', color: '#000000' }}>
+          <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center">
+            <ShieldCheck className="w-5 h-5 text-black" />
           </div>
-          <h4 className="text-sm font-bold" style={{ color: 'var(--text-primary)' }}>Product Operations</h4>
-          <p className="text-xs leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-            Automated bug triage workflows, metric telemetry tracking, QA testing suites & cross-functional engineering alignment.
+          <h4 className="text-sm font-black tracking-tight">PRODUCT OPERATIONS</h4>
+          <p className="text-xs leading-relaxed font-medium text-black/80">
+            Lifecycle tracking, test automation (Cypress/Selenium), telemetry & scalable cloud infrastructure.
           </p>
         </div>
       </div>
