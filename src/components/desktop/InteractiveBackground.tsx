@@ -1,7 +1,15 @@
 import React from 'react';
 import { BackgroundRippleEffect } from '../ui/background-ripple-effect';
+import { useOS } from '../../context/OSContext';
 
 export const InteractiveBackground: React.FC = () => {
+  const { theme } = useOS();
+  const isNeoBrutal = theme === 'neo-brutal';
+
+  if (isNeoBrutal) {
+    return null;
+  }
+
   return (
     <>
       <div className="mesh-bg" aria-hidden="true">
