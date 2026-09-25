@@ -43,13 +43,7 @@ export const BootScreen: React.FC = () => {
   }, [finishBoot]);
 
   return (
-    <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center p-6 select-none bg-[#18181b] text-white"
-         style={{ 
-           backgroundColor: 'var(--surface-0)', 
-           color: 'var(--text-primary)',
-           fontFamily: 'var(--font-mono)',
-           backgroundImage: 'radial-gradient(circle at center, var(--surface-1) 0%, var(--surface-0) 100%)'
-         }}>
+    <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center p-6 select-none bg-[#18181b] text-white" style={{ fontFamily: 'var(--font-mono)' }}>
       {/* Background Matrix/Grid lines */}
       <div className="absolute inset-0 opacity-20 pointer-events-none" 
            style={{ backgroundImage: 'radial-gradient(var(--text-tertiary) 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
@@ -60,10 +54,10 @@ export const BootScreen: React.FC = () => {
           <Logo size={64} />
         </div>
 
-        <h1 className="text-2xl font-bold tracking-tight flex items-center gap-2" style={{ color: 'var(--text-primary)' }}>
+        <h1 className="text-2xl font-bold tracking-tight flex items-center gap-2" style={{ color: '#ffffff' }}>
           Portfolio OS <span className="text-xs px-2 py-0.5 rounded border" style={{ backgroundColor: 'var(--accent-subtle)', color: 'var(--accent)', borderColor: 'var(--accent-subtle)' }}>v2.5</span>
         </h1>
-        <p className="text-xs mt-1" style={{ color: 'var(--text-secondary)' }}>AI & Data Science Graduate — Portfolio OS</p>
+        <p className="text-xs mt-1" style={{ color: '#a1a1aa' }}>AI & Data Science Graduate — Portfolio OS</p>
 
         {/* Progress Bar */}
         <div className="w-full border h-2.5 rounded-full overflow-hidden my-6 p-0.5 glass-panel"
@@ -80,7 +74,7 @@ export const BootScreen: React.FC = () => {
           {logs.map((log, idx) => (
             <div key={idx} className="flex items-center gap-2">
               <span className="font-bold" style={{ color: 'var(--accent)' }}>[OK]</span>
-              <span style={{ color: 'var(--text-secondary)' }}>{log}</span>
+              <span style={{ color: '#a1a1aa' }}>{log}</span>
             </div>
           ))}
         </div>
@@ -89,7 +83,7 @@ export const BootScreen: React.FC = () => {
         <button
           onClick={finishBoot}
           className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold transition-colors border glass-card-interactive"
-          style={{ color: 'var(--text-primary)' }}
+          style={{ color: '#ffffff' }}
         >
           Skip Boot Sequence <ArrowRight className="w-3.5 h-3.5" />
         </button>
