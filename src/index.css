@@ -1,4 +1,4 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 @import "tw-animate-css";
 
 /* ═══════════════════════════════════════════════
@@ -19,28 +19,10 @@
 
   --hover-surprise: var(--accent);
 
-  /* ColorHunt #2763 (Dark Teal) */
-  --glass-bg: rgba(30, 35, 42, 1);      /* #222831 */
-  --glass-bg-heavy: rgba(20, 25, 30, 1);
-  --glass-border: rgba(238, 238, 238, 0.1); /* #eeeeee */
-  --glass-border-active: rgba(0, 173, 181, 0.4); /* #00adb5 */
+  /* Shared Defaults */
   --glass-blur: 32px;
   --glass-blur-heavy: 48px;
-  --glass-highlight: inset 0 1px 0 rgba(238, 238, 238, 0.15);
-  --glass-window-bg: rgba(34, 40, 49, 0.4);   /* #222831 */
-
-  /* Surfaces - ColorHunt Dark */
-  --surface-0: #222831;
-  --surface-1: rgba(57, 62, 70, 0.3); /* #393e46 */
-  --surface-2: rgba(57, 62, 70, 0.6);
-  --surface-3: rgba(57, 62, 70, 0.9);
-  --surface-hover: rgba(238, 238, 238, 0.05);
-
-  /* Text - ColorHunt Dark */
-  --text-primary: #eeeeee;
-  --text-secondary: #9ca3af;
-  --text-tertiary: #6b7280;
-  --text-inverse: #222831;
+  --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.1);
 
   /* Fonts */
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -54,24 +36,105 @@
   --radius-2xl: 24px;
 }
 
+/* 1. OBSIDIAN (Pure Neutral Dark / OLED Black Base) */
+:root, .obsidian {
+  --glass-bg: rgba(9, 9, 11, 0.75);
+  --glass-bg-heavy: rgba(0, 0, 0, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-active: rgba(255, 255, 255, 0.2);
+  --glass-window-bg: rgba(9, 9, 11, 0.5);
+
+  --surface-0: #000000;
+  --surface-1: rgba(24, 24, 27, 0.4);
+  --surface-2: rgba(39, 39, 42, 0.4);
+  --surface-3: rgba(63, 63, 70, 0.8);
+  --surface-hover: rgba(255, 255, 255, 0.05);
+
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-tertiary: #71717a;
+  --text-inverse: #000000;
+}
+
+/* 2. ARCTIC LIGHT (Pure Neutral White) */
 .arctic-light {
-  --glass-bg: rgba(249, 247, 247, 1);     /* #f9f7f7 */
-  --glass-bg-heavy: rgba(240, 240, 240, 1);
-  --glass-border: rgba(17, 45, 78, 0.15);    /* #112d4e */
-  --glass-border-active: rgba(63, 114, 175, 0.5); /* #3f72af */
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-bg-heavy: rgba(250, 250, 250, 0.95);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --glass-border-active: rgba(0, 0, 0, 0.25);
   --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  --glass-window-bg: rgba(219, 226, 239, 0.45); /* #dbe2ef */
+  --glass-window-bg: rgba(255, 255, 255, 0.6);
 
-  --surface-0: #f9f7f7;
-  --surface-1: rgba(219, 226, 239, 0.4); /* #dbe2ef */
-  --surface-2: rgba(219, 226, 239, 0.7);
-  --surface-3: rgba(219, 226, 239, 0.9);
-  --surface-hover: rgba(17, 45, 78, 0.04);
+  --surface-0: #ffffff;
+  --surface-1: rgba(244, 244, 245, 0.5);
+  --surface-2: rgba(228, 228, 231, 0.6);
+  --surface-3: rgba(212, 212, 216, 0.9);
+  --surface-hover: rgba(0, 0, 0, 0.03);
 
-  --text-primary: #112d4e;
-  --text-secondary: #3f72af;
-  --text-tertiary: #8ba2c2;
-  --text-inverse: #f9f7f7;
+  --text-primary: #09090b;
+  --text-secondary: #52525b;
+  --text-tertiary: #a1a1aa;
+  --text-inverse: #ffffff;
+}
+
+/* 3. MIDNIGHT VIOLET (Deep Indigo/Violet Dark) */
+.midnight-violet {
+  --glass-bg: rgba(10, 7, 20, 0.75);
+  --glass-bg-heavy: rgba(5, 3, 12, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-active: rgba(255, 255, 255, 0.2);
+  --glass-window-bg: rgba(10, 7, 20, 0.5);
+
+  --surface-0: #05030c;
+  --surface-1: rgba(24, 18, 43, 0.4);
+  --surface-2: rgba(46, 34, 82, 0.4);
+  --surface-3: rgba(67, 56, 110, 0.8);
+  --surface-hover: rgba(255, 255, 255, 0.05);
+
+  --text-primary: #ffffff;
+  --text-secondary: #a7a1c4;
+  --text-tertiary: #7b7596;
+  --text-inverse: #05030c;
+}
+
+/* 4. CYBER BLUE (Deep Navy/Cyan Dark) */
+.cyber-blue {
+  --glass-bg: rgba(4, 11, 22, 0.75);
+  --glass-bg-heavy: rgba(2, 6, 13, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-active: rgba(255, 255, 255, 0.2);
+  --glass-window-bg: rgba(4, 11, 22, 0.5);
+
+  --surface-0: #02060d;
+  --surface-1: rgba(15, 30, 56, 0.4);
+  --surface-2: rgba(27, 51, 88, 0.4);
+  --surface-3: rgba(42, 73, 122, 0.8);
+  --surface-hover: rgba(255, 255, 255, 0.05);
+
+  --text-primary: #ffffff;
+  --text-secondary: #93a7c6;
+  --text-tertiary: #647b9e;
+  --text-inverse: #02060d;
+}
+
+/* 5. EMERALD GLASS (Deep Pine/Forest Dark) */
+.emerald-glass {
+  --glass-bg: rgba(5, 15, 11, 0.75);
+  --glass-bg-heavy: rgba(2, 8, 5, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-active: rgba(255, 255, 255, 0.2);
+  --glass-window-bg: rgba(5, 15, 11, 0.5);
+
+  --surface-0: #020805;
+  --surface-1: rgba(13, 38, 27, 0.4);
+  --surface-2: rgba(23, 61, 44, 0.4);
+  --surface-3: rgba(38, 89, 66, 0.8);
+  --surface-hover: rgba(255, 255, 255, 0.05);
+
+  --text-primary: #ffffff;
+  --text-secondary: #92b3a3;
+  --text-tertiary: #658a77;
+  --text-inverse: #020805;
 }
 
 /* ═══════════════════════════════════════════════
@@ -184,7 +247,7 @@ body {
 }
 
 
-/* Glass icon container � translucent, consistent across all apps */
+/* Glass icon container � translucent, consistent across all apps */
 .glass-icon {
   display: flex;
   align-items: center;

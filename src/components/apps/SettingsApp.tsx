@@ -41,9 +41,9 @@ export const SettingsApp: React.FC = () => {
   const THEMES: { id: ThemeMode; name: string; desc: string }[] = [
     { id: 'obsidian', name: 'Obsidian Dark', desc: 'Sleek OLED deep black with high contrast text' },
     { id: 'midnight-violet', name: 'Midnight Violet', desc: 'Subtle indigo violet dark workspace' },
-    { id: 'cyber-blue', name: 'Cyber Blue', desc: 'Neon cyan tech theme' },
-    { id: 'emerald-glass', name: 'Emerald Glass', desc: 'Warm dark theme with emerald green accents' },
-    { id: 'arctic-light', name: 'Arctic Light', desc: 'High legibility frosted glass light mode' }
+    { id: 'cyber-blue', name: 'Cyber Blue', desc: 'Deep navy glass tech theme' },
+    { id: 'emerald-glass', name: 'Emerald Glass', desc: 'Deep forest pine glass theme' },
+    { id: 'arctic-light', name: 'Arctic Light', desc: 'Pure neutral white frosted glass mode' }
   ];
 
   const ACCENTS: { id: AccentColor; name: string; bg: string }[] = [
