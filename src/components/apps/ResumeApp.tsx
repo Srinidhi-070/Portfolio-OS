@@ -26,7 +26,7 @@ export const ResumeApp: React.FC = () => {
         'border-[var(--glass-border)]'
       }`}>
         <div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/15 text-[var(--accent)] dark:text-[var(--accent)] border border-teal-500/30 text-xs font-semibold mb-2">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/15 text-[var(--accent)] border border-teal-500/30 text-xs font-semibold mb-2">
             <FileText className="w-3.5 h-3.5" /> Official Resume — Portfolio OS
           </div>
           <h1 className="text-2xl font-extrabold tracking-tight">Srinidhi N S — Curriculum Vitae</h1>
@@ -68,7 +68,7 @@ export const ResumeApp: React.FC = () => {
                 <h1 className={`text-2xl sm:text-3xl font-black tracking-tight print:text-black `}>
                   {PERSONAL_INFO.name}
                 </h1>
-                <div className="text-xs sm:text-sm font-semibold text-[var(--accent)] dark:text-[var(--accent)] print:text-[var(--accent)] mt-0.5">
+                <div className="text-xs sm:text-sm font-semibold text-[var(--accent)]  mt-0.5">
                   {PERSONAL_INFO.title}
                 </div>
               </div>
@@ -111,7 +111,7 @@ export const ResumeApp: React.FC = () => {
 
         {/* Executive Summary */}
         <div className="space-y-2">
-          <h3 className={`text-xs font-bold uppercase tracking-wider text-[var(--accent)] dark:text-[var(--accent)] print:text-[var(--accent)] border-b pb-1 print:border-black border-[var(--glass-border)]`}>
+          <h3 className={`text-xs font-bold uppercase tracking-wider text-[var(--accent)]  border-b pb-1 print:border-black border-[var(--glass-border)]`}>
             Professional Summary
           </h3>
           <p className={`text-xs leading-relaxed print:text-black `}>
@@ -121,7 +121,7 @@ export const ResumeApp: React.FC = () => {
 
         {/* Technical Competencies */}
         <div className="space-y-2">
-          <h3 className={`text-xs font-bold uppercase tracking-wider text-[var(--accent)] dark:text-[var(--accent)] print:text-[var(--accent)] border-b pb-1 print:border-black border-[var(--glass-border)]`}>
+          <h3 className={`text-xs font-bold uppercase tracking-wider text-[var(--accent)]  border-b pb-1 print:border-black border-[var(--glass-border)]`}>
             Technical Competencies
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
@@ -142,7 +142,7 @@ export const ResumeApp: React.FC = () => {
 
         {/* Experience */}
         <div className="space-y-4">
-          <h3 className={`text-xs font-bold uppercase tracking-wider text-[var(--accent)] dark:text-[var(--accent)] print:text-[var(--accent)] border-b pb-1 print:border-black border-[var(--glass-border)]`}>
+          <h3 className={`text-xs font-bold uppercase tracking-wider text-[var(--accent)]  border-b pb-1 print:border-black border-[var(--glass-border)]`}>
             Experience & Internships
           </h3>
 
@@ -150,7 +150,7 @@ export const ResumeApp: React.FC = () => {
             <div key={exp.id} className="space-y-1.5 text-xs">
               <div className="flex justify-between items-baseline font-bold">
                 <span >
-                  {exp.role} — <span className="text-[var(--accent)] dark:text-[var(--accent)] print:text-[var(--accent)]">{exp.company}</span>
+                  {exp.role} — <span className="text-[var(--accent)] ">{exp.company}</span>
                 </span>
                 <span className={`font-mono text-[11px] print:text-black `}>
                   {exp.period}
@@ -167,7 +167,7 @@ export const ResumeApp: React.FC = () => {
 
         {/* Key Featured AI Projects */}
         <div className="space-y-3">
-          <h3 className={`text-xs font-bold uppercase tracking-wider text-[var(--accent)] dark:text-[var(--accent)] print:text-[var(--accent)] border-b pb-1 print:border-black border-[var(--glass-border)]`}>
+          <h3 className={`text-xs font-bold uppercase tracking-wider text-[var(--accent)]  border-b pb-1 print:border-black border-[var(--glass-border)]`}>
             Key Engineering Projects
           </h3>
 
@@ -176,7 +176,7 @@ export const ResumeApp: React.FC = () => {
               <div key={p.id} className={`glass-surface p-3 rounded-xl border print:bg-[var(--surface-2)] print:border-black`}>
                 <div className={`font-bold print:text-black `}>{p.title}</div>
                 <div className={`text-[11px] mt-0.5 print:text-black `}>{p.shortDescription}</div>
-                <div className="text-[10px] text-[var(--accent)] dark:text-[var(--accent)] print:text-[var(--accent)] font-mono mt-1 font-medium">
+                <div className="text-[10px] text-[var(--accent)]  font-mono mt-1 font-medium">
                   Stack: {p.techStack.join(', ')}
                 </div>
               </div>
@@ -186,7 +186,7 @@ export const ResumeApp: React.FC = () => {
 
         {/* Education */}
         <div className="space-y-2">
-          <h3 className={`text-xs font-bold uppercase tracking-wider text-[var(--accent)] dark:text-[var(--accent)] print:text-[var(--accent)] border-b pb-1 print:border-black border-[var(--glass-border)]`}>
+          <h3 className={`text-xs font-bold uppercase tracking-wider text-[var(--accent)]  border-b pb-1 print:border-black border-[var(--glass-border)]`}>
             Education
           </h3>
           {EDUCATION.map(edu => (
@@ -199,7 +199,7 @@ export const ResumeApp: React.FC = () => {
               </div>
               <div className={`text-right font-mono print:text-black `}>
                 <div>{edu.period}</div>
-                <div className="text-[10px] text-[var(--accent)] dark:text-[var(--accent)] print:text-[var(--accent)] font-semibold">{edu.grade}</div>
+                <div className="text-[10px] text-[var(--accent)]  font-semibold">{edu.grade}</div>
               </div>
             </div>
           ))}

@@ -37,8 +37,8 @@ export const AboutApp: React.FC = () => {
               className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
             />
             <div className="absolute -bottom-2 -right-2 px-2.5 py-0.5 rounded-full font-bold text-[11px] border-2 flex items-center gap-1 shadow-lg"
-                 style={{ backgroundColor: 'var(--accent)', color: isLight ? 'white' : 'var(--surface-0)', borderColor: 'var(--glass-border)' }}>
-              <span className="w-2 h-2 rounded-full animate-ping" style={{ backgroundColor: isLight ? 'white' : 'var(--surface-0)' }} />
+                 style={{ backgroundColor: 'var(--accent)', color: 'white', borderColor: 'var(--glass-border)' }}>
+              <span className="w-2 h-2 rounded-full animate-ping" style={{ backgroundColor: 'white' }} />
               Verified Profile
             </div>
           </div>
@@ -61,7 +61,7 @@ export const AboutApp: React.FC = () => {
             <button
               onClick={() => openApp('projects')}
               className={`px-3.5 py-1.5 rounded-xl font-semibold text-xs flex items-center gap-1.5 shadow-md ${accent.bg} hover:brightness-110`}
-              style={{ color: isLight ? 'white' : 'var(--surface-0)' }}
+              style={{ color: 'white' }}
             >
               View Projects <ArrowRight className="w-3.5 h-3.5" />
             </button>

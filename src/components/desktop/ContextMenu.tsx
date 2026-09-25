@@ -26,7 +26,7 @@ export const ContextMenu: React.FC<ContextMenuProps> = ({ x, y, onClose }) => {
   }, [onClose]);
 
   const toggleTheme = () => {
-    setTheme(isLight ? 'default' : 'arctic-light');
+    setTheme(isLight ? 'obsidian' : 'arctic-light');
     onClose();
   };
 

@@ -46,8 +46,8 @@ export const HomeApp: React.FC = () => {
                 className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute -bottom-2 -right-2 px-2.5 py-1 rounded-full font-bold text-xs border-2 flex items-center gap-1 shadow-lg"
-                   style={{ backgroundColor: 'var(--accent)', color: isLight ? 'white' : 'var(--surface-0)', borderColor: 'var(--glass-border)' }}>
-                <span className="w-2 h-2 rounded-full animate-ping" style={{ backgroundColor: isLight ? 'white' : 'var(--surface-0)' }} />
+                   style={{ backgroundColor: 'var(--accent)', color: 'white', borderColor: 'var(--glass-border)' }}>
+                <span className="w-2 h-2 rounded-full animate-ping" style={{ backgroundColor: 'white' }} />
                 Online
               </div>
             </div>
@@ -80,7 +80,7 @@ export const HomeApp: React.FC = () => {
               <button
                 onClick={() => openApp('resume')}
                 className={`px-4 py-2 rounded-xl font-semibold text-xs flex items-center gap-2 transition-all shadow-lg ${accent.bg} hover:brightness-110`}
-                style={{ color: isLight ? 'white' : 'var(--surface-0)' }}
+                style={{ color: 'white' }}
               >
                 <FileText className="w-4 h-4" /> Curriculum Vitae
               </button>

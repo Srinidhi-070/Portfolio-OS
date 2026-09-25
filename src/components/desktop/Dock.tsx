@@ -24,7 +24,7 @@ export const Dock: React.FC = () => {
     return {
       title: app.title,
       icon: (
-        <div className="relative w-full h-full flex items-center justify-center text-neutral-500 dark:text-neutral-300">
+        <div className="relative w-full h-full flex items-center justify-center text-[var(--text-secondary)]">
           <IconComp className="w-full h-full" style={{ color: isActive ? 'var(--accent)' : 'inherit' }} />
           {isOpen && (
             <div 
@@ -49,8 +49,8 @@ export const Dock: React.FC = () => {
   return (
     <div className="fixed bottom-2 sm:bottom-3 left-1/2 -translate-x-1/2 z-40">
       <FloatingDock
-        desktopClassName="glass-panel-heavy shadow-2xl bg-transparent dark:bg-transparent"
-        mobileClassName="translate-y-0 shadow-2xl glass-panel-heavy bg-transparent dark:bg-transparent"
+        desktopClassName="glass-panel-heavy shadow-2xl bg-transparent "
+        mobileClassName="translate-y-0 shadow-2xl glass-panel-heavy bg-transparent "
         items={dockItems}
       />
     </div>

@@ -71,17 +71,17 @@ export const SettingsApp: React.FC = () => {
         <img
           src={srinidhiPhoto}
           alt={PERSONAL_INFO.name}
-          className="w-20 h-24 rounded-2xl object-cover object-top border-2 border-emerald-500/80 shadow-xl shrink-0"
+          className="w-20 h-24 rounded-2xl object-cover object-top border-2 border-[var(--accent)] shadow-xl shrink-0"
         />
         <div className="space-y-1.5 text-center sm:text-left flex-1 min-w-0">
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 text-[10px] font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[var(--accent-subtle)] text-[var(--accent)] text-[10px] font-bold uppercase tracking-wider">
             <User className="w-3 h-3" /> User Account
           </div>
           <h2 className={`text-lg font-bold tracking-tight `}>{PERSONAL_INFO.name}</h2>
-          <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">{PERSONAL_INFO.title}</p>
+          <p className="text-xs font-semibold text-[var(--accent)]">{PERSONAL_INFO.title}</p>
           <div className={`flex flex-wrap items-center justify-center sm:justify-start gap-x-4 gap-y-1 text-xs font-mono pt-1 `}>
-            <span className="flex items-center gap-1"><Mail className="w-3 h-3 text-cyan-600 dark:text-cyan-400" /> {PERSONAL_INFO.email}</span>
-            <span className="flex items-center gap-1"><MapPin className="w-3 h-3 text-rose-600 dark:text-rose-400" /> {PERSONAL_INFO.location}</span>
+            <span className="flex items-center gap-1"><Mail className="w-3 h-3 text-[var(--accent)]" /> {PERSONAL_INFO.email}</span>
+            <span className="flex items-center gap-1"><MapPin className="w-3 h-3 text-[var(--accent)]" /> {PERSONAL_INFO.location}</span>
           </div>
         </div>
       </div>
@@ -89,7 +89,7 @@ export const SettingsApp: React.FC = () => {
       {/* Theme Selection */}
       <div className="space-y-3">
         <h3 className={`text-sm font-bold uppercase tracking-wider flex items-center gap-2 `}>
-          <Palette className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> Color Mode & Atmosphere
+          <Palette className="w-4 h-4 text-[var(--accent)]" /> Color Mode & Atmosphere
         </h3>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
@@ -116,7 +116,7 @@ export const SettingsApp: React.FC = () => {
       {/* Accent Color Palette */}
       <div className="space-y-3">
         <h3 className={`text-sm font-bold uppercase tracking-wider flex items-center gap-2 `}>
-          <Sparkles className="w-4 h-4 text-cyan-600 dark:text-cyan-400" /> Accent Color Palette
+          <Sparkles className="w-4 h-4 text-[var(--accent)]" /> Accent Color Palette
         </h3>
 
         <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
@@ -140,7 +140,7 @@ export const SettingsApp: React.FC = () => {
       {/* Wallpapers */}
       <div className="space-y-3">
         <h3 className={`text-sm font-bold uppercase tracking-wider flex items-center gap-2 `}>
-          <HardDrive className="w-4 h-4 text-amber-600 dark:text-amber-400" /> Desktop Wallpaper
+          <HardDrive className="w-4 h-4 text-[var(--accent)]" /> Desktop Wallpaper
         </h3>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -167,25 +167,25 @@ export const SettingsApp: React.FC = () => {
       {/* System Telemetry & Info */}
       <div className="glass-card p-5 space-y-3">
         <div className={`flex items-center gap-2 font-bold text-xs `}>
-          <Info className="w-4 h-4 text-indigo-500 dark:text-indigo-400" /> System Information
+          <Info className="w-4 h-4 text-[var(--accent)]" /> System Information
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
           <div className="glass-surface p-3 rounded-xl border border-[var(--glass-border)]">
             <div className={`text-[10px] `}>OS Version</div>
-            <div className="font-mono text-emerald-600 dark:text-emerald-400 font-bold mt-0.5">Portfolio OS v2.5</div>
+            <div className="font-mono text-[var(--accent)] font-bold mt-0.5">Portfolio OS v2.5</div>
           </div>
           <div className="glass-surface p-3 rounded-xl border border-[var(--glass-border)]">
             <div className={`text-[10px] `}>Framework</div>
-            <div className="font-mono text-cyan-600 dark:text-cyan-400 font-bold mt-0.5">React 19 + Vite</div>
+            <div className="font-mono text-[var(--accent)] font-bold mt-0.5">React 19 + Vite</div>
           </div>
           <div className="glass-surface p-3 rounded-xl border border-[var(--glass-border)]">
             <div className={`text-[10px] `}>AI Engine</div>
-            <div className="font-mono text-amber-600 dark:text-amber-400 font-bold mt-0.5">Simulated AI</div>
+            <div className="font-mono text-[var(--accent)] font-bold mt-0.5">Simulated AI</div>
           </div>
           <div className="glass-surface p-3 rounded-xl border border-[var(--glass-border)]">
             <div className={`text-[10px] `}>Environment</div>
-            <div className="font-mono text-purple-600 dark:text-purple-400 font-bold mt-0.5">Cloud Run Container</div>
+            <div className="font-mono text-[var(--accent)] font-bold mt-0.5">Cloud Run Container</div>
           </div>
         </div>
       </div>

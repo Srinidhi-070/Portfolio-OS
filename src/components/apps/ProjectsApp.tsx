@@ -98,7 +98,7 @@ export const ProjectsApp: React.FC<ProjectsAppProps> = ({ initialParams }) => {
               className="text-[10px] px-2 py-1 rounded-md transition-all font-bold"
               style={{
                 backgroundColor: selectedTech === 'All' ? 'var(--accent)' : 'var(--surface-3)',
-                color: selectedTech === 'All' ? (isLight ? 'white' : 'var(--surface-0)') : 'var(--text-secondary)'
+                color: selectedTech === 'All' ? ('white') : 'var(--text-secondary)'
               }}
             >
               All Tech
@@ -110,7 +110,7 @@ export const ProjectsApp: React.FC<ProjectsAppProps> = ({ initialParams }) => {
                 className="text-[10px] px-2 py-1 rounded-md transition-all"
                 style={{
                   backgroundColor: selectedTech === tech ? 'var(--accent)' : 'var(--surface-3)',
-                  color: selectedTech === tech ? (isLight ? 'white' : 'var(--surface-0)') : 'var(--text-secondary)'
+                  color: selectedTech === tech ? ('white') : 'var(--text-secondary)'
                 }}
               >
                 {tech}
@@ -228,7 +228,7 @@ export const ProjectsApp: React.FC<ProjectsAppProps> = ({ initialParams }) => {
                 target="_blank"
                 rel="noreferrer"
                 className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 ${accent.bg} hover:brightness-110 shadow-lg`}
-                style={{ color: isLight ? 'white' : 'var(--surface-0)' }}
+                style={{ color: 'white' }}
               >
                 <Github className="w-4 h-4" /> View GitHub Repository
               </a>
