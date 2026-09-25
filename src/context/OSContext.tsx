@@ -120,7 +120,7 @@ export const OSProvider: React.FC<{ children: React.ReactNode }> = ({ children }
   useEffect(() => {
     applyThemeVariables(theme, accentColor, wallpaper);
     const root = document.documentElement;
-    root.classList.remove('linear-dark', 'vercel-light', 'dracula', 'monochrome', 'tokyo-night', 'arctic-light', 'obsidian', 'midnight-violet', 'cyber-blue', 'emerald-glass');
+    root.classList.remove('linear-dark', 'vercel-light', 'dracula', 'monochrome', 'neo-brutal', 'arctic-light', 'obsidian', 'midnight-violet', 'cyber-blue', 'emerald-glass');
     root.classList.add(theme);
     root.classList.toggle('reduce-motion', reducedMotion);
   }, [theme, accentColor, wallpaper, reducedMotion]);

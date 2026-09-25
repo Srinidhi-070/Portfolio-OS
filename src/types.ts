@@ -107,7 +107,7 @@ export interface SystemNotification {
   actionAppId?: AppID;
 }
 
-export type ThemeMode = 'linear-dark' | 'vercel-light' | 'dracula' | 'monochrome' | 'tokyo-night';
+export type ThemeMode = 'linear-dark' | 'vercel-light' | 'dracula' | 'monochrome' | 'neo-brutal';
 export type AccentColor = 'emerald' | 'violet' | 'cyan' | 'amber' | 'rose' | 'indigo';
 
 export interface WallpaperOption {

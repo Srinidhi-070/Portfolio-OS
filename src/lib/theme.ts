@@ -32,7 +32,7 @@ const THEME_MESH: Record<string, { mesh1: string; mesh2: string; mesh3: string; 
   'vercel-light':{ mesh1: '#e4e4e7', mesh2: '#f4f4f5', mesh3: '#d4d4d8', mesh4: '#ffffff' },
   'dracula':     { mesh1: '#6272a4', mesh2: '#44475a', mesh3: '#ff79c6', mesh4: '#282a36' },
   'monochrome':  { mesh1: '#404040', mesh2: '#262626', mesh3: '#525252', mesh4: '#171717' },
-  'tokyo-night': { mesh1: '#7aa2f7', mesh2: '#3d59a1', mesh3: '#bb9af7', mesh4: '#1a1b26' },
+  'neo-brutal':  { mesh1: '#d0d7cf', mesh2: '#aab5a8', mesh3: '#d0d7cf', mesh4: '#aab5a8' },
 };
 
 /**

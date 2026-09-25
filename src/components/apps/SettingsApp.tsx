@@ -42,7 +42,7 @@ export const SettingsApp: React.FC = () => {
     { id: 'linear-dark', name: 'Linear Dark', desc: 'Ultra-modern OLED black with minimal zinc borders' },
     { id: 'vercel-light', name: 'Vercel Light', desc: 'Crisp, high-contrast pure white interface' },
     { id: 'dracula', name: 'Dracula Modern', desc: 'Deep purple-slate with high saturation accents' },
-    { id: 'tokyo-night', name: 'Tokyo Night', desc: 'Beautiful deep blue cyber aesthetic' },
+    { id: 'neo-brutal', name: 'Neo Brutal', desc: 'Playful high-contrast dark panels on sage green' },
     { id: 'monochrome', name: 'Monochrome', desc: 'Pure grayscale brutalism' }
   ];
 
