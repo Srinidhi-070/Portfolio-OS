@@ -114,24 +114,24 @@
 
 /* 4. NEO BRUTAL (Playful Flat) */
 .neo-brutal {
-  color-scheme: dark;
-  --glass-bg: #1c1c1e;
-  --glass-bg-heavy: #121214;
-  --glass-border: transparent;
-  --glass-border-active: transparent;
-  --glass-window-bg: #1c1c1e;
+  color-scheme: light;
+  --glass-bg: #ffffff;
+  --glass-bg-heavy: #ffffff;
+  --glass-border: #e4e4e7;
+  --glass-border-active: #d4d4d8;
+  --glass-window-bg: #ffffff;
 
   --surface-0: #d4dcd2;
-  --surface-1: #2c2c2e;
-  --surface-2: #3a3a3c;
-  --surface-3: #48484a;
-  --card-bg: #2c2c2e;
-  --surface-hover: #3a3a3c;
+  --surface-1: #ffffff;
+  --surface-2: #f4f4f5;
+  --surface-3: #e4e4e7;
+  --card-bg: #ffffff;
+  --surface-hover: #f4f4f5;
 
-  --text-primary: #ffffff;
-  --text-secondary: #ebebf5;
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
   --text-tertiary: #a1a1aa;
-  --text-inverse: #1c1c1e;
+  --text-inverse: #ffffff;
 }
 
 /* 5. MONOCHROME */
