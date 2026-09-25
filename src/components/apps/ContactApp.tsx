@@ -63,7 +63,7 @@ export const ContactApp: React.FC = () => {
     <div className={`p-4 sm:p-6 max-w-4xl mx-auto space-y-6 sm:space-y-8 select-none `}>
       {/* Header */}
       <div className={`pb-4 border-b `}>
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-500/15 text-orange-600 dark:text-orange-300 border border-orange-500/30 text-xs font-semibold mb-2">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold mb-2" style={{ backgroundColor: 'var(--accent-subtle)', color: 'var(--accent)' }}>
           <Mail className="w-3.5 h-3.5" /> Direct Contact Center
         </div>
         <h1 className={`text-2xl font-extrabold `}>Get in Touch with Srinidhi N S</h1>
@@ -75,7 +75,7 @@ export const ContactApp: React.FC = () => {
         <div className="space-y-3 md:col-span-1">
           <div className="glass-card p-4 space-y-2">
             <div className={`text-xs font-bold flex items-center justify-between `}>
-              <span className="flex items-center gap-1.5"><Mail className="w-3.5 h-3.5 text-orange-500 dark:text-orange-400" /> Direct Email</span>
+              <span className="flex items-center gap-1.5"><Mail className="w-3.5 h-3.5" style={{ color: 'var(--accent)' }} /> Direct Email</span>
               <button
                 onClick={handleCopyEmail}
                 className={`p-1 rounded transition-colors `}
@@ -94,7 +94,7 @@ export const ContactApp: React.FC = () => {
             className="glass-card-interactive p-4 flex items-center justify-between group block"
           >
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20">
+              <div className="p-2 glass-icon">
                 <Github className="w-5 h-5" />
               </div>
               <div>
@@ -111,7 +111,7 @@ export const ContactApp: React.FC = () => {
             className="glass-card-interactive p-4 flex items-center justify-between group block"
           >
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
+              <div className="p-2 glass-icon">
                 <Linkedin className="w-5 h-5" />
               </div>
               <div>
@@ -125,13 +125,13 @@ export const ContactApp: React.FC = () => {
         {/* Messaging Form */}
         <div className="glass-card md:col-span-2 p-6 shadow-xl space-y-4">
           <div className={`flex items-center gap-2 font-bold text-sm `}>
-            <MessageSquare className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> Send a Message
+            <MessageSquare className="w-4 h-4" style={{ color: 'var(--accent)' }} /> Send a Message
           </div>
 
           {submitted ? (
-            <div className="p-6 text-center space-y-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl">
+            <div className="p-6 text-center space-y-3 rounded-xl" style={{ backgroundColor: 'var(--accent-subtle)' }}>
               <Sparkles className="w-8 h-8 text-emerald-500 mx-auto" />
-              <div className="text-sm font-bold text-emerald-600 dark:text-emerald-300">Message Received!</div>
+              <div className="text-sm font-bold" style={{ color: 'var(--accent)' }}>Message Received!</div>
               <p className={`text-xs `}>
                 Thank you for reaching out. Srinidhi will get back to you promptly.
               </p>

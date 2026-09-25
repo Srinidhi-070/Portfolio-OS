@@ -47,7 +47,7 @@ export const Desktop: React.FC = () => {
   const accent = getAccentClasses(accentColor);
 
   const [stickyNote, setStickyNote] = useState<string>(
-    "🚀 Portfolio OS Quick Notes:\n• Check out GuardianVoice (AI Voice Scam Detector)\n• Try 'sudo hire-me' in Warp Terminal!\n• Explore 16+ GitHub Repositories"
+    "Portfolio OS Quick Notes:\n• Check out GuardianVoice (AI Voice Scam Detector)\n• Try 'sudo hire-me' in Warp Terminal!\n• Explore 16+ GitHub Repositories"
   );
   const [contextMenu, setContextMenu] = useState<{ x: number; y: number } | null>(null);
 

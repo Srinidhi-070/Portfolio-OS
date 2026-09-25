@@ -43,8 +43,8 @@ export const SkillsApp: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4" style={{ borderBottom: '1px solid var(--glass-border)' }}>
         <div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold mb-2 border"
-               style={{ backgroundColor: 'rgba(6, 182, 212, 0.15)', color: '#22d3ee', borderColor: 'rgba(6, 182, 212, 0.3)' }}>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold mb-2"
+               style={{ backgroundColor: 'var(--accent-subtle)', color: 'var(--accent)' }}>
             <Cpu className="w-3.5 h-3.5" /> Technical Competency Matrix
           </div>
           <h1 className="text-2xl font-extrabold" style={{ color: 'var(--text-primary)' }}>Skills & Specializations</h1>
@@ -53,7 +53,7 @@ export const SkillsApp: React.FC = () => {
 
         {/* Search */}
         <div className="relative w-full md:w-64">
-          <div className="flex items-center w-full rounded-xl glass-input border border-[var(--glass-border)] text-xs focus-within:border-[var(--accent)] transition-colors">
+          <div className="flex items-center w-full rounded-xl glass-input text-xs focus-within:border-[var(--accent)] transition-colors">
             <Search className="w-4 h-4 ml-3 text-[var(--text-tertiary)] shrink-0" />
             <input
               type="text"
@@ -77,7 +77,7 @@ export const SkillsApp: React.FC = () => {
       {/* Top Skills Spotlight */}
       <div className="space-y-3">
         <h3 className="text-sm font-bold uppercase tracking-wider flex items-center gap-2" style={{ color: 'var(--text-secondary)' }}>
-          <Zap className="w-4 h-4 text-amber-500" /> Primary Engineering Stack
+          <Zap className="w-4 h-4" style={{ color: 'var(--accent)' }} /> Primary Engineering Stack
         </h3>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
@@ -112,7 +112,7 @@ export const SkillsApp: React.FC = () => {
           return (
             <div key={cat.id} className="p-5 rounded-2xl glass-card space-y-4">
               <div className="flex items-center gap-3 pb-3" style={{ borderBottom: '1px solid var(--glass-border)' }}>
-                <div className="p-2 rounded-xl glass-surface" style={{ color: 'var(--accent)' }}>
+                <div className="p-2 glass-icon" style={{ color: 'var(--accent)' }}>
                   <IconComp className="w-5 h-5" />
                 </div>
                 <div>
@@ -123,7 +123,7 @@ export const SkillsApp: React.FC = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {filteredCategorySkills.map(skill => (
-                  <div key={skill.name} className="p-3.5 rounded-xl glass-surface border border-[var(--glass-border)] space-y-2">
+                  <div key={skill.name} className="p-3.5 rounded-xl glass-surface space-y-2">
                     <div className="flex items-center justify-between text-xs font-bold" style={{ color: 'var(--text-primary)' }}>
                       <span>{skill.name}</span>
                       <span className="font-mono" style={{ color: 'var(--accent)' }}>{skill.level}%</span>

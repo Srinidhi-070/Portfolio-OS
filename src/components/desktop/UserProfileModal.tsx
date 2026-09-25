@@ -104,7 +104,7 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({ isOpen, onCl
               onClick={() => handleCopy(PERSONAL_INFO.phone, 'Phone number')}
               className="p-2 rounded-lg text-left transition-colors flex items-center gap-2 text-xs hover:bg-[var(--surface-2)]"
             >
-              <Phone className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+              <Phone className="w-3.5 h-3.5 shrink-0" style={{ color: 'var(--accent)' }} />
               <div className="truncate">
                 <div className="text-[10px]" style={{ color: 'var(--text-secondary)' }}>Phone</div>
                 <div className="font-mono font-semibold">{PERSONAL_INFO.phone}</div>
@@ -115,7 +115,7 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({ isOpen, onCl
               onClick={() => handleCopy(PERSONAL_INFO.email, 'Email address')}
               className="p-2 rounded-lg text-left transition-colors flex items-center gap-2 text-xs hover:bg-[var(--surface-2)]"
             >
-              <Mail className="w-3.5 h-3.5 text-cyan-500 shrink-0" />
+              <Mail className="w-3.5 h-3.5 shrink-0" style={{ color: 'var(--accent)' }} />
               <div className="truncate">
                 <div className="text-[10px]" style={{ color: 'var(--text-secondary)' }}>Email</div>
                 <div className="font-mono font-semibold truncate">{PERSONAL_INFO.email}</div>
@@ -123,7 +123,7 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({ isOpen, onCl
             </button>
 
             <div className="p-2 rounded-lg flex items-center gap-2 text-xs">
-              <MapPin className="w-3.5 h-3.5 text-violet-500 shrink-0" />
+              <MapPin className="w-3.5 h-3.5 text-[var(--accent)] shrink-0" />
               <div className="truncate">
                 <div className="text-[10px]" style={{ color: 'var(--text-secondary)' }}>Location</div>
                 <div className="font-semibold">{PERSONAL_INFO.location}</div>
@@ -143,7 +143,7 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({ isOpen, onCl
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Education */}
             <div className="p-3.5 rounded-xl border space-y-2.5 glass-surface" style={{ borderColor: 'var(--glass-border)' }}>
-              <div className="flex items-center gap-2 text-xs font-bold text-emerald-500">
+              <div className="flex items-center gap-2 text-xs font-bold text-[var(--accent)]">
                 <GraduationCap className="w-4 h-4" /> Education
               </div>
               {EDUCATION.map(edu => (
@@ -152,7 +152,7 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({ isOpen, onCl
                   <div className="text-[11px]" style={{ color: 'var(--text-secondary)' }}>{edu.institution}</div>
                   <div className="flex justify-between text-[10px] font-mono" style={{ color: 'var(--text-tertiary)' }}>
                     <span>{edu.period}</span>
-                    <span className="text-emerald-500 font-bold">{edu.grade}</span>
+                    <span className="text-[var(--accent)] font-bold">{edu.grade}</span>
                   </div>
                 </div>
               ))}
@@ -160,7 +160,7 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({ isOpen, onCl
 
             {/* Experience */}
             <div className="p-3.5 rounded-xl border space-y-2.5 glass-surface" style={{ borderColor: 'var(--glass-border)' }}>
-              <div className="flex items-center gap-2 text-xs font-bold text-cyan-500">
+              <div className="flex items-center gap-2 text-xs font-bold text-[var(--accent)]">
                 <Briefcase className="w-4 h-4" /> Latest Roles
               </div>
               {EXPERIENCES.map(exp => (

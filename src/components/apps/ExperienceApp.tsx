@@ -2,7 +2,7 @@ import React from 'react';
 import { EXPERIENCES } from '../../data/portfolioData';
 import { useOS } from '../../context/OSContext';
 import { getAccentClasses } from '../../lib/theme';
-import { Briefcase, Building, Calendar, MapPin, CheckCircle2, TrendingUp, Award } from 'lucide-react';
+import { Briefcase, Building, Calendar, MapPin, CheckCircle2, TrendingUp, Award, Check } from 'lucide-react';
 
 export const ExperienceApp: React.FC = () => {
   const { accentColor, theme } = useOS();
@@ -13,8 +13,8 @@ export const ExperienceApp: React.FC = () => {
     <div className={`p-6 max-w-4xl mx-auto space-y-8 select-none `}>
       {/* Header */}
       <div className="pb-4" style={{ borderBottom: '1px solid var(--glass-border)' }}>
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold mb-2 border"
-             style={{ backgroundColor: 'rgba(244, 63, 94, 0.15)', color: '#fda4af', borderColor: 'rgba(244, 63, 94, 0.3)' }}>
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold mb-2"
+             style={{ backgroundColor: 'var(--accent-subtle)', color: 'var(--accent)' }}>
           <Briefcase className="w-3.5 h-3.5" /> Career & Internship History
         </div>
         <h1 className="text-2xl font-extrabold" style={{ color: 'var(--text-primary)' }}>Work Experience & Leadership</h1>
@@ -28,8 +28,8 @@ export const ExperienceApp: React.FC = () => {
             {/* Role Header */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4" style={{ borderBottom: '1px solid var(--glass-border)' }}>
               <div>
-                <span className="text-[10px] uppercase font-mono px-2.5 py-0.5 rounded-full border"
-                      style={{ backgroundColor: 'rgba(244, 63, 94, 0.15)', color: '#fda4af', borderColor: 'rgba(244, 63, 94, 0.3)' }}>
+                <span className="text-[10px] uppercase font-mono px-2.5 py-0.5 rounded-full"
+                      style={{ backgroundColor: 'var(--accent-subtle)', color: 'var(--accent)' }}>
                   {exp.type}
                 </span>
                 <h2 className="text-lg font-extrabold mt-1" style={{ color: 'var(--text-primary)' }}>{exp.role}</h2>
@@ -52,7 +52,7 @@ export const ExperienceApp: React.FC = () => {
             {exp.impactMetrics && (
               <div className="grid grid-cols-2 gap-3">
                 {exp.impactMetrics.map(m => (
-                  <div key={m.label} className="p-3 rounded-xl glass-surface border border-[var(--glass-border)] text-center">
+                  <div key={m.label} className="p-3 rounded-xl glass-surface text-center">
                     <div className="text-xl font-black" style={{ color: 'var(--accent)' }}>{m.value}</div>
                     <div className="text-[10px] font-medium" style={{ color: 'var(--text-secondary)' }}>{m.label}</div>
                   </div>
@@ -78,13 +78,13 @@ export const ExperienceApp: React.FC = () => {
             {/* Achievements */}
             <div className="space-y-2">
               <h4 className="text-xs font-bold uppercase tracking-wider flex items-center gap-1.5" style={{ color: 'var(--text-secondary)' }}>
-                <Award className="w-3.5 h-3.5 text-amber-500" /> Highlight Achievements
+                <Award className="w-3.5 h-3.5" style={{ color: 'var(--accent)' }} /> Highlight Achievements
               </h4>
-              <ul className="space-y-1.5 text-xs leading-relaxed p-3.5 rounded-xl border"
-                  style={{ backgroundColor: 'rgba(245, 158, 11, 0.1)', color: '#fcd34d', borderColor: 'rgba(245, 158, 11, 0.2)' }}>
+              <ul className="space-y-1.5 text-xs leading-relaxed p-3.5 rounded-xl"
+                  style={{ backgroundColor: 'var(--accent-subtle)', color: 'var(--text-secondary)' }}>
                 {exp.achievements.map((ach, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <span className="font-bold text-amber-500">✓</span>
+                    <Check className="w-3 h-3 shrink-0" style={{ color: 'var(--accent)' }} />
                     <span>{ach}</span>
                   </li>
                 ))}
@@ -94,7 +94,7 @@ export const ExperienceApp: React.FC = () => {
             {/* Skills Badges */}
             <div className="flex flex-wrap gap-1.5 pt-2">
               {exp.skills.map(s => (
-                <span key={s} className="text-xs px-2.5 py-1 rounded-lg glass-surface border border-[var(--glass-border)]" style={{ color: 'var(--text-secondary)' }}>
+                <span key={s} className="text-xs px-2.5 py-1 rounded-lg glass-surface" style={{ color: 'var(--text-secondary)' }}>
                   {s}
                 </span>
               ))}

@@ -158,38 +158,45 @@ body {
   background: var(--surface-1);
   backdrop-filter: blur(10px) saturate(200%);
   -webkit-backdrop-filter: blur(10px) saturate(200%);
-  border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
-  box-shadow: var(--glass-highlight);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-.glass-card:hover {
-  border-color: var(--glass-border-active);
+  box-shadow: var(--glass-highlight), 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease;
 }
 
 .glass-card-interactive {
   background: var(--surface-1);
   backdrop-filter: blur(10px) saturate(1.2);
   -webkit-backdrop-filter: blur(10px) saturate(1.2);
-  border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
-  box-shadow: var(--glass-highlight);
+  box-shadow: var(--glass-highlight), 0 2px 8px rgba(0, 0, 0, 0.06);
   transition: all 0.2s ease;
   cursor: pointer;
 }
 .glass-card-interactive:hover {
-  border-color: var(--glass-border-active);
   background: var(--surface-2);
   transform: translateY(-1px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--glass-highlight), 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
 .glass-surface {
   background: var(--surface-2);
-  border: 1px solid var(--glass-border);
   border-radius: var(--radius-md);
 }
 
+
+/* Glass icon container — translucent, consistent across all apps */
+.glass-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: var(--accent-subtle);
+  backdrop-filter: blur(8px) saturate(180%);
+  -webkit-backdrop-filter: blur(8px) saturate(180%);
+  color: var(--accent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: background 0.2s ease;
+}
 /* Unified, minimal app-icon tile â€” monochrome by default, accent on hover.
    Kills the per-app rainbow look in favor of one restrained accent. */
 .app-tile {
@@ -292,10 +299,9 @@ body {
 .photo-frame {
   display: inline-block;
   background: linear-gradient(145deg, #f8fafc, #e2e8f0);
-  border: 2px solid var(--accent);
   border-radius: var(--radius-xl);
-  padding: 5px;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  padding: 4px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 .photo-frame img {
   display: block;

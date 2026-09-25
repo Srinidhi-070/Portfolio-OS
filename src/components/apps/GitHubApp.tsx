@@ -57,7 +57,7 @@ export const GitHubApp: React.FC = () => {
       {/* Header Bar */}
       <div className={`flex items-center justify-between pb-4 border-b `}>
         <div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/15 text-purple-600 dark:text-purple-300 border border-purple-500/30 text-xs font-semibold mb-2">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold mb-2" style={{ backgroundColor: 'var(--accent-subtle)', color: 'var(--accent)' }}>
             <Github className="w-3.5 h-3.5" /> Live Open Source Metrics
           </div>
           <h1 className={`text-2xl font-extrabold `}>GitHub Developer Dashboard</h1>
@@ -67,7 +67,7 @@ export const GitHubApp: React.FC = () => {
         <button
           onClick={fetchGitHubData}
           disabled={loading}
-          className={`px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-2 transition-colors btn-ghost border ${
+          className={`px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-2 transition-colors btn-ghost ${
             'border-[var(--glass-border)] text-[var(--text-primary)] hover:bg-[var(--surface-2)]'
           }`}
         >
@@ -77,7 +77,7 @@ export const GitHubApp: React.FC = () => {
 
       {loading ? (
         <div className="py-20 text-center space-y-3">
-          <RefreshCw className="w-8 h-8 text-purple-400 animate-spin mx-auto" />
+          <RefreshCw className="w-8 h-8 animate-spin mx-auto" style={{ color: 'var(--accent)' }} />
           <div className="text-xs text-[var(--text-tertiary)] font-mono">Fetching GitHub API data for Srinidhi-070...</div>
         </div>
       ) : error ? (
@@ -97,11 +97,11 @@ export const GitHubApp: React.FC = () => {
               <img
                 src={data.user.avatar_url}
                 alt="Srinidhi-070 Avatar"
-                className="w-16 h-16 rounded-2xl border-2 border-purple-500/30 shadow-lg object-cover"
+                className="w-16 h-16 rounded-2xl border-2 border-[var(--accent-subtle)] shadow-lg object-cover"
               />
               <div>
                 <h2 className={`text-xl font-extrabold `}>{data.user.name}</h2>
-                <div className="text-xs font-mono text-purple-500 dark:text-purple-400">@{data.user.login}</div>
+                <div className="text-xs font-mono text-[var(--accent)]">@{data.user.login}</div>
                 <p className={`text-xs mt-1 max-w-lg `}>{data.user.bio}</p>
               </div>
             </div>
@@ -119,23 +119,23 @@ export const GitHubApp: React.FC = () => {
           {/* Quick Metrics Cards */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div className="glass-card p-4 text-center">
-              <BookOpen className="w-4 h-4 text-purple-500 dark:text-purple-400 mx-auto mb-1" />
+              <BookOpen className="w-4 h-4 text-[var(--accent)] mx-auto mb-1" />
               <div className={`text-2xl font-black `}>{data.user.public_repos}</div>
               <div className={`text-[11px] `}>Public Repositories</div>
             </div>
             <div className="glass-card p-4 text-center">
-              <Star className="w-4 h-4 text-amber-500 dark:text-amber-400 mx-auto mb-1" />
-              <div className="text-2xl font-black text-amber-500 dark:text-amber-300">{data.totalStars}</div>
+              <Star className="w-4 h-4 mx-auto mb-1" style={{ color: 'var(--accent)' }} />
+              <div className="text-2xl font-black" style={{ color: 'var(--accent)' }}>{data.totalStars}</div>
               <div className={`text-[11px] `}>Total Stars Earned</div>
             </div>
             <div className="glass-card p-4 text-center">
-              <Users className="w-4 h-4 text-cyan-500 dark:text-cyan-400 mx-auto mb-1" />
+              <Users className="w-4 h-4 mx-auto mb-1" style={{ color: 'var(--accent)' }} />
               <div className={`text-2xl font-black `}>{data.user.followers}</div>
               <div className={`text-[11px] `}>Followers</div>
             </div>
             <div className="glass-card p-4 text-center">
-              <Code2 className="w-4 h-4 text-emerald-500 dark:text-emerald-400 mx-auto mb-1" />
-              <div className="text-2xl font-black text-emerald-500 dark:text-emerald-300">{Object.keys(data.languages || {}).length}</div>
+              <Code2 className="w-4 h-4 mx-auto mb-1" style={{ color: 'var(--accent)' }} />
+              <div className="text-2xl font-black" style={{ color: 'var(--accent)' }}>{Object.keys(data.languages || {}).length}</div>
               <div className={`text-[11px] `}>Languages Used</div>
             </div>
           </div>
@@ -169,15 +169,15 @@ export const GitHubApp: React.FC = () => {
 
                   <div className={`flex items-center gap-4 mt-3 pt-2 border-t text-[11px] font-mono `}>
                     {repo.language && (
-                      <span className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400">
-                        <span className="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400" />
+                      <span className="flex items-center gap-1 text-[var(--accent)]">
+                        <span className="w-2 h-2 rounded-full bg-[var(--accent)]" />
                         {repo.language}
                       </span>
                     )}
-                    <span className="flex items-center gap-1 text-amber-600 dark:text-amber-300">
-                      <Star className="w-3 h-3 text-amber-500 dark:text-amber-400" /> {repo.stargazers_count || 0}
+                    <span className="flex items-center gap-1 text-[var(--accent)]">
+                      <Star className="w-3 h-3 text-[var(--accent)]" /> {repo.stargazers_count || 0}
                     </span>
-                    <span className="flex items-center gap-1 text-slate-500 dark:text-[var(--text-tertiary)]">
+                    <span className="flex items-center gap-1 text-[var(--text-tertiary)]">
                       <GitFork className="w-3 h-3" /> {repo.forks_count || 0}
                     </span>
                   </div>

@@ -194,10 +194,10 @@ export const CommandPalette: React.FC = () => {
                     >
                       <div className="flex items-center gap-3 truncate">
                         <div className="p-2 rounded-lg glass-surface" style={{ color: 'var(--text-secondary)' }}>
-                          {item.type === 'Project' && <FolderGit2 className="w-4 h-4 text-amber-400" />}
-                          {item.type === 'Skill' && <Cpu className="w-4 h-4 text-cyan-400" />}
-                          {item.type === 'Application' && <Sparkles className="w-4 h-4 text-emerald-400" />}
-                          {item.type === 'Action' && <ArrowRight className="w-4 h-4 text-indigo-400" />}
+                          {item.type === 'Project' && <FolderGit2 className="w-4 h-4" style={{ color: 'var(--accent)' }} />}
+                          {item.type === 'Skill' && <Cpu className="w-4 h-4" style={{ color: 'var(--accent)' }} />}
+                          {item.type === 'Application' && <Sparkles className="w-4 h-4" style={{ color: 'var(--accent)' }} />}
+                          {item.type === 'Action' && <ArrowRight className="w-4 h-4" style={{ color: 'var(--accent)' }} />}
                         </div>
                         <div className="truncate">
                           <div className="text-xs font-semibold truncate" style={{ color: 'var(--text-primary)' }}>{item.title}</div>

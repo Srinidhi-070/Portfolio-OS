@@ -62,7 +62,7 @@ const OSContext = createContext<OSContextType | undefined>(undefined);
 const INITIAL_NOTIFICATIONS: SystemNotification[] = [
   {
     id: 'n1',
-    title: 'Welcome to Portfolio OS! 👋',
+    title: 'Welcome to Portfolio OS',
     message: 'Double-click any desktop icon to open apps, or use the bottom Dock to navigate quickly.',
     time: 'Just now',
     read: false,
@@ -70,7 +70,7 @@ const INITIAL_NOTIFICATIONS: SystemNotification[] = [
   },
   {
     id: 'n2',
-    title: 'Pro Tip: Try Right-Clicking! 🖱️',
+    title: 'Pro Tip: Try Right-Clicking',
     message: 'Right-click anywhere on the empty desktop background to access quick settings, theme toggler, and view source.',
     time: '1m ago',
     read: false,
@@ -78,7 +78,7 @@ const INITIAL_NOTIFICATIONS: SystemNotification[] = [
   },
   {
     id: 'n3',
-    title: 'Hidden Terminal Secrets 🤫',
+    title: 'Hidden Terminal Secrets',
     message: 'Open the Terminal app and type "ai joke", "sudo hire-me", or "ai skills" for some fun surprises!',
     time: '2m ago',
     read: false,

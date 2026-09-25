@@ -55,7 +55,7 @@ export const HomeApp: React.FC = () => {
 
           <div className="space-y-3 flex-1 text-center md:text-left min-w-0">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold"
-                 style={{ backgroundColor: 'var(--accent-subtle)', color: 'var(--accent)', border: '1px solid var(--accent)' }}>
+                 style={{ backgroundColor: 'var(--accent-subtle)', color: 'var(--accent)' }}>
               <Sparkles className="w-3.5 h-3.5" /> Portfolio OS v2.5 Verified Profile
             </div>
 
@@ -87,16 +87,14 @@ export const HomeApp: React.FC = () => {
               <button
                 onClick={() => openApp('projects')}
                 className="px-4 py-2 rounded-xl font-semibold text-xs flex items-center gap-2 transition-all glass-surface hover:brightness-110"
-                style={{ color: 'var(--text-primary)', border: '1px solid var(--glass-border)' }}
               >
                 <FolderGit2 className="w-4 h-4" style={{ color: 'var(--accent)' }} /> Explore 16 Repos
               </button>
               <button
                 onClick={() => openApp('contact')}
                 className="px-4 py-2 rounded-xl font-semibold text-xs flex items-center gap-2 transition-all btn-ghost"
-                style={{ color: 'var(--text-primary)', border: '1px solid var(--glass-border)' }}
               >
-                <Mail className="w-4 h-4 text-orange-400" /> Get in Touch
+                <Mail className="w-4 h-4" style={{ color: 'var(--accent)' }} /> Get in Touch
               </button>
             </div>
           </div>
@@ -108,7 +106,7 @@ export const HomeApp: React.FC = () => {
               <div className="text-[10px] font-medium" style={{ color: 'var(--text-secondary)' }}>B.E. GPA</div>
             </div>
             <div className="flex-1 p-3.5 rounded-xl glass-card text-center">
-              <div className="text-2xl font-black text-cyan-500">16+</div>
+              <div className="text-2xl font-black" style={{ color: 'var(--accent)' }}>16+</div>
               <div className="text-[10px] font-medium" style={{ color: 'var(--text-secondary)' }}>GitHub Repos</div>
             </div>
           </div>
@@ -139,7 +137,7 @@ export const HomeApp: React.FC = () => {
             >
               <div>
                 <div className="flex items-start justify-between gap-2 mb-2">
-                  <span className="text-[10px] uppercase font-mono tracking-wider px-2.5 py-0.5 rounded-full border"
+                  <span className="text-[10px] uppercase font-mono tracking-wider px-2.5 py-0.5 rounded-full"
                         style={{ backgroundColor: 'var(--accent-subtle)', color: 'var(--accent)', borderColor: 'var(--accent-subtle)' }}>
                     {proj.category}
                   </span>
@@ -170,8 +168,7 @@ export const HomeApp: React.FC = () => {
       {/* Core Competency Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div className="p-4 rounded-2xl glass-card space-y-2">
-          <div className="w-9 h-9 rounded-xl flex items-center justify-center border"
-               style={{ backgroundColor: 'rgba(99, 102, 241, 0.1)', color: '#818cf8', borderColor: 'rgba(99, 102, 241, 0.2)' }}>
+          <div className="w-9 h-9 glass-icon">
             <Cpu className="w-5 h-5" />
           </div>
           <h4 className="text-sm font-bold" style={{ color: 'var(--text-primary)' }}>AI & Deep Learning</h4>
@@ -181,8 +178,7 @@ export const HomeApp: React.FC = () => {
         </div>
 
         <div className="p-4 rounded-2xl glass-card space-y-2">
-          <div className="w-9 h-9 rounded-xl flex items-center justify-center border"
-               style={{ backgroundColor: 'var(--accent-subtle)', color: 'var(--accent)', borderColor: 'var(--accent-subtle)' }}>
+          <div className="w-9 h-9 glass-icon">
             <Boxes className="w-5 h-5" />
           </div>
           <h4 className="text-sm font-bold" style={{ color: 'var(--text-primary)' }}>Full-Stack & WebRTC</h4>
@@ -192,8 +188,7 @@ export const HomeApp: React.FC = () => {
         </div>
 
         <div className="p-4 rounded-2xl glass-card space-y-2">
-          <div className="w-9 h-9 rounded-xl flex items-center justify-center border"
-               style={{ backgroundColor: 'rgba(245, 158, 11, 0.1)', color: '#fbbf24', borderColor: 'rgba(245, 158, 11, 0.2)' }}>
+          <div className="w-9 h-9 glass-icon">
             <ShieldCheck className="w-5 h-5" />
           </div>
           <h4 className="text-sm font-bold" style={{ color: 'var(--text-primary)' }}>Product Operations</h4>

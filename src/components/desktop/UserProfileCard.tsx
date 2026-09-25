@@ -61,7 +61,7 @@ export const UserProfileCard: React.FC<UserProfileCardProps> = ({ compact = fals
             className="p-1.5 rounded-lg border flex items-center gap-1.5 truncate text-left transition-colors glass-surface hover:bg-[var(--surface-2)]"
             style={{ borderColor: 'var(--glass-border)', color: 'var(--text-primary)' }}
           >
-            <Mail className="w-3 h-3 text-cyan-400 shrink-0" />
+            <Mail className="w-3 h-3 shrink-0" style={{ color: 'var(--accent)' }} />
             <span className="truncate">{PERSONAL_INFO.email}</span>
           </button>
 

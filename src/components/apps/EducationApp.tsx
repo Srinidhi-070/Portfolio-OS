@@ -11,8 +11,8 @@ export const EducationApp: React.FC = () => {
     <div className={`p-6 max-w-4xl mx-auto space-y-8 select-none `}>
       {/* Header */}
       <div className="pb-4" style={{ borderBottom: '1px solid var(--glass-border)' }}>
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold mb-2 border"
-             style={{ backgroundColor: 'rgba(59, 130, 246, 0.15)', color: '#93c5fd', borderColor: 'rgba(59, 130, 246, 0.3)' }}>
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold mb-2"
+             style={{ backgroundColor: 'var(--accent-subtle)', color: 'var(--accent)' }}>
           <GraduationCap className="w-3.5 h-3.5" /> Academic Qualifications
         </div>
         <h1 className="text-2xl font-extrabold" style={{ color: 'var(--text-primary)' }}>Education & Coursework</h1>
@@ -32,7 +32,7 @@ export const EducationApp: React.FC = () => {
               <div className="text-right text-xs space-y-1">
                 <div className="font-mono" style={{ color: 'var(--text-secondary)' }}>{edu.period}</div>
                 {edu.grade && (
-                  <span className="inline-block px-2.5 py-0.5 rounded-full font-semibold text-[11px] border"
+                  <span className="inline-block px-2.5 py-0.5 rounded-full font-semibold text-[11px]"
                         style={{ backgroundColor: 'var(--accent-subtle)', color: 'var(--accent)', borderColor: 'var(--accent-subtle)' }}>
                     {edu.grade}
                   </span>
@@ -49,7 +49,7 @@ export const EducationApp: React.FC = () => {
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {edu.coursework.map((course, idx) => (
-                  <div key={idx} className="p-2.5 rounded-xl glass-surface border border-[var(--glass-border)] text-xs flex items-center gap-2" style={{ color: 'var(--text-secondary)' }}>
+                  <div key={idx} className="p-2.5 rounded-xl glass-surface text-xs flex items-center gap-2" style={{ color: 'var(--text-secondary)' }}>
                     <CheckCircle2 className="w-3.5 h-3.5 shrink-0" style={{ color: 'var(--accent)' }} />
                     <span>{course}</span>
                   </div>
@@ -60,13 +60,13 @@ export const EducationApp: React.FC = () => {
             {/* Achievements */}
             <div className="space-y-2">
               <h4 className="text-xs font-bold uppercase tracking-wider flex items-center gap-1.5" style={{ color: 'var(--text-secondary)' }}>
-                <Award className="w-3.5 h-3.5 text-amber-500" /> Key Honors & Accomplishments
+                <Award className="w-3.5 h-3.5" style={{ color: 'var(--accent)' }} /> Key Honors & Accomplishments
               </h4>
-              <ul className="space-y-1.5 text-xs leading-relaxed p-3.5 rounded-xl border"
-                  style={{ backgroundColor: 'rgba(245, 158, 11, 0.1)', color: '#fcd34d', borderColor: 'rgba(245, 158, 11, 0.2)' }}>
+              <ul className="space-y-1.5 text-xs leading-relaxed p-3.5 rounded-xl"
+                  style={{ backgroundColor: 'var(--accent-subtle)', color: 'var(--text-secondary)' }}>
                 {edu.achievements.map((ach, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <span className="font-bold text-amber-500">★</span>
+                    <span className="font-bold" style={{ color: 'var(--accent)' }}>★</span>
                     <span>{ach}</span>
                   </li>
                 ))}

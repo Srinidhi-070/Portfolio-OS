@@ -45,7 +45,7 @@ export const AboutApp: React.FC = () => {
         </div>
 
         <div className="space-y-3 text-center md:text-left flex-1 min-w-0">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border"
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold"
                style={{ backgroundColor: 'var(--accent-subtle)', color: 'var(--accent)', borderColor: 'var(--accent-subtle)' }}>
             <Sparkles className="w-3.5 h-3.5" /> Aspiring AI Engineer & Product Ops Professional
           </div>
@@ -67,7 +67,7 @@ export const AboutApp: React.FC = () => {
             </button>
             <button
               onClick={() => openApp('resume')}
-              className="px-3.5 py-1.5 rounded-xl font-semibold text-xs flex items-center gap-1.5 glass-surface border hover:brightness-110"
+              className="px-3.5 py-1.5 rounded-xl font-semibold text-xs flex items-center gap-1.5 glass-surface hover:brightness-110"
               style={{ color: 'var(--text-primary)', borderColor: 'var(--glass-border)' }}
             >
               Resume PDF
@@ -87,7 +87,7 @@ export const AboutApp: React.FC = () => {
 
         <div className="p-5 rounded-2xl glass-card space-y-3">
           <div className="flex items-center gap-2 text-sm font-bold" style={{ color: 'var(--text-primary)' }}>
-            <Compass className="w-4 h-4 text-cyan-500" /> Career Aspirations
+            <Compass className="w-4 h-4" style={{ color: 'var(--accent)' }} /> Career Aspirations
           </div>
           <p className="text-xs leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
             Aspiring to design production-grade Artificial Intelligence infrastructure, specialized Computer Vision networks, real-time speech processing, and automated product operations pipelines that bridge cutting-edge research with seamless end-user UX.
@@ -98,7 +98,7 @@ export const AboutApp: React.FC = () => {
       {/* Career Interests & Domain Focus */}
       <div className="space-y-4">
         <h3 className="text-base font-bold flex items-center gap-2" style={{ color: 'var(--text-primary)' }}>
-          <Brain className="w-5 h-5 text-indigo-500" /> Technical Domains & Interests
+          <Brain className="w-5 h-5" style={{ color: 'var(--accent)' }} /> Technical Domains & Interests
         </h3>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
@@ -107,15 +107,15 @@ export const AboutApp: React.FC = () => {
             <div className="text-[11px]" style={{ color: 'var(--text-secondary)' }}>Deepfake detection, MFCC audio features, scam speech intent classification.</div>
           </div>
           <div className="p-3.5 rounded-xl glass-surface text-xs">
-            <div className="font-bold text-cyan-500 mb-1">Computer Vision</div>
+            <div className="font-bold mb-1" style={{ color: 'var(--accent)' }}>Computer Vision</div>
             <div className="text-[11px]" style={{ color: 'var(--text-secondary)' }}>YOLOv8 object tracking, plant pathology CNNs, MediaPipe 3D gesture UI.</div>
           </div>
           <div className="p-3.5 rounded-xl glass-surface text-xs">
-            <div className="font-bold text-amber-500 mb-1">WebRTC & Spatial AI</div>
+            <div className="font-bold mb-1" style={{ color: 'var(--accent)' }}>WebRTC & Spatial AI</div>
             <div className="text-[11px]" style={{ color: 'var(--text-secondary)' }}>Low latency video channels, Vision Language Models, Three.js WebGL rendering.</div>
           </div>
           <div className="p-3.5 rounded-xl glass-surface text-xs">
-            <div className="font-bold text-purple-500 mb-1">Product Operations</div>
+            <div className="font-bold mb-1" style={{ color: 'var(--accent)' }}>Product Operations</div>
             <div className="text-[11px]" style={{ color: 'var(--text-secondary)' }}>Bug triage automation, product analytics, QA regression testing, Jira workflows.</div>
           </div>
         </div>
@@ -124,7 +124,7 @@ export const AboutApp: React.FC = () => {
       {/* Interactive Journey Timeline */}
       <div className="space-y-4">
         <h3 className="text-base font-bold flex items-center gap-2" style={{ color: 'var(--text-primary)' }}>
-          <Award className="w-5 h-5 text-amber-500" /> Journey Timeline
+          <Award className="w-5 h-5" style={{ color: 'var(--accent)' }} /> Journey Timeline
         </h3>
 
         <div className="relative ml-4 pl-6 space-y-6" style={{ borderLeft: '1px solid var(--glass-border)' }}>
@@ -138,8 +138,8 @@ export const AboutApp: React.FC = () => {
           </div>
 
           <div className="relative">
-            <div className="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full border-2 bg-cyan-500" style={{ borderColor: 'var(--surface-0)' }} />
-            <div className="text-xs font-semibold text-cyan-500 font-mono">2023 - 2024</div>
+            <div className="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full border-2" style={{ backgroundColor: 'var(--accent)', borderColor: 'var(--surface-0)' }} />
+            <div className="text-xs font-semibold font-mono" style={{ color: 'var(--accent)' }}>2023 - 2024</div>
             <div className="text-sm font-bold" style={{ color: 'var(--text-primary)' }}>Deep Learning & Computer Vision Specialization</div>
             <div className="text-xs mt-1" style={{ color: 'var(--text-secondary)' }}>
               Developed LeafMedic CNN plant disease classification, RoadSafe accident detection, and Gesture Media Controller using PyTorch, OpenCV, and TensorFlow.
@@ -147,8 +147,8 @@ export const AboutApp: React.FC = () => {
           </div>
 
           <div className="relative">
-            <div className="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full border-2 bg-indigo-500" style={{ borderColor: 'var(--surface-0)' }} />
-            <div className="text-xs font-semibold text-indigo-500 font-mono">2023 – 2026</div>
+            <div className="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full border-2" style={{ backgroundColor: 'var(--accent)', borderColor: 'var(--surface-0)' }} />
+            <div className="text-xs font-semibold font-mono" style={{ color: 'var(--accent)' }}>2023 – 2026</div>
             <div className="text-sm font-bold" style={{ color: 'var(--text-primary)' }}>B.E. in Artificial Intelligence & Data Science</div>
             <div className="text-xs mt-1" style={{ color: 'var(--text-secondary)' }}>
               Pursuing undergraduate degree in AI & DS, mastering data structures, neural network design, relational databases, and cloud architecture.

@@ -72,9 +72,9 @@ export const QuickSettings: React.FC = () => {
           <div className="glass-card flex items-center justify-between p-3 rounded-xl border">
             <div className="flex items-center gap-2.5">
               {isLight ? (
-                <Sun className="w-4 h-4 text-amber-500" />
+                <Sun className="w-4 h-4" style={{ color: 'var(--accent)' }} />
               ) : (
-                <Moon className="w-4 h-4 text-indigo-400" />
+                <Moon className="w-4 h-4" style={{ color: 'var(--accent)' }} />
               )}
               <div>
                 <div className="text-xs font-semibold">Dark Theme Mode</div>
@@ -114,7 +114,7 @@ export const QuickSettings: React.FC = () => {
           {/* Accent Color Palette */}
           <div>
             <div className="text-xs font-semibold mb-2 flex items-center gap-1.5" style={{ color: 'var(--text-secondary)' }}>
-              <Palette className="w-3.5 h-3.5 text-cyan-400" /> System Accent Color
+              <Palette className="w-3.5 h-3.5" style={{ color: 'var(--accent)' }} /> System Accent Color
             </div>
             <div className="grid grid-cols-6 gap-2">
               {ACCENTS.map(acc => (
@@ -134,7 +134,7 @@ export const QuickSettings: React.FC = () => {
           {/* Wallpapers Quick Selector */}
           <div>
             <div className="text-xs font-semibold mb-2 flex items-center justify-between" style={{ color: 'var(--text-secondary)' }}>
-              <span className="flex items-center gap-1.5"><Sparkles className="w-3.5 h-3.5 text-amber-400" /> Desktop Wallpaper</span>
+              <span className="flex items-center gap-1.5"><Sparkles className="w-3.5 h-3.5" style={{ color: 'var(--accent)' }} /> Desktop Wallpaper</span>
               <button onClick={() => { openApp('settings'); setIsQuickSettingsOpen(false); }} className="text-[10px] accent-text hover:underline">Full Settings</button>
             </div>
             <div className="space-y-2">

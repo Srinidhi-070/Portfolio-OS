@@ -89,7 +89,7 @@ export const TerminalApp: React.FC = () => {
           <div className="text-amber-400 font-bold">FEATURED REPOSITORIES (16 Total):</div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {PROJECTS.map(p => (
-              <div key={p.id} className="p-2 rounded glass-surface border border-[var(--glass-border)]">
+              <div key={p.id} className="p-2 rounded glass-surface">
                 <div className="text-emerald-300 font-bold">{p.title}</div>
                 <div className="text-[var(--text-tertiary)] text-[10px]">{p.category}</div>
                 <div className="text-[var(--text-tertiary)] text-[10px] mt-1">{p.techStack.slice(0, 3).join(', ')}</div>
@@ -118,7 +118,7 @@ export const TerminalApp: React.FC = () => {
       const fileData = TERMINAL_FILES[fileName];
       if (fileData) {
         outputNode = (
-          <div className="p-3 rounded glass-surface border border-[var(--glass-border)] text-xs text-[var(--text-secondary)] whitespace-pre-wrap leading-relaxed" style={{ fontFamily: 'var(--font-mono)' }}>
+          <div className="p-3 rounded glass-surface text-xs text-[var(--text-secondary)] whitespace-pre-wrap leading-relaxed" style={{ fontFamily: 'var(--font-mono)' }}>
             {fileData}
           </div>
         );
@@ -206,7 +206,7 @@ export const TerminalApp: React.FC = () => {
               ? {
                   ...item,
                   output: (
-                    <div className="p-3 rounded-xl glass-surface border border-[var(--glass-border)] text-xs text-[var(--text-secondary)] leading-relaxed space-y-1" style={{ fontFamily: 'var(--font-mono)' }}>
+                    <div className="p-3 rounded-xl glass-surface text-xs text-[var(--text-secondary)] leading-relaxed space-y-1" style={{ fontFamily: 'var(--font-mono)' }}>
                       <div className="text-emerald-400 font-bold flex items-center gap-1.5 mb-1">
                         <Sparkles className="w-3.5 h-3.5 text-cyan-400" /> Srinidhi OS Assistant:
                       </div>
@@ -263,7 +263,7 @@ export const TerminalApp: React.FC = () => {
           onChange={e => setInput(e.target.value)}
           onKeyDown={e => soundEngine.playTerminalKey()}
           placeholder="Type command (e.g. help, whoami, projects, ai ...)"
-          className="flex-1 bg-transparent border-none text-xs text-[var(--text-primary)] placeholder-slate-600 focus:outline-none"
+          className="flex-1 bg-transparent border-none text-xs text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:outline-none"
           style={{ fontFamily: 'var(--font-mono)' }}
           autoFocus
         />

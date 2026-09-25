@@ -112,7 +112,7 @@ const IconContainer: React.FC<{
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative flex aspect-square items-center justify-center rounded-full bg-gray-200 dark:bg-neutral-800"
+        className="relative flex aspect-square items-center justify-center rounded-full glass-surface"
       >
         <AnimatePresence>
           {hovered && (

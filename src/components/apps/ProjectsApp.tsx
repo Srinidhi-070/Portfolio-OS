@@ -61,7 +61,7 @@ export const ProjectsApp: React.FC<ProjectsAppProps> = ({ initialParams }) => {
       <div className="w-full md:w-64 glass-panel border-b md:border-b-0 md:border-r border-[var(--glass-border)] p-4 shrink-0 space-y-5">
         <div>
           <div className="text-xs font-bold uppercase tracking-wider mb-2 flex items-center gap-1.5" style={{ color: 'var(--text-secondary)' }}>
-            <FolderGit2 className="w-3.5 h-3.5 text-amber-500" /> Repositories Folder
+            <FolderGit2 className="w-3.5 h-3.5 text-[var(--accent)]" /> Repositories Folder
           </div>
           <div className="space-y-1">
             {['All', 'AI / Machine Learning', 'Full Stack Projects'].map(cat => (
@@ -70,7 +70,7 @@ export const ProjectsApp: React.FC<ProjectsAppProps> = ({ initialParams }) => {
                 onClick={() => setSelectedCategory(cat)}
                 className={`w-full text-left px-3 py-2 rounded-xl text-xs font-semibold flex items-center justify-between transition-all ${
                   selectedCategory === cat
-                    ? 'glass-surface border border-[var(--glass-border)]'
+                    ? 'glass-surface'
                     : 'hover:brightness-110'
                 }`}
                 style={{
@@ -90,7 +90,7 @@ export const ProjectsApp: React.FC<ProjectsAppProps> = ({ initialParams }) => {
         {/* Tech Tag Filters */}
         <div className="hidden md:block">
           <div className="text-xs font-bold uppercase tracking-wider mb-2 flex items-center gap-1.5" style={{ color: 'var(--text-secondary)' }}>
-            <Tag className="w-3.5 h-3.5 text-cyan-500" /> Filter by Tech
+            <Tag className="w-3.5 h-3.5 text-[var(--accent)]" /> Filter by Tech
           </div>
           <div className="flex flex-wrap gap-1 max-h-48 overflow-y-auto os-scrollbar pr-1">
             <button
@@ -124,7 +124,7 @@ export const ProjectsApp: React.FC<ProjectsAppProps> = ({ initialParams }) => {
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
           {/* Top Search & Filter Bar */}
           <div className="p-4 border-b border-[var(--glass-border)] flex items-center gap-3" style={{ border: 'none', borderBottom: '1px solid var(--glass-border)', borderRadius: 0, backgroundColor: 'var(--surface-1)' }}>
-            <div className="flex items-center w-full rounded-xl glass-input border border-[var(--glass-border)] text-xs focus-within:border-[var(--accent)] transition-colors">
+            <div className="flex items-center w-full rounded-xl glass-input text-xs focus-within:border-[var(--accent)] transition-colors">
               <Search className="w-4 h-4 ml-3 text-[var(--text-tertiary)] shrink-0" />
               <input
                 type="text"
@@ -237,7 +237,7 @@ export const ProjectsApp: React.FC<ProjectsAppProps> = ({ initialParams }) => {
                   href={activeProject.liveDemoUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 glass-surface border border-[var(--glass-border)] hover:brightness-110"
+                  className="px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 glass-surface hover:brightness-110"
                   style={{ color: 'var(--text-primary)' }}
                 >
                   <ExternalLink className="w-4 h-4" style={{ color: 'var(--accent)' }} /> Live Demo
@@ -249,7 +249,7 @@ export const ProjectsApp: React.FC<ProjectsAppProps> = ({ initialParams }) => {
             {activeProject.metrics && (
               <div className="grid grid-cols-2 gap-3">
                 {activeProject.metrics.map(m => (
-                  <div key={m.label} className="p-3 rounded-xl glass-surface border border-[var(--glass-border)] text-center">
+                  <div key={m.label} className="p-3 rounded-xl glass-surface text-center">
                     <div className="text-lg font-black" style={{ color: 'var(--accent)' }}>{m.value}</div>
                     <div className="text-[10px]" style={{ color: 'var(--text-secondary)' }}>{m.label}</div>
                   </div>
@@ -260,7 +260,7 @@ export const ProjectsApp: React.FC<ProjectsAppProps> = ({ initialParams }) => {
             {/* Overview */}
             <div className="space-y-2">
               <h4 className="text-xs font-bold uppercase tracking-wider flex items-center gap-1.5" style={{ color: 'var(--text-secondary)' }}>
-                <Layers className="w-3.5 h-3.5 text-cyan-500" /> System Overview
+                <Layers className="w-3.5 h-3.5 text-[var(--accent)]" /> System Overview
               </h4>
               <p className="text-xs leading-relaxed glass-surface p-3 rounded-xl border border-[var(--glass-border)]" style={{ color: 'var(--text-secondary)' }}>
                 {activeProject.overview}
@@ -286,7 +286,7 @@ export const ProjectsApp: React.FC<ProjectsAppProps> = ({ initialParams }) => {
             {activeProject.architecture && (
               <div className="space-y-2">
                 <h4 className="text-xs font-bold uppercase tracking-wider flex items-center gap-1.5" style={{ color: 'var(--text-secondary)' }}>
-                  <Code2 className="w-3.5 h-3.5 text-amber-500" /> Architecture Flow
+                  <Code2 className="w-3.5 h-3.5 text-[var(--accent)]" /> Architecture Flow
                 </h4>
                 <div className="p-3 rounded-xl glass-surface font-mono text-[11px] border border-[var(--glass-border)] leading-relaxed" style={{ color: 'var(--accent)' }}>
                   {activeProject.architecture}
@@ -297,11 +297,11 @@ export const ProjectsApp: React.FC<ProjectsAppProps> = ({ initialParams }) => {
             {/* Tech Stack */}
             <div className="space-y-2">
               <h4 className="text-xs font-bold uppercase tracking-wider flex items-center gap-1.5" style={{ color: 'var(--text-secondary)' }}>
-                <Cpu className="w-3.5 h-3.5 text-purple-500" /> Tech Stack
+                <Cpu className="w-3.5 h-3.5 text-[var(--accent)]" /> Tech Stack
               </h4>
               <div className="flex flex-wrap gap-1.5">
                 {activeProject.techStack.map(t => (
-                  <span key={t} className="text-xs px-2.5 py-1 rounded-lg glass-surface border border-[var(--glass-border)]" style={{ color: 'var(--text-primary)' }}>
+                  <span key={t} className="text-xs px-2.5 py-1 rounded-lg glass-surface" style={{ color: 'var(--text-primary)' }}>
                     {t}
                   </span>
                 ))}
