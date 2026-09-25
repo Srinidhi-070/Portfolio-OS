@@ -71,8 +71,8 @@ export const TopBar: React.FC = () => {
   };
 
   return (
-    <header className="relative z-50 h-8 w-full glass-panel border-b text-xs font-medium flex items-center justify-between px-4 select-none transition-colors duration-200"
-      style={{ borderColor: 'var(--glass-border)', color: 'var(--text-primary)' }}
+    <header className="relative z-50 h-8 w-full border-b text-xs font-medium flex items-center justify-between px-4 select-none transition-colors duration-200"
+      style={{ background: 'var(--glass-bg)', borderColor: 'var(--glass-border)', color: 'var(--text-primary)' }}
     >
       {/* Left: System Menu & Active App */}
       <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
