@@ -144,7 +144,7 @@ export const QuickSettings: React.FC = () => {
                   onClick={() => setWallpaper(wp)}
                    className={`w-full p-2 rounded-xl border text-left flex items-center justify-between gap-2 transition-all`}
                    style={{
-                     backgroundColor: wallpaper.id === wp.id ? 'var(--surface-2)' : 'var(--surface-0)',
+                     backgroundColor: wallpaper.id === wp.id ? 'var(--surface-2)' : 'transparent',
                      borderColor: wallpaper.id === wp.id ? 'var(--glass-border)' : 'transparent',
                      color: wallpaper.id === wp.id ? 'var(--text-primary)' : 'var(--text-secondary)'
                    }}
