@@ -6,15 +6,12 @@ import { AccentColor, ThemeMode, WallpaperOption } from '../types';
  * so the entire design system responds to accent changes.
  */
 const ACCENT_HSL: Record<AccentColor, { h: number; s: number; l: number }> = {
-  emerald: { h: 160, s: 84, l: 39 },
-  violet:  { h: 263, s: 70, l: 50 },
-  cyan:    { h: 188, s: 94, l: 43 },
-  amber:   { h: 39,  s: 95, l: 49 },
-  rose:    { h: 350, s: 89, l: 60 },
-  indigo:  { h: 239, s: 84, l: 67 },
-  tomato:  { h: 9,   s: 100, l: 64 }, // #ff5744
-  mustard: { h: 44,  s: 100, l: 65 }, // #ffcc4d
-  grape:   { h: 254, s: 100, l: 65 }, // #6b4eff
+  terracotta: { h: 11,  s: 73, l: 56 }, // #e05a3d
+  cobalt:     { h: 221, s: 83, l: 53 }, // #2563eb
+  pine:       { h: 176, s: 69, l: 22 }, // #115e59
+  lavender:   { h: 258, s: 90, l: 66 }, // #8b5cf6
+  mustard:    { h: 45,  s: 93, l: 47 }, // #eab308
+  slate:      { h: 215, s: 19, l: 35 }, // #475569
 };
 
 const WALLPAPER_MESH: Record<string, { mesh1: string; mesh2: string; mesh3: string; mesh4: string }> = {
@@ -72,73 +69,14 @@ export function applyThemeVariables(
  * Still used by components that need explicit Tailwind classes.
  */
 export function getAccentClasses(accent: AccentColor) {
-  switch (accent) {
-    case 'emerald':
-      return {
-        bg: 'bg-emerald-500',
-        bgSubtle: 'bg-emerald-500/10',
-        text: 'text-emerald-400',
-        textDark: 'text-emerald-500',
-        border: 'border-emerald-500/30',
-        ring: 'focus:ring-emerald-500',
-        badge: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30',
-        glow: 'shadow-emerald-500/20'
-      };
-    case 'violet':
-      return {
-        bg: 'bg-violet-500',
-        bgSubtle: 'bg-violet-500/10',
-        text: 'text-violet-400',
-        textDark: 'text-violet-500',
-        border: 'border-violet-500/30',
-        ring: 'focus:ring-violet-500',
-        badge: 'bg-violet-500/15 text-violet-300 border-violet-500/30',
-        glow: 'shadow-violet-500/20'
-      };
-    case 'cyan':
-      return {
-        bg: 'bg-cyan-500',
-        bgSubtle: 'bg-cyan-500/10',
-        text: 'text-cyan-400',
-        textDark: 'text-cyan-500',
-        border: 'border-cyan-500/30',
-        ring: 'focus:ring-cyan-500',
-        badge: 'bg-cyan-500/15 text-cyan-300 border-cyan-500/30',
-        glow: 'shadow-cyan-500/20'
-      };
-    case 'amber':
-      return {
-        bg: 'bg-amber-500',
-        bgSubtle: 'bg-amber-500/10',
-        text: 'text-amber-400',
-        textDark: 'text-amber-500',
-        border: 'border-amber-500/30',
-        ring: 'focus:ring-amber-500',
-        badge: 'bg-amber-500/15 text-amber-300 border-amber-500/30',
-        glow: 'shadow-amber-500/20'
-      };
-    case 'rose':
-      return {
-        bg: 'bg-rose-500',
-        bgSubtle: 'bg-rose-500/10',
-        text: 'text-rose-400',
-        textDark: 'text-rose-500',
-        border: 'border-rose-500/30',
-        ring: 'focus:ring-rose-500',
-        badge: 'bg-rose-500/15 text-rose-300 border-rose-500/30',
-        glow: 'shadow-rose-500/20'
-      };
-    case 'indigo':
-    default:
-      return {
-        bg: 'bg-indigo-500',
-        bgSubtle: 'bg-indigo-500/10',
-        text: 'text-indigo-400',
-        textDark: 'text-indigo-500',
-        border: 'border-indigo-500/30',
-        ring: 'focus:ring-indigo-500',
-        badge: 'bg-indigo-500/15 text-indigo-300 border-indigo-500/30',
-        glow: 'shadow-indigo-500/20'
-      };
-  }
+  return {
+    bg: 'btn-accent',
+    bgSubtle: 'bg-[var(--accent-subtle)]',
+    text: 'accent-text',
+    textDark: 'accent-text',
+    border: 'border-[var(--accent)]',
+    ring: 'focus:ring-[var(--accent)]',
+    badge: 'bg-[var(--accent-subtle)] text-[var(--accent)] border-[var(--accent-subtle)]',
+    glow: 'shadow-[var(--accent-glow)]'
+  };
 }

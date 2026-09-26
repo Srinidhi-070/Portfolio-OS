@@ -36,12 +36,12 @@ export const QuickSettings: React.FC = () => {
   const isLight = theme === 'vercel-light' || theme === 'neo-brutal';
 
   const ACCENTS: { id: AccentColor; name: string; bg: string }[] = [
-    { id: 'emerald', name: 'Emerald', bg: '#10b981' },
-    { id: 'violet', name: 'Violet', bg: '#8b5cf6' },
-    { id: 'cyan', name: 'Cyan', bg: '#06b6d4' },
-    { id: 'amber', name: 'Amber', bg: '#f59e0b' },
-    { id: 'rose', name: 'Rose', bg: '#f43f5e' },
-    { id: 'indigo', name: 'Indigo', bg: '#6366f1' }
+    { id: 'terracotta', name: 'Terracotta', bg: '#e05a3d' },
+    { id: 'cobalt', name: 'Cobalt', bg: '#2563eb' },
+    { id: 'pine', name: 'Pine Green', bg: '#115e59' },
+    { id: 'lavender', name: 'Lavender', bg: '#8b5cf6' },
+    { id: 'mustard', name: 'Mustard', bg: '#eab308' },
+    { id: 'slate', name: 'Slate', bg: '#475569' }
   ];
 
   return (
