@@ -1,9 +1,10 @@
 @theme {
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
+  --radius-sm: 20px;
+  --radius-md: 20px;
+  --radius-lg: 20px;
+  --radius-xl: 20px;
   --radius-2xl: 20px;
-  --radius-3xl: 24px;
+  --radius-3xl: 20px;
 }
 
 @import "tailwindcss";
@@ -161,7 +162,7 @@
 
 .glass-card {
   background: var(--card-bg);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-2xl);
   border: none;
   box-shadow: none;
   transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s ease;
@@ -169,7 +170,7 @@
 
 .glass-card-interactive {
   background: var(--card-bg);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-2xl);
   border: none;
   box-shadow: none;
   transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s ease;
@@ -183,7 +184,7 @@
 
 .glass-surface {
   background: var(--surface-2);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-2xl);
   border: none;
 }
 
@@ -240,7 +241,7 @@
   .glass-input {
   background: var(--surface-2);
   border: 1px solid transparent;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-2xl);
   color: var(--text-primary);
   padding: 0.75rem 1rem;
   width: 100%;
@@ -282,7 +283,7 @@
   background: var(--accent);
   color: white;
   border: none;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-2xl);
   padding: 0.5rem 1.25rem;
   font-weight: 500;
   font-family: var(--font-sans);
@@ -300,7 +301,7 @@
   background: transparent;
   color: var(--text-secondary);
   border: 1px solid var(--glass-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-2xl);
   padding: 0.5rem 1rem;
   font-weight: 500;
   font-family: var(--font-sans);
