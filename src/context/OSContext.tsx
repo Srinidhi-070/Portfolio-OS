@@ -107,7 +107,7 @@ export const OSProvider: React.FC<{ children: React.ReactNode }> = ({ children }
   // Customization
   const [theme, setTheme] = useState<ThemeMode>('neo-brutal');
   const [accentColor, setAccentColor] = useState<AccentColor>('navy');
-  const [wallpaper, setWallpaper] = useState<WallpaperOption>(WALLPAPERS[0]);
+  const [wallpaper, setWallpaper] = useState<WallpaperOption>(WALLPAPERS[1]);
   const [soundEnabled, setSoundEnabledState] = useState<boolean>(true);
   const [reducedMotion, setReducedMotion] = useState<boolean>(false);
 

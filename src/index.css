@@ -598,3 +598,19 @@
     0 10px 20px rgba(0, 0, 0, 0.1),
     inset 0 2px 3px rgba(255, 255, 255, 1);
 }
+
+
+.os-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.os-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.os-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--text-tertiary);
+  border-radius: var(--radius-full);
+}
+.os-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}

@@ -655,16 +655,16 @@ export const EDUCATION: EducationItem[] = [
 
 export const WALLPAPERS: WallpaperOption[] = [
   // Light Wallpapers
-  { id: 'light-sakura', name: 'Sakura Blossom (Light)', type: 'mesh', previewBg: 'bg-pink-100', bgClass: '' },
-  { id: 'light-sky', name: 'Clear Sky (Light)', type: 'mesh', previewBg: 'bg-sky-100', bgClass: '' },
-  { id: 'light-sage', name: 'Muted Sage (Light)', type: 'mesh', previewBg: 'bg-[#d4dcd2]', bgClass: '' },
-  { id: 'light-peach', name: 'Warm Peach (Light)', type: 'mesh', previewBg: 'bg-orange-100', bgClass: '' },
+  { id: 'light-silver', name: 'Silver Frost (Light)', type: 'mesh', previewBg: 'bg-gray-200', bgClass: '' },
+  { id: 'light-sage', name: 'Sage Minimal (Light)', type: 'mesh', previewBg: 'bg-[#d4dcd2]', bgClass: '' },
+  { id: 'light-arctic', name: 'Arctic Blue (Light)', type: 'mesh', previewBg: 'bg-sky-100', bgClass: '' },
+  { id: 'light-sand', name: 'Desert Sand (Light)', type: 'mesh', previewBg: 'bg-orange-50', bgClass: '' },
   
   // Dark Wallpapers
-  { id: 'dark-abyss', name: 'Oceanic Abyss (Dark)', type: 'mesh', previewBg: 'bg-slate-900', bgClass: '' },
-  { id: 'dark-nebula', name: 'Deep Nebula (Dark)', type: 'mesh', previewBg: 'bg-purple-900', bgClass: '' },
-  { id: 'dark-matrix', name: 'Terminal Matrix (Dark)', type: 'mesh', previewBg: 'bg-emerald-900', bgClass: '' },
-  { id: 'dark-magma', name: 'Volcanic Magma (Dark)', type: 'mesh', previewBg: 'bg-red-900', bgClass: '' },
+  { id: 'dark-obsidian', name: 'Obsidian Grid (Dark)', type: 'mesh', previewBg: 'bg-slate-900', bgClass: '' },
+  { id: 'dark-violet', name: 'Midnight Violet (Dark)', type: 'mesh', previewBg: 'bg-indigo-950', bgClass: '' },
+  { id: 'dark-space', name: 'Deep Space (Dark)', type: 'mesh', previewBg: 'bg-black', bgClass: '' },
+  { id: 'dark-cyber', name: 'Cyber Neon (Dark)', type: 'mesh', previewBg: 'bg-rose-950', bgClass: '' },
 ];
 
 export const TERMINAL_FILES: Record<string, string> = {

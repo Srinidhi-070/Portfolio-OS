@@ -20,17 +20,17 @@ const ACCENT_HSL: Record<AccentColor, { h: number; s: number; l: number }> = {
 };
 
 const WALLPAPER_MESH: Record<string, { mesh1: string; mesh2: string; mesh3: string; mesh4: string }> = {
-  // Light Wallpapers
-  'light-sakura': { mesh1: '#fce4ec', mesh2: '#f8bbd0', mesh3: '#ffcdd2', mesh4: '#ffffff' },
-  'light-sky':    { mesh1: '#e0f2fe', mesh2: '#bae6fd', mesh3: '#7dd3fc', mesh4: '#f0f9ff' },
-  'light-sage':   { mesh1: '#d0d7cf', mesh2: '#aab5a8', mesh3: '#d4dcd2', mesh4: '#eef2ec' },
-  'light-peach':  { mesh1: '#ffedd5', mesh2: '#fed7aa', mesh3: '#fdba74', mesh4: '#fff7ed' },
+  // Light Wallpapers (Subtle, Elegant, Professional)
+  'light-silver': { mesh1: '#f8f9fa', mesh2: '#e9ecef', mesh3: '#dee2e6', mesh4: '#ffffff' },
+  'light-sage':   { mesh1: '#d4dcd2', mesh2: '#e2e8e0', mesh3: '#c5cfc2', mesh4: '#ffffff' },
+  'light-arctic': { mesh1: '#e0f2fe', mesh2: '#f0f9ff', mesh3: '#bae6fd', mesh4: '#ffffff' },
+  'light-sand':   { mesh1: '#fdf5e6', mesh2: '#fff8dc', mesh3: '#faebd7', mesh4: '#ffffff' },
   
-  // Dark Wallpapers
-  'dark-abyss':   { mesh1: '#020617', mesh2: '#0f172a', mesh3: '#1e293b', mesh4: '#000000' },
-  'dark-nebula':  { mesh1: '#4c1d95', mesh2: '#701a75', mesh3: '#312e81', mesh4: '#000000' },
-  'dark-matrix':  { mesh1: '#064e3b', mesh2: '#065f46', mesh3: '#022c22', mesh4: '#000000' },
-  'dark-magma':   { mesh1: '#7f1d1d', mesh2: '#991b1b', mesh3: '#450a0a', mesh4: '#000000' },
+  // Dark Wallpapers (Classic, High Contrast, Deep)
+  'dark-obsidian': { mesh1: '#00adb5', mesh2: '#393e46', mesh3: '#00adb5', mesh4: '#222831' },
+  'dark-violet':   { mesh1: '#f8b500', mesh2: '#393e46', mesh3: '#f8b500', mesh4: '#222831' },
+  'dark-space':    { mesh1: '#020617', mesh2: '#0f172a', mesh3: '#1e293b', mesh4: '#000000' },
+  'dark-cyber':    { mesh1: '#e94560', mesh2: '#16213e', mesh3: '#0f3460', mesh4: '#e94560' },
 };
 
 /**
