@@ -3,6 +3,7 @@ import { useOS } from '../../context/OSContext';
 import { APPS_METADATA, PERSONAL_INFO, PROJECTS } from '../../data/portfolioData';
 import { getAccentClasses } from '../../lib/theme';
 import { InteractiveBackground } from './InteractiveBackground';
+import { DesktopPet } from './DesktopPet';
 import { UserProfileCard } from './UserProfileCard';
 import {
   LayoutDashboard,
@@ -64,7 +65,9 @@ export const Desktop: React.FC = () => {
       style={{ color: 'var(--text-primary)' }}
       onContextMenu={handleContextMenu}
     >
-      {/* Background ready for user's custom background animation */}
+      <DesktopPet />
+
+        {/* Background ready for user's custom background animation */}
       <InteractiveBackground />
       
       {contextMenu && (
