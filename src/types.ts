@@ -108,7 +108,7 @@ export interface SystemNotification {
 }
 
 export type ThemeMode = 'linear-dark' | 'vercel-light' | 'dracula' | 'monochrome' | 'neo-brutal';
-export type AccentColor = 'terracotta' | 'cobalt' | 'pine' | 'lavender' | 'mustard' | 'slate';
+export type AccentColor = 'crimson' | 'navy' | 'forest' | 'plum' | 'cyan' | 'pink' | 'lime' | 'amber';
 
 export interface WallpaperOption {
   id: string;

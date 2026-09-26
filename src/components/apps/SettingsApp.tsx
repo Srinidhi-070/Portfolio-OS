@@ -47,12 +47,14 @@ export const SettingsApp: React.FC = () => {
   ];
 
   const ACCENTS: { id: AccentColor; name: string; bg: string }[] = [
-    { id: 'terracotta', name: 'Terracotta', bg: '#e05a3d' },
-    { id: 'cobalt', name: 'Cobalt', bg: '#2563eb' },
-    { id: 'pine', name: 'Pine Green', bg: '#115e59' },
-    { id: 'lavender', name: 'Lavender', bg: '#8b5cf6' },
-    { id: 'mustard', name: 'Mustard', bg: '#eab308' },
-    { id: 'slate', name: 'Slate', bg: '#475569' }
+    { id: 'crimson', name: 'Crimson (Light)', bg: '#dc2626' },
+    { id: 'navy', name: 'Navy (Light)', bg: '#1e3a8a' },
+    { id: 'forest', name: 'Forest (Light)', bg: '#047857' },
+    { id: 'plum', name: 'Plum (Light)', bg: '#701a75' },
+    { id: 'cyan', name: 'Cyan (Dark)', bg: '#22d3ee' },
+    { id: 'pink', name: 'Pink (Dark)', bg: '#f472b6' },
+    { id: 'lime', name: 'Lime (Dark)', bg: '#4ade80' },
+    { id: 'amber', name: 'Amber (Dark)', bg: '#fbbf24' }
   ];
 
   return (

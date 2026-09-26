@@ -6,20 +6,31 @@ import { AccentColor, ThemeMode, WallpaperOption } from '../types';
  * so the entire design system responds to accent changes.
  */
 const ACCENT_HSL: Record<AccentColor, { h: number; s: number; l: number }> = {
-  terracotta: { h: 11,  s: 73, l: 56 }, // #e05a3d
-  cobalt:     { h: 221, s: 83, l: 53 }, // #2563eb
-  pine:       { h: 176, s: 69, l: 22 }, // #115e59
-  lavender:   { h: 258, s: 90, l: 66 }, // #8b5cf6
-  mustard:    { h: 45,  s: 93, l: 47 }, // #eab308
-  slate:      { h: 215, s: 19, l: 35 }, // #475569
+  // Light Mode Accents (Deep, Rich, High-Contrast)
+  crimson: { h: 0,   s: 72, l: 51 }, // #dc2626
+  navy:    { h: 224, s: 64, l: 33 }, // #1e3a8a
+  forest:  { h: 163, s: 94, l: 24 }, // #047857
+  plum:    { h: 297, s: 64, l: 28 }, // #701a75
+  
+  // Dark Mode Accents (Bright, Luminous, Neon)
+  cyan:    { h: 188, s: 86, l: 53 }, // #22d3ee
+  pink:    { h: 328, s: 86, l: 70 }, // #f472b6
+  lime:    { h: 142, s: 71, l: 58 }, // #4ade80
+  amber:   { h: 43,  s: 96, l: 56 }, // #fbbf24
 };
 
 const WALLPAPER_MESH: Record<string, { mesh1: string; mesh2: string; mesh3: string; mesh4: string }> = {
-  'dark-obsidian':   { mesh1: '#00adb5', mesh2: '#393e46', mesh3: '#00adb5', mesh4: '#222831' }, // ColorHunt: Dark Teal
-  'cyber-mesh':      { mesh1: '#e94560', mesh2: '#16213e', mesh3: '#0f3460', mesh4: '#e94560' }, // ColorHunt: Neon Red/Blue
-  'aurora-waves':    { mesh1: '#11999e', mesh2: '#30e3ca', mesh3: '#40514e', mesh4: '#11999e' }, // ColorHunt: Aqua Mint
-  'midnight-violet': { mesh1: '#f8b500', mesh2: '#393e46', mesh3: '#f8b500', mesh4: '#222831' }, // ColorHunt: Dark Yellow
-  'arctic-clean':    { mesh1: '#3f72af', mesh2: '#dbe2ef', mesh3: '#112d4e', mesh4: '#3f72af' }, // ColorHunt: Crisp Blue
+  // Light Wallpapers
+  'light-sakura': { mesh1: '#fce4ec', mesh2: '#f8bbd0', mesh3: '#ffcdd2', mesh4: '#ffffff' },
+  'light-sky':    { mesh1: '#e0f2fe', mesh2: '#bae6fd', mesh3: '#7dd3fc', mesh4: '#f0f9ff' },
+  'light-sage':   { mesh1: '#d0d7cf', mesh2: '#aab5a8', mesh3: '#d4dcd2', mesh4: '#eef2ec' },
+  'light-peach':  { mesh1: '#ffedd5', mesh2: '#fed7aa', mesh3: '#fdba74', mesh4: '#fff7ed' },
+  
+  // Dark Wallpapers
+  'dark-abyss':   { mesh1: '#020617', mesh2: '#0f172a', mesh3: '#1e293b', mesh4: '#000000' },
+  'dark-nebula':  { mesh1: '#4c1d95', mesh2: '#701a75', mesh3: '#312e81', mesh4: '#000000' },
+  'dark-matrix':  { mesh1: '#064e3b', mesh2: '#065f46', mesh3: '#022c22', mesh4: '#000000' },
+  'dark-magma':   { mesh1: '#7f1d1d', mesh2: '#991b1b', mesh3: '#450a0a', mesh4: '#000000' },
 };
 
 /**

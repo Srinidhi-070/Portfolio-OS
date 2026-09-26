@@ -654,41 +654,17 @@ export const EDUCATION: EducationItem[] = [
 ];
 
 export const WALLPAPERS: WallpaperOption[] = [
-  {
-    id: 'dark-obsidian',
-    name: 'Obsidian Grid',
-    type: 'particles',
-    previewBg: 'bg-slate-950 border-slate-800',
-    bgClass: 'bg-radial from-slate-900 via-slate-950 to-black'
-  },
-  {
-    id: 'cyber-mesh',
-    name: 'Cyber Mesh',
-    type: 'mesh',
-    previewBg: 'bg-zinc-950 border-emerald-500/30',
-    bgClass: 'bg-gradient-to-br from-zinc-950 via-slate-900 to-emerald-950/40'
-  },
-  {
-    id: 'aurora-waves',
-    name: 'Aurora Borealis',
-    type: 'waves',
-    previewBg: 'bg-slate-950 border-cyan-500/30',
-    bgClass: 'bg-gradient-to-tr from-indigo-950 via-slate-950 to-cyan-950/40'
-  },
-  {
-    id: 'midnight-violet',
-    name: 'Midnight Violet',
-    type: 'dark-gradient',
-    previewBg: 'bg-purple-950 border-purple-500/30',
-    bgClass: 'bg-gradient-to-br from-purple-950 via-slate-950 to-slate-900'
-  },
-  {
-    id: 'arctic-clean',
-    name: 'Arctic Executive Light',
-    type: 'minimal-light',
-    previewBg: 'bg-slate-100 border-slate-300',
-    bgClass: 'bg-gradient-to-br from-slate-50 via-slate-100 to-indigo-50/50 text-slate-900'
-  }
+  // Light Wallpapers
+  { id: 'light-sakura', name: 'Sakura Blossom (Light)', type: 'mesh', previewBg: 'bg-pink-100', bgClass: '' },
+  { id: 'light-sky', name: 'Clear Sky (Light)', type: 'mesh', previewBg: 'bg-sky-100', bgClass: '' },
+  { id: 'light-sage', name: 'Muted Sage (Light)', type: 'mesh', previewBg: 'bg-[#d4dcd2]', bgClass: '' },
+  { id: 'light-peach', name: 'Warm Peach (Light)', type: 'mesh', previewBg: 'bg-orange-100', bgClass: '' },
+  
+  // Dark Wallpapers
+  { id: 'dark-abyss', name: 'Oceanic Abyss (Dark)', type: 'mesh', previewBg: 'bg-slate-900', bgClass: '' },
+  { id: 'dark-nebula', name: 'Deep Nebula (Dark)', type: 'mesh', previewBg: 'bg-purple-900', bgClass: '' },
+  { id: 'dark-matrix', name: 'Terminal Matrix (Dark)', type: 'mesh', previewBg: 'bg-emerald-900', bgClass: '' },
+  { id: 'dark-magma', name: 'Volcanic Magma (Dark)', type: 'mesh', previewBg: 'bg-red-900', bgClass: '' },
 ];
 
 export const TERMINAL_FILES: Record<string, string> = {
