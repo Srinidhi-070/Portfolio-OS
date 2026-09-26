@@ -60,8 +60,8 @@ export const BootScreen: React.FC = () => {
         <p className="text-xs mt-1" style={{ color: '#a1a1aa' }}>AI & Data Science Graduate — Portfolio OS</p>
 
         {/* Progress Bar */}
-        <div className="w-full border h-2.5 rounded-full overflow-hidden my-6 p-0.5 glass-panel"
-             style={{ borderColor: 'var(--glass-border)' }}>
+        <div className="w-full border h-2.5 rounded-full overflow-hidden my-6 p-0.5 bg-white/5"
+             style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
           <div
             className="h-full rounded-full transition-all duration-200"
             style={{ width: `${progress}%`, backgroundColor: 'var(--accent)', boxShadow: '0 0 12px var(--accent-glow)' }}
@@ -69,8 +69,8 @@ export const BootScreen: React.FC = () => {
         </div>
 
         {/* Boot Terminal Log Output */}
-        <div className="w-full h-32 border rounded-xl p-3 text-left overflow-y-auto text-[11px] space-y-1 mb-6 shadow-inner glass-surface"
-             style={{ borderColor: 'var(--glass-border)', color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>
+        <div className="w-full h-32 border rounded-xl p-3 text-left overflow-y-auto os-scrollbar text-[11px] space-y-1 mb-6 shadow-inner bg-black/40 backdrop-blur-md"
+             style={{ borderColor: 'rgba(255,255,255,0.1)', color: '#a1a1aa', fontFamily: 'var(--font-mono)' }}>
           {logs.map((log, idx) => (
             <div key={idx} className="flex items-center gap-2">
               <span className="font-bold" style={{ color: 'var(--accent)' }}>[OK]</span>
