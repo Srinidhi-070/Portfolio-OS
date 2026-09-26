@@ -58,7 +58,7 @@ export const ProjectsApp: React.FC<ProjectsAppProps> = ({ initialParams }) => {
   return (
     <div className={`h-full flex flex-col md:flex-row glass-surface  overflow-hidden select-none`}>
       {/* Left Sidebar File Explorer Navigation */}
-      <div className="w-full md:w-64 glass-panel border-b md:border-b-0 md:border-r border-[var(--glass-border)] p-4 shrink-0 space-y-5">
+      <div className="w-full md:w-64 border-b md:border-b-0 md:border-r border-[var(--glass-border)] p-4 shrink-0 space-y-5">
         <div>
           <div className="text-xs font-bold uppercase tracking-wider mb-2 flex items-center gap-1.5" style={{ color: 'var(--text-secondary)' }}>
             <FolderGit2 className="w-3.5 h-3.5 text-[var(--accent)]" /> Repositories Folder

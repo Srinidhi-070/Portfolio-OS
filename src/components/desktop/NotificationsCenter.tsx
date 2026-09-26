@@ -23,8 +23,8 @@ export const NotificationsCenter: React.FC = () => {
     >
       <div
         onClick={e => e.stopPropagation()}
-        className="w-full max-w-sm h-full glass-panel-heavy border-l p-4 flex flex-col animate-slide-in-right"
-        style={{ color: 'var(--text-primary)', borderColor: 'var(--glass-border)' }}
+        className="w-full max-w-sm h-full rounded-l-2xl rounded-r-none border-l p-4 flex flex-col animate-slide-in-right"
+        style={{ color: 'var(--text-primary)', borderColor: 'var(--glass-border)', backgroundColor: 'var(--glass-bg-heavy)' }}
       >
         {/* Drawer Header */}
         <div className="flex items-center justify-between pb-3 border-b" style={{ borderColor: 'var(--glass-border)' }}>

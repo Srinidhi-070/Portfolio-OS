@@ -51,7 +51,7 @@ export const QuickSettings: React.FC = () => {
     >
       <div
         onClick={e => e.stopPropagation()}
-        className="w-full max-w-sm h-full border-l shadow-2xl glass-panel-heavy p-4 flex flex-col transition-colors duration-200 animate-slide-in-right os-scrollbar"
+        className="w-full max-w-sm h-full border-l shadow-2xl rounded-l-2xl rounded-r-none p-4 flex flex-col transition-colors duration-200 animate-slide-in-right os-scrollbar"
         style={{ borderColor: 'var(--glass-border)', color: 'var(--text-primary)' }}
       >
         {/* Header */}
