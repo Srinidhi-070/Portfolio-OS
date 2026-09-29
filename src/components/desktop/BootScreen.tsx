@@ -82,8 +82,7 @@ export const BootScreen: React.FC = () => {
         {/* Quick Skip Button */}
         <button
           onClick={finishBoot}
-          className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold transition-colors border glass-card-interactive"
-          style={{ color: '#ffffff' }}
+          className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold transition-all border border-white/10 bg-white/5 hover:bg-white/10 text-white"
         >
           Skip Boot Sequence <ArrowRight className="w-3.5 h-3.5" />
         </button>
