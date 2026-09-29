@@ -40,7 +40,7 @@ export interface Project {
   id: string;
   title: string;
   shortDescription: string;
-  category: 'AI / Machine Learning' | 'Full Stack Projects';
+  category: 'AI / Machine Learning' | 'Full Stack Projects' | 'Backend / Cloud';
   githubUrl: string;
   liveDemoUrl?: string;
   overview: string;

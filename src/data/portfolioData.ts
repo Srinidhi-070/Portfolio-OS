@@ -8,7 +8,7 @@ export const PERSONAL_INFO = {
   phone: "+91 80736 92802",
   roles: [
     "AI & Data Science Graduate",
-    "Product Operations Intern",
+    "Product Operations Lead Intern",
     "Aspiring AI Engineer",
     "Machine Learning Enthusiast",
     "Full-Stack Web Developer"
@@ -16,8 +16,8 @@ export const PERSONAL_INFO = {
   email: "nssrinidhi72884@gmail.com",
   github: "https://github.com/Srinidhi-070",
   linkedin: "https://www.linkedin.com/in/srinidhi-n-s-270351218",
-  location: "Bengaluru, Karnataka",
-  bio: "Being a recent graduate of AI & Data Science, I consider myself a builder by nature. My technical expertise includes Python, Java, and full-stack development with a wide range of experiences varying from developing predictive ML algorithms to creating end-to-end web applications. I have a character of not leaving a problem alone until I find a suitable and efficient solution to it. As such, I offer my skills and experience as a developer passionate about solving challenging problems.",
+  location: "Bengaluru, India",
+  bio: "Hands-on experience across software development, AI, data, and backend systems, with projects spanning machine learning, API development, data pipelines, databases, and application development. Experienced in taking ideas from exploration and experimentation through implementation, working with different technologies and approaches to solve practical technical problems. Comfortable moving across domains, learning unfamiliar tools when required, and applying a broad technical foundation to build reliable, useful software.",
   mission: "To engineer empathetic, high-throughput AI systems that seamlessly solve complex real-world challenges in safety, healthcare, accessibility, and automated reasoning.",
   quickStats: [
     { label: "B.E. GPA", value: "7.8" },
@@ -144,19 +144,17 @@ export const PROJECTS: Project[] = [
   // AI / ML
   {
     id: 'guardian-voice',
-    title: 'GuardianVoice',
+    title: 'GuardianVoice – Real-Time Scam Detection',
     shortDescription: 'AI Voice Scam Detection System using Deep Learning & Audio Pattern Analysis',
     category: 'AI / Machine Learning',
     githubUrl: 'https://github.com/Srinidhi-070/GuardianVoice',
-    overview: 'GuardianVoice is a real-time speech processing and deep learning platform designed to identify fraudulent voice patterns, audio deepfakes, and telephone scam tactics in live audio streams.',
+    overview: 'A real-time voice analysis microservice designed to instantly transcribe speech and detect scam patterns for elder protection.',
     features: [
-      'Real-time spectral analysis and MFCC feature extraction from incoming voice feeds.',
-      'Custom transformer classification engine for voice deepfake detection.',
-      'NLP analysis for scam intent classification (urgency markers, bank spoof keywords).',
-      'Instant alert notifications with threat confidence rating.'
+      'Developed a real-time voice analysis microservice using Python and machine learning to instantly transcribe speech and detect scam patterns for elder protection.',
+      'Engineered adaptive risk threshold algorithms and rule-based filters, enabling live audio processing and automated spoken warnings during active phone calls.'
     ],
     architecture: 'Input Audio Stream -> Web Audio API / PyAudio -> MFCC & Mel-Spectrogram Engine -> PyTorch Transformer Model -> Intent Classifier -> Realtime Alert Bus',
-    techStack: ['Python', 'PyTorch', 'Librosa', 'FastAPI', 'React', 'Transformers', 'WebSockets'],
+    techStack: ['Python', 'Machine Learning', 'Speech API'],
     challenges: 'Achieving sub-200ms latency on continuous audio streams while avoiding false positives on noisy cellular phone lines.',
     learnings: 'Mastered streaming audio buffer management, spectral feature extraction, and lightweight model quantization.',
     stars: 18,
@@ -192,19 +190,17 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'cloud-ai-anomaly-guardian',
-    title: 'Cloud AI Anomaly Guardian',
+    title: 'Cloud Microservices – Anomaly Guardian',
     shortDescription: 'Cloud-native anomaly detection engine monitoring real-time server telemetry',
-    category: 'AI / Machine Learning',
+    category: 'Backend / Cloud',
     githubUrl: 'https://github.com/Srinidhi-070/cloud-ai-anomaly-guardian',
-    overview: 'An intelligent cloud infrastructure monitoring tool that utilizes unsupervised machine learning (Isolation Forests & Autoencoders) to detect malicious spikes, resource leaks, and network anomalies.',
+    overview: 'A scalable microservice processing high-throughput events to effectively detect critical data anomalies in real-time across enterprise environments.',
     features: [
-      'Unsupervised metric anomaly detection on CPU, memory, and network throughput.',
-      'Autoencoder reconstruction error analysis for unseen zero-day infrastructure faults.',
-      'Interactive dashboard displaying metric health heatmaps.',
-      'Automated alert dispatch via Webhooks and Slack integration.'
+      'Engineered a scalable FastAPI microservice secured with 2 JWT/OAuth protocols, processing 500+ events/second to effectively detect critical data anomalies in real-time.',
+      'Deployed containerized applications across 3 environments using Docker and automated CI/CD pipelines, maintaining 99% uptime for the underlying enterprise cloud infrastructure.'
     ],
     architecture: 'Prometheus / Cloud Watch Logs -> Kafka Event Bus -> PyTorch Autoencoder Inference Worker -> InfluxDB Time-Series DB -> Grafana / React UI',
-    techStack: ['Python', 'PyTorch', 'Scikit-Learn', 'FastAPI', 'Docker', 'Prometheus', 'Tailwind CSS'],
+    techStack: ['FastAPI', 'Docker', 'PostgreSQL'],
     challenges: 'Distinguishing normal peak traffic spikes from malicious DDoS or silent resource leakage.',
     learnings: 'Acquired strong insights into unsupervised representation learning, time-series anomaly detection, and cloud infrastructure monitoring.',
     stars: 12,
@@ -328,19 +324,17 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'emotional-syllabus',
-    title: 'Emotional Syllabus',
+    title: 'Agentic AI System – Emotional Syllabus',
     shortDescription: 'Generative AI learning adaptive tool tailored to student emotional state',
     category: 'AI / Machine Learning',
     githubUrl: 'https://github.com/Srinidhi-070/emotional-syllabus',
-    overview: 'An empathetic EdTech engine that measures student engagement and frustration levels to dynamically re-adjust curriculum pacing and generate simplified explanations.',
+    overview: 'A full-stack web application handling dynamic multi-modal content generation pipelines and adaptive learning via RAG architectures.',
     features: [
-      'Facial expression and tone sentiment analysis for frustration detection.',
-      'Dynamic lesson simplification & micro-learning breakdown via Gemini.',
-      'Gamified progress tracker adapting to cognitive load.',
-      'Interactive quiz generation.'
+      'Designed a full-stack web application utilizing Python and React.js, handling 1,000+ daily requests through highly dynamic multi-modal content generation pipelines.',
+      'Implemented RAG architectures and vector embeddings across 5+ knowledge domains, achieving 90% retrieval accuracy via OpenAI and Claude APIs for end-users.'
     ],
     architecture: 'Webcam/Quiz Telemetry -> Expression & Sentiment Evaluator -> Adaptive Prompt Engine -> Custom Dynamic Syllabus UI',
-    techStack: ['Python', 'Gemini API', 'OpenCV', 'React', 'Node.js', 'Tailwind CSS'],
+    techStack: ['Python', 'React.js', 'LLMs', 'REST APIs'],
     challenges: 'Accurately measuring cognitive friction without frustrating the learner with invasive modal prompts.',
     learnings: 'Explored affective computing, cognitive load theory, and personalized LLM tutoring workflows.',
     stars: 9
@@ -368,19 +362,17 @@ export const PROJECTS: Project[] = [
   // Full Stack Projects
   {
     id: 'ar-campus-navigation',
-    title: 'AR Campus Navigation (Trailix)',
+    title: 'AR-Campus-Navigation System',
     shortDescription: 'Augmented Reality web-based indoor/outdoor campus directional guide',
     category: 'Full Stack Projects',
     githubUrl: 'https://github.com/Srinidhi-070/AR-Campus-Navigation',
-    overview: 'Trailix provides immersive camera-overlay augmented reality directional arrows and interactive building waypoint info cards for seamless campus exploration.',
+    overview: 'A highly scalable backend integrated with an AR frontend, computing real-time indoor pathfinding routes via QR-code mapping.',
     features: [
-      'WebXR and Three.js camera overlay rendering directional 3D waypoint markers.',
-      'GPS & Device Compass compass heading sensor fusion for spatial orientation.',
-      'Shortest path navigation algorithm (Dijkstra) between campus buildings.',
-      'Accessible step-free route filter for wheel-chair accessibility.'
+      'Architected a highly scalable FastAPI backend using Python to actively compute real-time indoor pathfinding routes and localize users via QR-code mapping.',
+      'Integrated the backend infrastructure with a Unity ARCore frontend application, delivering seamless augmented reality wayfinding experiences for campus visitors.'
     ],
     architecture: 'Mobile Device Sensors (GPS, Gyro, Compass) -> Spatial Graph Engine -> Three.js / WebGL Render Layer -> Augmented Camera Feed UI',
-    techStack: ['TypeScript', 'Three.js', 'React', 'WebXR API', 'Node.js', 'Tailwind CSS'],
+    techStack: ['Python', 'FastAPI', 'Unity', 'ARCore'],
     challenges: 'Overcoming GPS drift in dense multi-story academic buildings through compass sensor smoothing.',
     learnings: 'Gained extensive knowledge in 3D WebGL rendering, WebXR spatial tracking, and mobile web optimization.',
     stars: 17,
@@ -565,49 +557,49 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
 export const EXPERIENCES: ExperienceItem[] = [
   {
     id: 'exp-namaah-atlas',
-    role: 'Product Operations Intern',
+    role: 'Product Operations Lead Intern',
     company: 'Namaah ATLAS',
     type: 'Internship',
-    period: 'March 2026 - September 2026',
-    location: 'Bengaluru, India',
-    description: 'Developed product operations workflows, support runbooks, and application manuals for the ATLAS ecosystem.',
+    period: 'May 2026 - Present',
+    location: 'Bengaluru, India (Remote)',
+    description: 'Established foundational product-operations workflows and designed cross-functional team structures, leading technical onboarding and architectural knowledge transfer.',
     responsibilities: [
-      'Developed product operations workflows, support runbooks, and application manuals for the ATLAS ecosystem, translating technical architectures into structured documentation for business stakeholders.',
-      'Coordinated with engineering teams to manage application rollout pre-work, tracking module dependencies and standardizing operational processes to ensure seamless cross-functional deployment.',
-      'Monitored development progress across application modules, tracking pending tasks and standardizing internal workflows to improve operational efficiency.'
+      'Established foundational product-operations workflows and designed cross-functional team structures (Frontend, AI Pipeline, Backend), leading technical onboarding and architectural knowledge transfer for new engineers.',
+      'Created a centralized operational documentation suite defining core product architecture, subscription ecosystems, credit lifecycle monetization, and strict GitHub engineering collaboration practices.',
+      'Orchestrated cross-functional execution across product and technical domains, actively managing dependencies, risk mitigation, and operational readiness to successfully drive the platform’s Alpha release.'
     ],
     achievements: [
-      'Spearheaded operational readiness and standardized internal workflows for seamless application rollout.',
-      'Translated complex technical architectures into structured documentation for business stakeholders.'
+      'Successfully drove the platform’s Alpha release by orchestrating cross-functional execution.',
+      'Created centralized operational documentation defining core product architecture and monetization.'
     ],
     impactMetrics: [
-      { label: 'Workflows', value: 'Standardized' },
-      { label: 'Deployment', value: 'Cross-Functional' }
+      { label: 'Workflows', value: 'Established' },
+      { label: 'Release', value: 'Alpha Delivered' }
     ],
-    skills: ['Product Operations', 'Technical Documentation', 'Workflow Standardization', 'Cross-Functional Coordination']
+    skills: ['Product Operations', 'Technical Documentation', 'Cross-Functional Leadership', 'Agile & GitHub Workflows']
   },
   {
     id: 'exp-schneider',
-    role: 'Technical Intern – Home Automation & IoT (On-Campus)',
+    role: 'Technical Intern (Home Automation & IoT)',
     company: 'Schneider Electric',
     type: 'Internship',
-    period: 'Aug 2023 – Sep 2023',
+    period: 'Aug 2023 - Sep 2023',
     location: 'Bengaluru, India',
-    description: 'Supported smart-building deployments by working with device telemetry and system data to improve monitoring visibility.',
+    description: 'Analyzed device telemetry from embedded IoT sensors and developed automated data extraction scripts to improve system reliability.',
     responsibilities: [
-      'Supported smart-building deployments by working with device telemetry and system data to improve monitoring visibility.',
-      'Analyzed device behavior and failure patterns; contributed to reliability improvements through structured troubleshooting.',
-      'Collaborated with cross-functional teams to document workflows and communicate findings effectively.'
+      'Analyzed device telemetry from 50+ embedded IoT sensors, identifying 3 hardware failure patterns to improve system reliability using Python data tools and SQL.',
+      'Documented 10+ analytical workflows and delivered technical data insights to 4 engineering teams, accelerating hardware troubleshooting response times by 30% across the division.',
+      'Developed automated data extraction scripts that processed 5,000+ daily log entries, effectively eliminating manual diagnostic bottlenecks for the core engineering team.'
     ],
     achievements: [
-      'Improved monitoring visibility across smart-building device deployments.',
-      'Analyzed device behavior and failure patterns to drive structured reliability improvements.'
+      'Accelerated hardware troubleshooting response times by 30% across the division.',
+      'Eliminated manual diagnostic bottlenecks by processing 5,000+ daily log entries automatically.'
     ],
     impactMetrics: [
-      { label: 'Domain', value: 'IoT & Telemetry' },
-      { label: 'Focus', value: 'Smart Buildings' }
+      { label: 'Response Time', value: '-30%' },
+      { label: 'Log Processing', value: '5k+/day' }
     ],
-    skills: ['IoT Telemetry', 'Device Analysis', 'System Troubleshooting', 'Smart Buildings', 'Technical Workflows']
+    skills: ['IoT Telemetry', 'Python', 'SQL', 'System Troubleshooting', 'Data Extraction']
   }
 ];
 
@@ -627,9 +619,9 @@ export const EDUCATION: EducationItem[] = [
       'Database Management Systems'
     ],
     achievements: [
-      'Completed B.E. in AI & Data Science with GPA 7.8.',
-      'Core Committee Member – Wolfpack Disciplinary Committee.',
-      'Open-source contributor on GitHub.'
+      'Earned SAP Certified Generative AI Developer and SAP Analytics Cloud Data Analyst credentials.',
+      'Achieved UiPath Automation Developer Associate certification.',
+      'Core Committee Member for the Wolfpack Disciplinary Committee, successfully organizing 5+ technical events for over 500 attendees.'
     ]
   },
   {
