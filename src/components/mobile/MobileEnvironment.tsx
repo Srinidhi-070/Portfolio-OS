@@ -60,7 +60,6 @@ export const MobileEnvironment: React.FC = () => {
       ) : (
         <div className="absolute inset-0 z-0" style={{ backgroundImage: `url(${wallpaper.url})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
       )}
-      <div className="absolute inset-0 z-0" style={{ background: 'var(--glass-bg)', backdropFilter: 'blur(var(--glass-blur))' }} />
 
       {/* Mobile Status Bar */}
       <div className="absolute top-0 w-full h-12 px-6 flex items-center justify-between z-50 text-xs font-bold pointer-events-none" style={{ color: 'var(--text-primary)' }}>
