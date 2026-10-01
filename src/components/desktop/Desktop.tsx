@@ -5,6 +5,9 @@ import { getAccentClasses } from '../../lib/theme';
 import { InteractiveBackground } from './InteractiveBackground';
 import { DesktopPet } from './DesktopPet';
 import { UserProfileCard } from './UserProfileCard';
+import { ClockWidget } from './widgets/ClockWidget';
+import { SystemMonitorWidget } from './widgets/SystemMonitorWidget';
+import { GitHubWidget } from './widgets/GitHubWidget';
 import {
   LayoutDashboard,
   User,
@@ -104,11 +107,15 @@ export const Desktop: React.FC = () => {
         </div>
 
         {/* Right Desktop Floating Widgets (User Profile & Scratchpad Cards) */}
-        <div className="hidden lg:flex flex-col gap-4 items-end justify-start pr-4 pointer-events-none max-w-md ml-auto">
+        <div className="hidden lg:flex flex-col gap-4 items-end justify-start pr-4 pointer-events-none max-w-md ml-auto overflow-y-auto max-h-[calc(100dvh-50px)] os-scrollbar pb-10">
           {/* User Section Profile Card */}
           <div className="w-96 sm:w-[26rem] animate-fade-in slide-in-from-right-4 duration-300 widget-3d pointer-events-auto">
             <UserProfileCard compact={false} />
           </div>
+
+          <div className="animate-fade-in slide-in-from-right-4 duration-500 delay-75 pointer-events-auto"><ClockWidget /></div>
+          <div className="animate-fade-in slide-in-from-right-4 duration-500 delay-150 pointer-events-auto"><SystemMonitorWidget /></div>
+          <div className="animate-fade-in slide-in-from-right-4 duration-500 delay-200 pointer-events-auto"><GitHubWidget /></div>
 
           {/* Sticky Notes Widget */}
           <div className="w-96 sm:w-[26rem] p-4 widget-3d pointer-events-auto">
@@ -131,3 +138,4 @@ export const Desktop: React.FC = () => {
     </div>
   );
 };
+

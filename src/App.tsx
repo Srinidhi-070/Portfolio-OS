@@ -1,18 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { OSProvider, useOS } from './context/OSContext';
-import { TopBar } from './components/desktop/TopBar';
-import { Desktop } from './components/desktop/Desktop';
-import { Dock } from './components/desktop/Dock';
-import { Window } from './components/desktop/Window';
 import { BootScreen } from './components/desktop/BootScreen';
 import { LockScreen } from './components/desktop/LockScreen';
-import { CommandPalette } from './components/desktop/CommandPalette';
-import { NotificationsCenter } from './components/desktop/NotificationsCenter';
-import { AnimatePresence } from 'framer-motion';
-import { QuickSettings } from './components/desktop/QuickSettings';
+import { DesktopEnvironment } from './components/desktop/DesktopEnvironment';
+import { MobileEnvironment } from './components/mobile/MobileEnvironment';
+import { useIsMobile } from './hooks/useIsMobile';
 
 const OSContent: React.FC = () => {
-  const { isBooting, isLocked, windows, theme } = useOS();
+  const { isBooting, isLocked } = useOS();
+  const isMobile = useIsMobile();
 
   if (isBooting) {
     return <BootScreen />;
@@ -22,30 +18,11 @@ const OSContent: React.FC = () => {
     return <LockScreen />;
   }
 
-  return (
-    <div className={`relative w-screen h-[100dvh] overflow-hidden select-none font-sans ${theme}`} style={{ background: 'var(--surface-0)', color: 'var(--text-primary)', fontFamily: 'var(--font-sans)' }}>
-      {/* Top Bar */}
-      <TopBar />
+  if (isMobile) {
+    return <MobileEnvironment />;
+  }
 
-      {/* Main Desktop Stage */}
-      <Desktop />
-
-      {/* Active Application Windows */}
-      <AnimatePresence>
-        {windows.map(win => (
-          <Window key={win.id} windowState={win} />
-        ))}
-      </AnimatePresence>
-
-      {/* Dock */}
-      <Dock />
-
-      {/* Modals & Slideouts */}
-      <CommandPalette />
-      <NotificationsCenter />
-      <QuickSettings />
-    </div>
-  );
+  return <DesktopEnvironment />;
 };
 
 export function App() {
