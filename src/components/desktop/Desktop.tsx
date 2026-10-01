@@ -51,7 +51,7 @@ export const Desktop: React.FC = () => {
   const accent = getAccentClasses(accentColor);
 
   const [stickyNote, setStickyNote] = useState<string>(
-    "Portfolio OS Quick Notes:\n• Check out GuardianVoice (AI Voice Scam Detector)\n• Try 'sudo hire-me' in Warp Terminal!\n• Explore 16+ GitHub Repositories"
+    "Portfolio OS Quick Notes:\n\u2022 Check out GuardianVoice (AI Voice Scam Detector)\n\u2022 Try 'sudo hire-me' in Warp Terminal!\n\u2022 Explore 16+ GitHub Repositories"
   );
   const [contextMenu, setContextMenu] = useState<{ x: number; y: number } | null>(null);
 
@@ -70,7 +70,7 @@ export const Desktop: React.FC = () => {
     >
       <DesktopPet />
 
-        {/* Background ready for user's custom background animation */}
+      {/* Background ready for user's custom background animation */}
       <InteractiveBackground />
       
       {contextMenu && (
@@ -106,29 +106,47 @@ export const Desktop: React.FC = () => {
           })}
         </div>
 
-        {/* Right Desktop Floating Widgets (User Profile & Scratchpad Cards) */}
-        <div className="hidden lg:flex flex-col gap-4 items-end justify-start pr-4 pointer-events-none max-w-md ml-auto overflow-y-auto max-h-[calc(100dvh-50px)] os-scrollbar pb-10">
-          {/* User Section Profile Card */}
-          <div className="w-96 sm:w-[26rem] animate-fade-in slide-in-from-right-4 duration-300 widget-3d pointer-events-auto">
+        {/* Right Desktop Floating Widgets */}
+        <div className="hidden lg:flex flex-col gap-3 items-end justify-start pr-4 pointer-events-none w-80 ml-auto overflow-y-auto max-h-[calc(100dvh-80px)] os-scrollbar pb-10">
+          {/* User Profile Card */}
+          <div className="w-full widget-3d pointer-events-auto animate-fade-in">
             <UserProfileCard compact={false} />
           </div>
 
-          <div className="animate-fade-in slide-in-from-right-4 duration-500 delay-75 pointer-events-auto"><ClockWidget /></div>
-          <div className="animate-fade-in slide-in-from-right-4 duration-500 delay-150 pointer-events-auto"><SystemMonitorWidget /></div>
-          <div className="animate-fade-in slide-in-from-right-4 duration-500 delay-200 pointer-events-auto"><GitHubWidget /></div>
+          {/* Clock */}
+          <div className="w-full pointer-events-auto animate-fade-in">
+            <ClockWidget />
+          </div>
 
-          {/* Sticky Notes Widget */}
-          <div className="w-96 sm:w-[26rem] p-4 widget-3d pointer-events-auto">
+          {/* System Monitor */}
+          <div className="w-full pointer-events-auto animate-fade-in">
+            <SystemMonitorWidget />
+          </div>
+
+          {/* GitHub */}
+          <div className="w-full pointer-events-auto animate-fade-in">
+            <GitHubWidget />
+          </div>
+
+          {/* Sticky Notes */}
+          <div
+            className="w-full p-3.5 rounded-2xl pointer-events-auto animate-fade-in"
+            style={{
+              background: 'var(--glass-bg)',
+              backdropFilter: 'blur(var(--glass-blur))',
+              border: '1px solid var(--glass-border)',
+            }}
+          >
             <div className="flex items-center justify-between pb-2 border-b" style={{ borderColor: 'var(--glass-border)' }}>
-              <div className="flex items-center gap-1.5 font-bold text-xs" style={{ color: 'var(--accent)' }}>
-                <Pin className="w-3.5 h-3.5" style={{ color: 'var(--accent)' }} /> Desktop Scratchpad
+              <div className="flex items-center gap-1.5 font-bold text-[10px]" style={{ color: 'var(--accent)' }}>
+                <Pin className="w-3 h-3" style={{ color: 'var(--accent)' }} /> Scratchpad
               </div>
-              <span className="text-[10px]" style={{ color: 'var(--text-tertiary)' }}>Editable</span>
+              <span className="text-[9px] opacity-50" style={{ color: 'var(--text-tertiary)' }}>Editable</span>
             </div>
             <textarea
               value={stickyNote}
               onChange={e => setStickyNote(e.target.value)}
-              className="mt-2.5 w-full h-24 bg-transparent border-0 text-xs font-mono focus:outline-none resize-none leading-relaxed"
+              className="mt-2 w-full h-20 bg-transparent border-0 text-[11px] font-mono focus:outline-none resize-none leading-relaxed"
               style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}
               placeholder="Type desktop notes here..."
             />
@@ -138,4 +156,3 @@ export const Desktop: React.FC = () => {
     </div>
   );
 };
-

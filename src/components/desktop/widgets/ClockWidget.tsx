@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useOS } from '../../../context/OSContext';
 
 export const ClockWidget: React.FC = () => {
-  const { theme } = useOS();
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -13,36 +11,75 @@ export const ClockWidget: React.FC = () => {
   const hours = time.getHours().toString().padStart(2, '0');
   const minutes = time.getMinutes().toString().padStart(2, '0');
   const seconds = time.getSeconds().toString().padStart(2, '0');
-  
-  const dateStr = time.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
+  const dateStr = time.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
+
+  const hDeg = (time.getHours() % 12) * 30 + time.getMinutes() * 0.5;
+  const mDeg = time.getMinutes() * 6;
+  const sDeg = time.getSeconds() * 6;
 
   return (
-    <div className="w-96 sm:w-[26rem] p-6 widget-3d pointer-events-auto flex items-center justify-between">
-      <div className="flex flex-col">
-        <div className="text-[10px] uppercase font-bold tracking-widest" style={{ color: 'var(--accent)' }}>Local Time</div>
-        <div className="text-4xl font-light tracking-tighter mt-1" style={{ color: 'var(--text-primary)' }}>
-          {hours}:{minutes}<span className="text-xl text-[var(--text-tertiary)] ml-1">{seconds}</span>
+    <div
+      className="w-full p-4 rounded-2xl flex items-center justify-between"
+      style={{
+        background: 'var(--glass-bg)',
+        backdropFilter: 'blur(var(--glass-blur))',
+        border: '1px solid var(--glass-border)',
+      }}
+    >
+      <div className="flex flex-col gap-0.5">
+        <span className="text-[9px] uppercase font-bold tracking-[0.15em] opacity-50" style={{ color: 'var(--text-secondary)' }}>
+          Local Time
+        </span>
+        <div className="flex items-baseline gap-1">
+          <span className="text-2xl font-semibold tabular-nums" style={{ color: 'var(--text-primary)' }}>
+            {hours}:{minutes}
+          </span>
+          <span className="text-sm font-medium tabular-nums opacity-40" style={{ color: 'var(--text-secondary)' }}>
+            {seconds}
+          </span>
         </div>
-        <div className="text-xs mt-1 font-medium" style={{ color: 'var(--text-secondary)' }}>{dateStr}</div>
+        <span className="text-[10px] font-medium" style={{ color: 'var(--text-tertiary)' }}>{dateStr}</span>
       </div>
-      
-      {/* Decorative Analog Element */}
-      <div className="relative w-16 h-16 rounded-full border-2 flex items-center justify-center glass-surface" style={{ borderColor: 'var(--accent-subtle)' }}>
+
+      {/* Mini Analog Clock */}
+      <div
+        className="relative w-12 h-12 rounded-full flex items-center justify-center shrink-0"
+        style={{ border: '1.5px solid var(--glass-border)' }}
+      >
+        {/* Center dot */}
         <div className="absolute w-1 h-1 rounded-full z-10" style={{ backgroundColor: 'var(--accent)' }} />
-        {/* Hour hand */}
-        <div 
-          className="absolute bottom-1/2 left-1/2 w-0.5 h-4 origin-bottom rounded-full" 
-          style={{ backgroundColor: 'var(--text-primary)', transform: `translateX(-50%) rotate(${(time.getHours() % 12) * 30 + time.getMinutes() * 0.5}deg)` }}
+        {/* Hour */}
+        <div
+          className="absolute w-[1.5px] rounded-full origin-bottom"
+          style={{
+            height: '12px',
+            bottom: '50%',
+            left: 'calc(50% - 0.75px)',
+            backgroundColor: 'var(--text-primary)',
+            transform: `rotate(${hDeg}deg)`,
+          }}
         />
-        {/* Minute hand */}
-        <div 
-          className="absolute bottom-1/2 left-1/2 w-0.5 h-6 origin-bottom rounded-full" 
-          style={{ backgroundColor: 'var(--text-secondary)', transform: `translateX(-50%) rotate(${time.getMinutes() * 6}deg)` }}
+        {/* Minute */}
+        <div
+          className="absolute w-[1px] rounded-full origin-bottom"
+          style={{
+            height: '16px',
+            bottom: '50%',
+            left: 'calc(50% - 0.5px)',
+            backgroundColor: 'var(--text-secondary)',
+            transform: `rotate(${mDeg}deg)`,
+          }}
         />
-        {/* Second hand */}
-        <div 
-          className="absolute bottom-1/2 left-1/2 w-[1px] h-7 origin-bottom rounded-full" 
-          style={{ backgroundColor: 'var(--accent)', transform: `translateX(-50%) rotate(${time.getSeconds() * 6}deg)` }}
+        {/* Second */}
+        <div
+          className="absolute w-[0.5px] rounded-full origin-bottom"
+          style={{
+            height: '18px',
+            bottom: '50%',
+            left: 'calc(50% - 0.25px)',
+            backgroundColor: 'var(--accent)',
+            transform: `rotate(${sDeg}deg)`,
+          }}
         />
       </div>
     </div>

@@ -1,53 +1,50 @@
 import React, { useState, useEffect } from 'react';
-import { useOS } from '../../../context/OSContext';
-import { Cpu, MemoryStick, BatteryMedium } from 'lucide-react';
+import { Cpu, MemoryStick, BatteryFull } from 'lucide-react';
 
 export const SystemMonitorWidget: React.FC = () => {
-  const { theme } = useOS();
   const [cpuUsage, setCpuUsage] = useState(12);
   const [ramUsage, setRamUsage] = useState(45);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCpuUsage(prev => Math.max(5, Math.min(100, prev + (Math.random() * 10 - 5))));
-      setRamUsage(prev => Math.max(30, Math.min(90, prev + (Math.random() * 4 - 2))));
-    }, 2000);
+      setCpuUsage(prev => Math.max(5, Math.min(95, prev + (Math.random() * 10 - 5))));
+      setRamUsage(prev => Math.max(30, Math.min(85, prev + (Math.random() * 4 - 2))));
+    }, 2500);
     return () => clearInterval(interval);
   }, []);
 
+  const items = [
+    { icon: Cpu, label: 'CPU', value: `${cpuUsage.toFixed(0)}%`, pct: cpuUsage, color: 'var(--accent)' },
+    { icon: MemoryStick, label: 'RAM', value: `${ramUsage.toFixed(0)}%`, pct: ramUsage, color: 'var(--accent)' },
+    { icon: BatteryFull, label: 'BAT', value: '100%', pct: 100, color: '#10b981' },
+  ];
+
   return (
-    <div className="w-96 sm:w-[26rem] p-4 widget-3d pointer-events-auto">
-      <div className="text-[10px] uppercase font-bold tracking-widest mb-3" style={{ color: 'var(--text-tertiary)' }}>System Monitor</div>
-      <div className="grid grid-cols-3 gap-2">
-        {/* CPU */}
-        <div className="flex flex-col items-center p-2 rounded-xl glass-surface border border-[var(--glass-border)]">
-          <Cpu className="w-4 h-4 mb-1" style={{ color: 'var(--accent)' }} />
-          <div className="text-[10px]" style={{ color: 'var(--text-secondary)' }}>CPU</div>
-          <div className="text-xs font-bold font-mono mt-0.5" style={{ color: 'var(--text-primary)' }}>{cpuUsage.toFixed(1)}%</div>
-          <div className="w-full h-1 rounded-full mt-1.5 overflow-hidden" style={{ backgroundColor: 'var(--surface-3)' }}>
-            <div className="h-full rounded-full transition-all duration-500" style={{ width: `${cpuUsage}%`, backgroundColor: 'var(--accent)' }} />
+    <div
+      className="w-full p-4 rounded-2xl"
+      style={{
+        background: 'var(--glass-bg)',
+        backdropFilter: 'blur(var(--glass-blur))',
+        border: '1px solid var(--glass-border)',
+      }}
+    >
+      <span className="text-[9px] uppercase font-bold tracking-[0.15em] opacity-50" style={{ color: 'var(--text-secondary)' }}>
+        System Monitor
+      </span>
+      <div className="flex gap-2 mt-2.5">
+        {items.map(({ icon: Icon, label, value, pct, color }) => (
+          <div key={label} className="flex-1 flex flex-col items-center gap-1.5 py-2 px-1 rounded-xl" style={{ background: 'var(--surface-1, rgba(255,255,255,0.03))' }}>
+            <Icon className="w-3.5 h-3.5 opacity-60" style={{ color: 'var(--text-secondary)' }} />
+            <span className="text-[9px] font-medium" style={{ color: 'var(--text-tertiary)' }}>{label}</span>
+            <span className="text-xs font-bold font-mono" style={{ color: 'var(--text-primary)' }}>{value}</span>
+            <div className="w-full h-[3px] rounded-full overflow-hidden" style={{ backgroundColor: 'var(--glass-border)' }}>
+              <div
+                className="h-full rounded-full transition-all duration-700 ease-out"
+                style={{ width: `${pct}%`, backgroundColor: color }}
+              />
+            </div>
           </div>
-        </div>
-
-        {/* RAM */}
-        <div className="flex flex-col items-center p-2 rounded-xl glass-surface border border-[var(--glass-border)]">
-          <MemoryStick className="w-4 h-4 mb-1" style={{ color: 'var(--accent)' }} />
-          <div className="text-[10px]" style={{ color: 'var(--text-secondary)' }}>Memory</div>
-          <div className="text-xs font-bold font-mono mt-0.5" style={{ color: 'var(--text-primary)' }}>{ramUsage.toFixed(1)}%</div>
-          <div className="w-full h-1 rounded-full mt-1.5 overflow-hidden" style={{ backgroundColor: 'var(--surface-3)' }}>
-            <div className="h-full rounded-full transition-all duration-500" style={{ width: `${ramUsage}%`, backgroundColor: 'var(--accent)' }} />
-          </div>
-        </div>
-
-        {/* Battery */}
-        <div className="flex flex-col items-center p-2 rounded-xl glass-surface border border-[var(--glass-border)]">
-          <BatteryMedium className="w-4 h-4 mb-1" style={{ color: 'var(--accent)' }} />
-          <div className="text-[10px]" style={{ color: 'var(--text-secondary)' }}>Battery</div>
-          <div className="text-xs font-bold font-mono mt-0.5" style={{ color: 'var(--text-primary)' }}>100%</div>
-          <div className="w-full h-1 rounded-full mt-1.5 overflow-hidden" style={{ backgroundColor: 'var(--surface-3)' }}>
-            <div className="h-full rounded-full" style={{ width: `100%`, backgroundColor: '#10b981' }} />
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
