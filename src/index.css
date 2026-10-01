@@ -515,7 +515,7 @@
 }
 
 /* -----------------------------------------------
-   REDUCED MOTION � respect OS preference + manual toggle
+   REDUCED MOTION - respect OS preference + manual toggle
    ----------------------------------------------- */
 .reduce-motion *,
 .reduce-motion *::before,
@@ -524,9 +524,6 @@
   animation-iteration-count: 1 !important;
   transition-duration: 0.001ms !important;
   scroll-behavior: auto !important;
-}
-
-
 }
 
 /* -----------------------------------------------
@@ -561,19 +558,4 @@
 .mask-radial-at-top {
   mask-image: radial-gradient(circle at top, white, transparent);
   -webkit-mask-image: radial-gradient(circle at top, white, transparent);
-}
-/* Solid 3D Widgets */
-.os-scrollbar::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-.os-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-.os-scrollbar::-webkit-scrollbar-thumb {
-  background: var(--text-tertiary);
-  border-radius: var(--radius-full);
-}
-.os-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: var(--text-secondary);
 }
