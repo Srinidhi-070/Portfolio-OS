@@ -18,7 +18,7 @@ export const ClockWidget: React.FC = () => {
   const sDeg = time.getSeconds() * 6;
 
   return (
-    <div className="w-full p-4 glass-card flex items-center justify-between">
+    <div className="p-4 flex items-center justify-between">
       <div className="flex flex-col gap-0.5">
         <span className="text-[9px] uppercase font-bold tracking-[0.15em]" style={{ color: 'var(--text-tertiary)' }}>
           Local Time
@@ -36,7 +36,8 @@ export const ClockWidget: React.FC = () => {
 
       {/* Mini Analog Clock */}
       <div
-        className="relative w-12 h-12 rounded-full flex items-center justify-center shrink-0 glass-surface"
+        className="relative w-12 h-12 rounded-full flex items-center justify-center shrink-0"
+        style={{ background: 'var(--surface-2)' }}
       >
         <div className="absolute w-1 h-1 rounded-full z-10" style={{ backgroundColor: 'var(--accent)' }} />
         <div

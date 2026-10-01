@@ -107,7 +107,7 @@ export const Desktop: React.FC = () => {
         </div>
 
         {/* Right Desktop Floating Widgets */}
-        <div className="hidden lg:flex flex-col gap-3 items-end justify-start pr-4 pointer-events-none w-80 ml-auto overflow-y-auto max-h-[calc(100dvh-80px)] os-scrollbar pb-10 pt-2">
+        <div className="hidden lg:flex flex-col gap-3 items-end justify-start pointer-events-none w-[22rem] ml-auto overflow-y-auto max-h-[calc(100dvh-80px)] os-scrollbar px-4 pt-4 pb-10">
           {/* User Profile Card */}
           <div className="w-full widget-3d pointer-events-auto animate-fade-in shrink-0">
             <UserProfileCard compact={false} />
