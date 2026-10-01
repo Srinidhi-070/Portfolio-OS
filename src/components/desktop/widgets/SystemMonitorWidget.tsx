@@ -26,11 +26,11 @@ export const SystemMonitorWidget: React.FC = () => {
       </span>
       <div className="flex gap-2 mt-2.5">
         {items.map(({ icon: Icon, label, value, pct, color }) => (
-          <div key={label} className="flex-1 flex flex-col items-center gap-1.5 py-2 px-1 rounded-lg" style={{ background: 'var(--surface-2)' }}>
+          <div key={label} className="flex-1 flex flex-col items-center gap-1.5 py-2 px-2 rounded-[24px]" style={{ background: 'var(--surface-2)' }}>
             <Icon className="w-3.5 h-3.5" style={{ color: 'var(--text-tertiary)' }} />
             <span className="text-[9px] font-medium" style={{ color: 'var(--text-tertiary)' }}>{label}</span>
             <span className="text-xs font-bold font-mono" style={{ color: 'var(--text-primary)' }}>{value}</span>
-            <div className="w-full h-[3px] rounded-full overflow-hidden" style={{ backgroundColor: 'var(--surface-3)' }}>
+            <div className="w-10 h-[3px] rounded-full overflow-hidden" style={{ backgroundColor: 'var(--surface-3)' }}>
               <div
                 className="h-full rounded-full transition-all duration-700 ease-out"
                 style={{ width: `${pct}%`, backgroundColor: color }}

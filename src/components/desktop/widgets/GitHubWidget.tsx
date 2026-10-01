@@ -31,7 +31,7 @@ export const GitHubWidget: React.FC = () => {
 
       <div className="flex gap-2 mt-2.5">
         {stats.map(({ icon: Icon, label, value, color }) => (
-          <div key={label} className="flex-1 flex flex-col items-center gap-1 py-2 rounded-lg" style={{ background: 'var(--surface-2)' }}>
+          <div key={label} className="flex-1 flex flex-col items-center gap-1 py-2 px-2 rounded-[24px]" style={{ background: 'var(--surface-2)' }}>
             <Icon className="w-3.5 h-3.5" style={{ color }} />
             <span className="text-[9px] font-medium" style={{ color: 'var(--text-tertiary)' }}>{label}</span>
             <span className="text-sm font-bold" style={{ color: 'var(--text-primary)' }}>{value}</span>
