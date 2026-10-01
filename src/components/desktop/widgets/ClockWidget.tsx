@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useOS } from '../../../context/OSContext';
 
 export const ClockWidget: React.FC = () => {
+  const { theme } = useOS();
+  const isLight = theme === 'vercel-light' || theme === 'arctic-light' || theme === 'neo-brutal';
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -17,12 +20,15 @@ export const ClockWidget: React.FC = () => {
   const mDeg = time.getMinutes() * 6;
   const sDeg = time.getSeconds() * 6;
 
+  const glassBg = isLight ? 'rgba(255,255,255,0.45)' : 'rgba(0,0,0,0.35)';
+
   return (
     <div
       className="w-full p-4 rounded-2xl flex items-center justify-between"
       style={{
-        background: 'var(--glass-bg)',
-        backdropFilter: 'blur(var(--glass-blur))',
+        background: glassBg,
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
         border: '1px solid var(--glass-border)',
       }}
     >
@@ -46,39 +52,26 @@ export const ClockWidget: React.FC = () => {
         className="relative w-12 h-12 rounded-full flex items-center justify-center shrink-0"
         style={{ border: '1.5px solid var(--glass-border)' }}
       >
-        {/* Center dot */}
         <div className="absolute w-1 h-1 rounded-full z-10" style={{ backgroundColor: 'var(--accent)' }} />
-        {/* Hour */}
         <div
           className="absolute w-[1.5px] rounded-full origin-bottom"
           style={{
-            height: '12px',
-            bottom: '50%',
-            left: 'calc(50% - 0.75px)',
-            backgroundColor: 'var(--text-primary)',
-            transform: `rotate(${hDeg}deg)`,
+            height: '12px', bottom: '50%', left: 'calc(50% - 0.75px)',
+            backgroundColor: 'var(--text-primary)', transform: `rotate(${hDeg}deg)`,
           }}
         />
-        {/* Minute */}
         <div
           className="absolute w-[1px] rounded-full origin-bottom"
           style={{
-            height: '16px',
-            bottom: '50%',
-            left: 'calc(50% - 0.5px)',
-            backgroundColor: 'var(--text-secondary)',
-            transform: `rotate(${mDeg}deg)`,
+            height: '16px', bottom: '50%', left: 'calc(50% - 0.5px)',
+            backgroundColor: 'var(--text-secondary)', transform: `rotate(${mDeg}deg)`,
           }}
         />
-        {/* Second */}
         <div
           className="absolute w-[0.5px] rounded-full origin-bottom"
           style={{
-            height: '18px',
-            bottom: '50%',
-            left: 'calc(50% - 0.25px)',
-            backgroundColor: 'var(--accent)',
-            transform: `rotate(${sDeg}deg)`,
+            height: '18px', bottom: '50%', left: 'calc(50% - 0.25px)',
+            backgroundColor: 'var(--accent)', transform: `rotate(${sDeg}deg)`,
           }}
         />
       </div>

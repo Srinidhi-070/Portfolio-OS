@@ -132,8 +132,9 @@ export const Desktop: React.FC = () => {
           <div
             className="w-full p-3.5 rounded-2xl pointer-events-auto animate-fade-in"
             style={{
-              background: 'var(--glass-bg)',
-              backdropFilter: 'blur(var(--glass-blur))',
+              background: isLight ? 'rgba(255,255,255,0.45)' : 'rgba(0,0,0,0.35)',
+              backdropFilter: 'blur(16px)',
+              WebkitBackdropFilter: 'blur(16px)',
               border: '1px solid var(--glass-border)',
             }}
           >

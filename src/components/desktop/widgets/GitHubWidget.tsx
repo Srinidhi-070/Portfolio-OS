@@ -1,8 +1,14 @@
 import React from 'react';
+import { useOS } from '../../../context/OSContext';
 import { Github, GitCommit, Star, GitPullRequest } from 'lucide-react';
 import { PERSONAL_INFO } from '../../../data/portfolioData';
 
 export const GitHubWidget: React.FC = () => {
+  const { theme } = useOS();
+  const isLight = theme === 'vercel-light' || theme === 'arctic-light' || theme === 'neo-brutal';
+  const glassBg = isLight ? 'rgba(255,255,255,0.45)' : 'rgba(0,0,0,0.35)';
+  const innerBg = isLight ? 'rgba(0,0,0,0.04)' : 'rgba(255,255,255,0.04)';
+
   const stats = [
     { icon: GitCommit, label: 'Commits', value: '1.2k', color: 'var(--accent)' },
     { icon: Star, label: 'Stars', value: '84', color: '#fbbf24' },
@@ -13,8 +19,9 @@ export const GitHubWidget: React.FC = () => {
     <div
       className="w-full p-4 rounded-2xl"
       style={{
-        background: 'var(--glass-bg)',
-        backdropFilter: 'blur(var(--glass-blur))',
+        background: glassBg,
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
         border: '1px solid var(--glass-border)',
       }}
     >
@@ -38,7 +45,7 @@ export const GitHubWidget: React.FC = () => {
 
       <div className="flex gap-2 mt-2.5">
         {stats.map(({ icon: Icon, label, value, color }) => (
-          <div key={label} className="flex-1 flex flex-col items-center gap-1 py-2 rounded-xl" style={{ background: 'var(--surface-1, rgba(255,255,255,0.03))' }}>
+          <div key={label} className="flex-1 flex flex-col items-center gap-1 py-2 rounded-xl" style={{ background: innerBg }}>
             <Icon className="w-3.5 h-3.5" style={{ color }} />
             <span className="text-[9px] font-medium" style={{ color: 'var(--text-tertiary)' }}>{label}</span>
             <span className="text-sm font-bold" style={{ color: 'var(--text-primary)' }}>{value}</span>
