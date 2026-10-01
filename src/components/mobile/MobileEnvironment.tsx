@@ -111,7 +111,7 @@ export const MobileEnvironment: React.FC = () => {
           </motion.div>
         )}
 
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           {/* App Drawer Overlay */}
           {isDrawerOpen && !activeApp && (
             <motion.div

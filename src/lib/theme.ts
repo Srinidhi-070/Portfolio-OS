@@ -19,31 +19,30 @@ const ACCENT_HSL: Record<AccentColor, { h: number; s: number; l: number }> = {
   amber:   { h: 43,  s: 96, l: 56 }, // #fbbf24
 };
 
-const WALLPAPER_MESH: Record<string, { mesh1: string; mesh2: string; mesh3: string; mesh4: string }> = {
-  // Light Wallpapers (Subtle, Elegant, Professional)
-  'light-silver': { mesh1: '#f8f9fa', mesh2: '#e9ecef', mesh3: '#dee2e6', mesh4: '#ffffff' },
-  'light-sage':   { mesh1: '#d4dcd2', mesh2: '#e2e8e0', mesh3: '#c5cfc2', mesh4: '#ffffff' },
-  'light-arctic': { mesh1: '#e0f2fe', mesh2: '#f0f9ff', mesh3: '#bae6fd', mesh4: '#ffffff' },
-  'light-sand':   { mesh1: '#fdf5e6', mesh2: '#fff8dc', mesh3: '#faebd7', mesh4: '#ffffff' },
-  
-  // Dark Wallpapers (Classic, High Contrast, Deep)
-  'dark-obsidian': { mesh1: '#00adb5', mesh2: '#393e46', mesh3: '#00adb5', mesh4: '#222831' },
-  'dark-violet':   { mesh1: '#f8b500', mesh2: '#393e46', mesh3: '#f8b500', mesh4: '#222831' },
-  'dark-space':    { mesh1: '#020617', mesh2: '#0f172a', mesh3: '#1e293b', mesh4: '#000000' },
-  'dark-cyber':    { mesh1: '#e94560', mesh2: '#16213e', mesh3: '#0f3460', mesh4: '#e94560' },
+const VIBRANT_MESH = {
+  mesh1: 'rgba(99, 102, 241, 0.45)', // Indigo
+  mesh2: 'rgba(168, 85, 247, 0.45)', // Purple
+  mesh3: 'rgba(236, 72, 153, 0.45)', // Pink
+  mesh4: 'rgba(14, 165, 233, 0.45)'  // Cyan
 };
 
-/**
- * Theme identity palettes. Selecting a theme in Settings now visibly changes
- * the OS by recoloring the animated mesh background orbs (the dominant visual).
- * Keys must match the ThemeMode ids in src/types.ts.
- */
+const WALLPAPER_MESH: Record<string, { mesh1: string; mesh2: string; mesh3: string; mesh4: string }> = {
+  'light-silver': VIBRANT_MESH,
+  'light-sage': VIBRANT_MESH,
+  'light-arctic': VIBRANT_MESH,
+  'light-sand': VIBRANT_MESH,
+  'dark-obsidian': VIBRANT_MESH,
+  'dark-violet': VIBRANT_MESH,
+  'dark-space': VIBRANT_MESH,
+  'dark-cyber': VIBRANT_MESH,
+};
+
 const THEME_MESH: Record<string, { mesh1: string; mesh2: string; mesh3: string; mesh4: string }> = {
-  'linear-dark': { mesh1: '#27272a', mesh2: '#18181b', mesh3: '#3f3f46', mesh4: '#000000' },
-  'vercel-light':{ mesh1: '#e4e4e7', mesh2: '#f4f4f5', mesh3: '#d4d4d8', mesh4: '#ffffff' },
-  'dracula':     { mesh1: '#6272a4', mesh2: '#44475a', mesh3: '#ff79c6', mesh4: '#282a36' },
-  'monochrome':  { mesh1: '#404040', mesh2: '#262626', mesh3: '#525252', mesh4: '#171717' },
-  'neo-brutal':  { mesh1: '#d0d7cf', mesh2: '#aab5a8', mesh3: '#d0d7cf', mesh4: '#aab5a8' },
+  'linear-dark': VIBRANT_MESH,
+  'vercel-light': VIBRANT_MESH,
+  'dracula': VIBRANT_MESH,
+  'monochrome': VIBRANT_MESH,
+  'neo-brutal': VIBRANT_MESH,
 };
 
 /**

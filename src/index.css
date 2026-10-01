@@ -57,10 +57,10 @@
   --card-bg: #18181b;
   --surface-hover: #27272a;
 
-  --mesh-1: rgba(39, 39, 42, 0.5);
-  --mesh-2: var(--accent-subtle);
-  --mesh-3: rgba(24, 24, 27, 0.6);
-  --mesh-4: var(--accent-glow);
+  --mesh-1: rgba(99, 102, 241, 0.45);
+  --mesh-2: rgba(168, 85, 247, 0.45);
+  --mesh-3: rgba(236, 72, 153, 0.45);
+  --mesh-4: rgba(14, 165, 233, 0.45);
 
   --text-primary: #ededed;
   --text-secondary: #a1a1aa;
@@ -84,10 +84,10 @@
   --card-bg: #f4f4f5;
   --surface-hover: #fafafa;
 
-  --mesh-1: rgba(226, 232, 240, 0.8);
-  --mesh-2: var(--accent-subtle);
-  --mesh-3: rgba(241, 245, 249, 0.9);
-  --mesh-4: rgba(203, 213, 225, 0.4);
+  --mesh-1: rgba(99, 102, 241, 0.45);
+  --mesh-2: rgba(168, 85, 247, 0.45);
+  --mesh-3: rgba(236, 72, 153, 0.45);
+  --mesh-4: rgba(14, 165, 233, 0.45);
 
   --text-primary: #000000;
   --text-secondary: #666666;
@@ -111,10 +111,10 @@
   --card-bg: #282a36;
   --surface-hover: #44475a;
 
-  --mesh-1: rgba(68, 71, 90, 0.6);
-  --mesh-2: var(--accent-subtle);
-  --mesh-3: rgba(40, 42, 54, 0.8);
-  --mesh-4: rgba(98, 114, 164, 0.3);
+  --mesh-1: rgba(99, 102, 241, 0.45);
+  --mesh-2: rgba(168, 85, 247, 0.45);
+  --mesh-3: rgba(236, 72, 153, 0.45);
+  --mesh-4: rgba(14, 165, 233, 0.45);
 
   --text-primary: #f8f8f2;
   --text-secondary: #bfbfbf;
@@ -138,10 +138,10 @@
   --card-bg: #f4f4f5;
   --surface-hover: #e4e4e7;
 
-  --mesh-1: rgba(180, 195, 175, 0.5);
-  --mesh-2: var(--accent-subtle);
-  --mesh-3: rgba(212, 220, 210, 0.8);
-  --mesh-4: rgba(160, 175, 155, 0.4);
+  --mesh-1: rgba(99, 102, 241, 0.45);
+  --mesh-2: rgba(168, 85, 247, 0.45);
+  --mesh-3: rgba(236, 72, 153, 0.45);
+  --mesh-4: rgba(14, 165, 233, 0.45);
 
   --text-primary: #18181b;
   --text-secondary: #52525b;
@@ -165,10 +165,10 @@
   --card-bg: #171717;
   --surface-hover: #262626;
 
-  --mesh-1: rgba(38, 38, 38, 0.5);
-  --mesh-2: rgba(64, 64, 64, 0.3);
-  --mesh-3: rgba(23, 23, 23, 0.8);
-  --mesh-4: rgba(82, 82, 82, 0.2);
+  --mesh-1: rgba(99, 102, 241, 0.45);
+  --mesh-2: rgba(168, 85, 247, 0.45);
+  --mesh-3: rgba(236, 72, 153, 0.45);
+  --mesh-4: rgba(14, 165, 233, 0.45);
 
   --text-primary: #ffffff;
   --text-secondary: #a3a3a3;
@@ -363,7 +363,7 @@
   top: -25%;
   left: -20%;
   background: radial-gradient(circle at 40% 40%, var(--mesh-1) 0%, transparent 62%);
-  animation: mesh-drift-1 36s ease-in-out infinite alternate;
+  animation: mesh-drift-1 12s ease-in-out infinite alternate;
 }
 .mesh-orb-2 {
   width: 62vmax;
@@ -371,7 +371,7 @@
   top: 32%;
   right: -22%;
   background: radial-gradient(circle at 55% 45%, var(--mesh-2) 0%, transparent 62%);
-  animation: mesh-drift-2 42s ease-in-out infinite alternate;
+  animation: mesh-drift-2 14s ease-in-out infinite alternate;
 }
 .mesh-orb-3 {
   width: 56vmax;
@@ -379,7 +379,7 @@
   bottom: -28%;
   left: 20%;
   background: radial-gradient(circle at 50% 50%, var(--mesh-3) 0%, transparent 62%);
-  animation: mesh-drift-3 48s ease-in-out infinite alternate;
+  animation: mesh-drift-3 16s ease-in-out infinite alternate;
 }
 .mesh-orb-4 {
   width: 44vmax;
@@ -387,7 +387,7 @@
   top: 10%;
   left: 42%;
   background: radial-gradient(circle at 50% 50%, var(--mesh-4) 0%, transparent 60%);
-  animation: mesh-drift-4 38s ease-in-out infinite alternate;
+  animation: mesh-drift-4 13s ease-in-out infinite alternate;
 }
 
 /* Light theme: brighter, pastel orbs */
@@ -397,19 +397,19 @@
 
 @keyframes mesh-drift-1 {
   0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(9vw, 11vh) scale(1.12); }
+  100% { transform: translate(15vw, 18vh) scale(1.2); }
 }
 @keyframes mesh-drift-2 {
   0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(-8vw, -9vh) scale(1.08); }
+  100% { transform: translate(-12vw, -15vh) scale(1.15); }
 }
 @keyframes mesh-drift-3 {
   0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(6vw, -8vh) scale(1.14); }
+  100% { transform: translate(10vw, -12vh) scale(1.25); }
 }
 @keyframes mesh-drift-4 {
   0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(-11vw, 7vh) scale(1.05); }
+  100% { transform: translate(-18vw, 12vh) scale(1.15); }
 }
 
 /* -----------------------------------------------
@@ -525,23 +525,8 @@
   transition-duration: 0.001ms !important;
   scroll-behavior: auto !important;
 }
-.reduce-motion .mesh-orb {
-  animation: none !important;
-}
-@media (prefers-reduced-motion: reduce) {
-  .mesh-orb {
-    animation: none;
-  }
-  .animate-fade-in,
-  .animate-fade-in-up,
-  .animate-fade-in-down,
-  .animate-slide-in-right,
-  .animate-scale-in,
-  .animate-glow-pulse,
-  .animate-float {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-  }
+
+
 }
 
 /* -----------------------------------------------
