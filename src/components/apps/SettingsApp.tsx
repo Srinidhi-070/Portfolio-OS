@@ -38,6 +38,15 @@ export const SettingsApp: React.FC = () => {
 
   const isLight = theme === 'vercel-light' || theme === 'neo-brutal';
 
+  
+  const THEME_PREVIEWS: Record<string, { bg: string, text: string, card: string }> = {
+    'linear-dark': { bg: '#000000', text: '#ededed', card: '#18181b' },
+    'vercel-light': { bg: '#fafafa', text: '#000000', card: '#ffffff' },
+    'dracula': { bg: '#191a21', text: '#f8f8f2', card: '#282a36' },
+    'neo-brutal': { bg: '#d4dcd2', text: '#18181b', card: '#ffffff' },
+    'monochrome': { bg: '#000000', text: '#ffffff', card: '#171717' }
+  };
+
   const THEMES: { id: ThemeMode; name: string; desc: string }[] = [
     { id: 'linear-dark', name: 'Linear Dark', desc: 'Ultra-modern OLED black with minimal zinc borders' },
     { id: 'vercel-light', name: 'Vercel Light', desc: 'Crisp, high-contrast pure white interface' },
@@ -97,22 +106,22 @@ export const SettingsApp: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
           {THEMES.map(t => (
             <button
-              key={t.id}
-              onClick={() => setTheme(t.id)}
-              className="p-4 text-left rounded-[1.25rem] transition-all duration-200 shadow-sm"
-              style={{
-                backgroundColor: theme === t.id ? 'var(--surface-hover)' : 'var(--card-bg)',
-                border: theme === t.id ? '2px solid var(--accent)' : '1px solid var(--glass-border)',
-                transform: theme === t.id ? 'translateY(-2px)' : 'none',
-                boxShadow: theme === t.id ? '0 4px 12px var(--accent-subtle)' : 'none'
-              }}
-            >
-              <div className="flex items-center justify-between font-bold text-xs">
-                <span className={theme === t.id ? 'accent-text' : 'text-[var(--text-primary)]'}>{t.name}</span>
-                {theme === t.id && <Check className="w-4 h-4 accent-text font-bold" />}
-              </div>
-              <p className="text-[11px] mt-1.5 leading-relaxed opacity-80" style={{ color: theme === t.id ? 'var(--text-primary)' : 'var(--text-secondary)' }}>{t.desc}</p>
-            </button>
+                key={t.id}
+                onClick={() => setTheme(t.id)}
+                className="p-4 text-left rounded-[1.25rem] transition-all duration-200 shadow-sm flex flex-col justify-between"
+                style={{
+                  backgroundColor: THEME_PREVIEWS[t.id]?.card || 'var(--card-bg)',
+                  border: theme === t.id ? '2px solid var(--accent)' : '1px solid var(--glass-border)',
+                  transform: theme === t.id ? 'translateY(-2px)' : 'none',
+                  boxShadow: theme === t.id ? '0 4px 12px var(--accent-subtle)' : 'none'
+                }}
+              >
+                <div className="flex items-center justify-between font-bold text-xs w-full">
+                  <span style={{ color: THEME_PREVIEWS[t.id]?.text || 'var(--text-primary)' }}>{t.name}</span>
+                  {theme === t.id && <Check className="w-4 h-4 font-bold" style={{ color: THEME_PREVIEWS[t.id]?.text || 'var(--text-primary)' }} />}
+                </div>
+                <p className="text-[11px] mt-1.5 leading-relaxed opacity-80" style={{ color: THEME_PREVIEWS[t.id]?.text || 'var(--text-secondary)' }}>{t.desc}</p>
+              </button>
           ))}
         </div>
       </div>

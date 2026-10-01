@@ -52,8 +52,8 @@ export const ContextMenu: React.FC<ContextMenuProps> = ({ x, y, onClose }) => {
   return (
     <div 
       ref={menuRef}
-      className="fixed z-50 w-48 glass-panel-heavy rounded-xl shadow-2xl py-2 overflow-hidden border border-[var(--glass-border)] animate-fade-in pointer-events-auto"
-      style={{ left: safeX, top: safeY }}
+      className="fixed z-50 w-48 shadow-2xl py-1 overflow-hidden border border-[var(--glass-border)] animate-fade-in pointer-events-auto"
+      style={{ left: safeX, top: safeY, backgroundColor: 'var(--glass-bg-heavy)', borderRadius: '1rem' }}
     >
       <div className="px-3 py-1.5 text-[10px] font-bold text-[var(--text-tertiary)] uppercase tracking-wider border-b border-[var(--glass-border)] mb-1">
         Portfolio OS
