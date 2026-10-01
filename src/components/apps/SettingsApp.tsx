@@ -69,7 +69,7 @@ export const SettingsApp: React.FC = () => {
       </div>
 
       {/* Developer Profile & Photo Section */}
-      <div className="glass-card p-5 flex flex-col sm:flex-row items-center sm:items-start gap-5">
+      <div className="glass-card p-5 flex flex-col sm:flex-row items-center sm:items-start gap-5 border border-[var(--glass-border)]">
         <img
           src={srinidhiPhoto}
           alt={PERSONAL_INFO.name}
@@ -99,17 +99,19 @@ export const SettingsApp: React.FC = () => {
             <button
               key={t.id}
               onClick={() => setTheme(t.id)}
-              className={`glass-card-interactive p-4 text-left ${
-                theme === t.id
-                  ? 'border-[var(--accent)] ring-1 ring-[var(--accent)]'
-                  : ''
-              }`}
+              className="p-4 text-left rounded-[1.25rem] transition-all duration-200 shadow-sm"
+              style={{
+                backgroundColor: theme === t.id ? 'var(--surface-hover)' : 'var(--card-bg)',
+                border: theme === t.id ? '2px solid var(--accent)' : '1px solid var(--glass-border)',
+                transform: theme === t.id ? 'translateY(-2px)' : 'none',
+                boxShadow: theme === t.id ? '0 4px 12px var(--accent-subtle)' : 'none'
+              }}
             >
               <div className="flex items-center justify-between font-bold text-xs">
                 <span className={theme === t.id ? 'accent-text' : 'text-[var(--text-primary)]'}>{t.name}</span>
                 {theme === t.id && <Check className="w-4 h-4 accent-text font-bold" />}
               </div>
-              <p className={`text-[11px] mt-1 leading-relaxed `}>{t.desc}</p>
+              <p className="text-[11px] mt-1.5 leading-relaxed opacity-80" style={{ color: theme === t.id ? 'var(--text-primary)' : 'var(--text-secondary)' }}>{t.desc}</p>
             </button>
           ))}
         </div>
@@ -126,14 +128,17 @@ export const SettingsApp: React.FC = () => {
             <button
               key={acc.id}
               onClick={() => setAccentColor(acc.id)}
-              className={`glass-card p-3 text-center flex flex-col items-center gap-2 transition-all hover:scale-105 ${
-                currentAccent === acc.id ? 'accent-glow border-[var(--accent)] ring-1 ring-[var(--accent)]' : ''
-              }`}
+              className="p-3 text-center flex flex-col items-center gap-2 transition-all rounded-[1rem] shadow-sm hover:scale-105"
+              style={{
+                backgroundColor: 'var(--card-bg)',
+                border: currentAccent === acc.id ? '2px solid var(--accent)' : '1px solid var(--glass-border)',
+                boxShadow: currentAccent === acc.id ? '0 0 12px var(--accent-subtle)' : 'none'
+              }}
             >
               <div className={`w-8 h-8 rounded-full ${acc.bg} flex items-center justify-center`}>
                 {currentAccent === acc.id && <Check className="w-4 h-4 text-white drop-shadow-md font-bold" />}
               </div>
-              <span className={`text-xs font-medium `}>{acc.name}</span>
+              <span className="text-xs font-medium" style={{ color: 'var(--text-primary)' }}>{acc.name}</span>
             </button>
           ))}
         </div>
@@ -150,24 +155,25 @@ export const SettingsApp: React.FC = () => {
             <button
               key={wp.id}
               onClick={() => setWallpaper(wp)}
-              className={`glass-surface p-4 rounded-2xl border text-left flex items-center justify-between transition-all ${
-                wallpaper.id === wp.id
-                  ? 'border-[var(--accent)] ring-1 ring-[var(--accent)]'
-                  : 'border-[var(--glass-border)] hover:border-[var(--accent-subtle)]'
-              }`}
+              className="p-4 rounded-[1.25rem] text-left flex items-center justify-between transition-all shadow-sm"
+              style={{
+                backgroundColor: 'var(--surface-2)',
+                border: wallpaper.id === wp.id ? '2px solid var(--accent)' : '1px solid var(--glass-border)',
+                boxShadow: wallpaper.id === wp.id ? '0 0 12px var(--accent-subtle)' : 'none'
+              }}
             >
               <div>
-                <div className={`text-xs font-bold ${wallpaper.id === wp.id ? 'accent-text' : 'text-[var(--text-primary)]'}`}>{wp.name}</div>
-                <div className={`text-[10px] `}>Gradient Canvas</div>
+                <div className="text-xs font-bold" style={{ color: wallpaper.id === wp.id ? 'var(--accent)' : 'var(--text-primary)' }}>{wp.name}</div>
+                <div className="text-[10px]" style={{ color: 'var(--text-secondary)' }}>Gradient Canvas</div>
               </div>
-              <div className={`w-6 h-6 rounded-full border shadow-sm ${wp.previewBg}`} />
+              <div className={`w-6 h-6 rounded-full border shadow-sm ${wp.previewBg}`} style={{ borderColor: 'var(--glass-border)' }} />
             </button>
           ))}
         </div>
       </div>
 
       {/* System Telemetry & Info */}
-      <div className="glass-card p-5 space-y-3">
+      <div className="glass-card p-5 space-y-3 border border-[var(--glass-border)]">
         <div className={`flex items-center gap-2 font-bold text-xs `}>
           <Info className="w-4 h-4 text-[var(--accent)]" /> System Information
         </div>

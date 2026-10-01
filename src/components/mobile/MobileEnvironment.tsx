@@ -164,8 +164,7 @@ export const MobileEnvironment: React.FC = () => {
               animate={{ y: 0 }}
               exit={{ y: '100%' }}
               transition={{ type: 'spring', damping: 26, stiffness: 220 }}
-              className="absolute top-10 bottom-0 left-0 right-0 z-40 flex flex-col rounded-t-[2rem] overflow-hidden border-t border-[var(--glass-border)] shadow-2xl"
-              style={{ backgroundColor: 'var(--surface-0)' }}
+              className="absolute top-10 bottom-0 left-0 right-0 z-40 flex flex-col rounded-t-[2rem] overflow-hidden border-t border-[var(--glass-border)] shadow-2xl glass-panel-heavy"
             >
               {/* App Header */}
               <div className="h-14 px-2 flex items-center justify-between border-b border-[var(--glass-border)] z-50 shrink-0" style={{ backgroundColor: 'var(--surface-1)' }}>
@@ -180,7 +179,7 @@ export const MobileEnvironment: React.FC = () => {
               </div>
               
               {/* App Content */}
-              <div className="flex-1 overflow-y-auto os-scrollbar relative" style={{ backgroundColor: 'var(--surface-0)' }}>
+              <div className="flex-1 overflow-y-auto os-scrollbar relative bg-transparent">
                 {ActiveComponent && <ActiveComponent windowState={{ id: activeApp, title: activeAppMetadata?.title, isMaximized: true }} />}
               </div>
             </motion.div>
