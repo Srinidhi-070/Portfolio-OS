@@ -30,7 +30,7 @@ const APP_COMPONENTS: Record<string, React.FC<{ windowState: any }>> = {
 };
 
 export const MobileEnvironment: React.FC = () => {
-  const { theme, wallpaper, accentColor, openApp, closeApp, activeApp } = useOS();
+  const { theme, wallpaper, accentColor, openApp, windows, activeWindowId, closeWindow } = useOS();
   const accent = getAccentClasses(accentColor);
   const [time, setTime] = useState(new Date());
 
@@ -39,8 +39,17 @@ export const MobileEnvironment: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
+  const activeWindow = windows.find(w => w.id === activeWindowId) || windows[windows.length - 1];
+  const activeApp = activeWindow?.appId;
+
   const activeAppMetadata = APPS_METADATA.find(app => app.id === activeApp);
   const ActiveComponent = activeApp ? APP_COMPONENTS[activeApp] : null;
+
+  const handleCloseApp = () => {
+    if (activeWindow) {
+      closeWindow(activeWindow.id);
+    }
+  };
 
   return (
     <div className={`relative w-screen h-[100dvh] overflow-hidden select-none font-sans ${theme}`} style={{ background: 'var(--surface-0)', color: 'var(--text-primary)' }}>
@@ -106,7 +115,7 @@ export const MobileEnvironment: React.FC = () => {
               {/* App Header */}
               <div className="h-16 px-4 flex items-center justify-between glass-surface border-b border-[var(--glass-border)] z-50 pt-4">
                 <button 
-                  onClick={() => closeApp(activeApp)}
+                  onClick={handleCloseApp}
                   className="p-2 -ml-2 rounded-full glass-card-interactive flex items-center gap-1 active:scale-95 transition-transform"
                 >
                   <ChevronLeft className="w-6 h-6" style={{ color: 'var(--accent)' }} />
