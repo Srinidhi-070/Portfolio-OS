@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { useOS } from '../../context/OSContext';
 import { APPS_METADATA, PERSONAL_INFO, PROJECTS } from '../../data/portfolioData';
 import { getAccentClasses } from '../../lib/theme';
@@ -62,6 +63,9 @@ export const Desktop: React.FC = () => {
     setContextMenu({ x: e.pageX, y: e.pageY });
   };
 
+  const widgetBaseClass = "absolute w-80 bg-[var(--surface-0)] rounded-[1.25rem] border border-[var(--glass-border)] pointer-events-auto shadow-sm cursor-grab active:cursor-grabbing";
+  const dragProps = { drag: true, dragMomentum: false, whileDrag: { scale: 1.02, zIndex: 50 } };
+
   return (
     <div 
       className="relative w-full h-[calc(100dvh-32px)] overflow-hidden select-none transition-colors duration-200"
@@ -81,10 +85,11 @@ export const Desktop: React.FC = () => {
         />
       )}
 
-      {/* Main Desktop Grid Layout */}
-      <div className={`relative z-10 w-full h-full p-4 md:p-6 grid grid-cols-[auto_1fr] gap-6 overflow-hidden pointer-events-none transition-all duration-500 ease-out ${hasOpenWindows ? 'opacity-30 blur-[8px] scale-[0.97]' : 'opacity-100 blur-0 scale-100'}`}>
-        {/* Left Column: Pinned Desktop Icons Grid */}
-        <div className="flex flex-row sm:flex-col flex-wrap gap-2 sm:gap-4 max-h-[calc(100dvh-110px)] overflow-y-auto scrollbar-none content-start pb-16 pointer-events-none">
+      {/* Main Desktop Layout */}
+      <div className={`relative z-10 w-full h-full p-4 md:p-6 overflow-hidden pointer-events-none transition-all duration-500 ease-out ${hasOpenWindows ? 'opacity-30 blur-[8px] scale-[0.97]' : 'opacity-100 blur-0 scale-100'}`}>
+        
+        {/* Left Column: Pinned Desktop Icons */}
+        <div className="absolute top-4 left-4 md:top-6 md:left-6 flex flex-row sm:flex-col flex-wrap gap-2 sm:gap-4 max-h-[calc(100dvh-110px)] overflow-y-auto scrollbar-none content-start pb-16 pointer-events-none z-10">
           {APPS_METADATA.map(app => {
             const IconComp = ICON_MAP[app.icon] || LayoutDashboard;
             return (
@@ -106,30 +111,26 @@ export const Desktop: React.FC = () => {
           })}
         </div>
 
-        {/* Right Desktop Floating Widgets */}
-        <div className="hidden lg:flex flex-col gap-3 items-end justify-start pointer-events-none w-[22rem] ml-auto overflow-y-auto max-h-[calc(100dvh-80px)] os-scrollbar px-4 pt-4 pb-10">
-          {/* User Profile Card */}
-          <div className="w-full widget-3d pointer-events-auto animate-fade-in shrink-0">
+        {/* Free-Floating Draggable Widgets */}
+        <div className="hidden lg:block absolute inset-0 pointer-events-none z-0">
+          
+          <motion.div {...dragProps} className={`${widgetBaseClass} top-[1.5rem] right-[1.5rem]`}>
             <UserProfileCard compact={false} />
-          </div>
+          </motion.div>
 
-          {/* Clock */}
-          <div className="w-full widget-3d pointer-events-auto animate-fade-in shrink-0">
+          <motion.div {...dragProps} className={`${widgetBaseClass} top-[1.5rem] right-[23rem]`}>
             <ClockWidget />
-          </div>
+          </motion.div>
 
-          {/* System Monitor */}
-          <div className="w-full widget-3d pointer-events-auto animate-fade-in shrink-0">
+          <motion.div {...dragProps} className={`${widgetBaseClass} top-[9rem] right-[23rem]`}>
             <SystemMonitorWidget />
-          </div>
+          </motion.div>
 
-          {/* GitHub */}
-          <div className="w-full widget-3d pointer-events-auto animate-fade-in shrink-0">
+          <motion.div {...dragProps} className={`${widgetBaseClass} top-[18.5rem] right-[23rem]`}>
             <GitHubWidget />
-          </div>
+          </motion.div>
 
-          {/* Sticky Notes */}
-          <div className="w-full p-3.5 widget-3d pointer-events-auto animate-fade-in shrink-0">
+          <motion.div {...dragProps} className={`${widgetBaseClass} top-[28rem] right-[23rem] p-3.5`}>
             <div className="flex items-center justify-between pb-2 border-b" style={{ borderColor: 'var(--glass-border)' }}>
               <div className="flex items-center gap-1.5 font-bold text-[10px]" style={{ color: 'var(--accent)' }}>
                 <Pin className="w-3 h-3" style={{ color: 'var(--accent)' }} /> Scratchpad
@@ -139,11 +140,13 @@ export const Desktop: React.FC = () => {
             <textarea
               value={stickyNote}
               onChange={e => setStickyNote(e.target.value)}
-              className="mt-2 w-full h-20 bg-transparent border-0 text-[11px] font-mono focus:outline-none resize-none leading-relaxed"
+              className="mt-2 w-full h-20 bg-transparent border-0 text-[11px] font-mono focus:outline-none resize-none leading-relaxed cursor-text"
               style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}
               placeholder="Type desktop notes here..."
+              onPointerDown={(e) => e.stopPropagation()}
             />
-          </div>
+          </motion.div>
+
         </div>
       </div>
     </div>
