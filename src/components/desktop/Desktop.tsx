@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useOS } from '../../context/OSContext';
 import { APPS_METADATA, PERSONAL_INFO, PROJECTS } from '../../data/portfolioData';
@@ -55,6 +55,23 @@ export const Desktop: React.FC = () => {
     "Portfolio OS Quick Notes:\n\u2022 Check out GuardianVoice (AI Voice Scam Detector)\n\u2022 Try 'sudo hire-me' in Warp Terminal!\n\u2022 Explore 16+ GitHub Repositories"
   );
   const [contextMenu, setContextMenu] = useState<{ x: number; y: number } | null>(null);
+
+  const noteRef = useRef<HTMLTextAreaElement>(null);
+
+  const handleNoteChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setStickyNote(e.target.value);
+    if (noteRef.current) {
+      noteRef.current.style.height = 'auto';
+      noteRef.current.style.height = `${noteRef.current.scrollHeight}px`;
+    }
+  };
+
+  useEffect(() => {
+    if (noteRef.current) {
+      noteRef.current.style.height = 'auto';
+      noteRef.current.style.height = `${noteRef.current.scrollHeight}px`;
+    }
+  }, []);
 
   const hasOpenWindows = windows.some(w => !w.isMinimized);
 
@@ -138,9 +155,10 @@ export const Desktop: React.FC = () => {
               <span className="text-[9px] opacity-50" style={{ color: 'var(--text-tertiary)' }}>Editable</span>
             </div>
             <textarea
+              ref={noteRef}
               value={stickyNote}
-              onChange={e => setStickyNote(e.target.value)}
-              className="mt-2 w-full h-20 bg-transparent border-0 text-[11px] font-mono focus:outline-none resize-none leading-relaxed cursor-text"
+              onChange={handleNoteChange}
+              className="mt-2 w-full min-h-[5rem] bg-transparent border-0 text-[11px] font-mono focus:outline-none resize-none leading-relaxed cursor-text overflow-hidden"
               style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}
               placeholder="Type desktop notes here..."
               onPointerDown={(e) => e.stopPropagation()}
