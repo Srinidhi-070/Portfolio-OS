@@ -57,6 +57,11 @@
   --card-bg: #18181b;
   --surface-hover: #27272a;
 
+  --mesh-1: rgba(39, 39, 42, 0.5);
+  --mesh-2: var(--accent-subtle);
+  --mesh-3: rgba(24, 24, 27, 0.6);
+  --mesh-4: var(--accent-glow);
+
   --text-primary: #ededed;
   --text-secondary: #a1a1aa;
   --text-tertiary: #71717a;
@@ -78,6 +83,11 @@
   --surface-3: #eaeaea;
   --card-bg: #f4f4f5;
   --surface-hover: #fafafa;
+
+  --mesh-1: rgba(226, 232, 240, 0.8);
+  --mesh-2: var(--accent-subtle);
+  --mesh-3: rgba(241, 245, 249, 0.9);
+  --mesh-4: rgba(203, 213, 225, 0.4);
 
   --text-primary: #000000;
   --text-secondary: #666666;
@@ -101,6 +111,11 @@
   --card-bg: #282a36;
   --surface-hover: #44475a;
 
+  --mesh-1: rgba(68, 71, 90, 0.6);
+  --mesh-2: var(--accent-subtle);
+  --mesh-3: rgba(40, 42, 54, 0.8);
+  --mesh-4: rgba(98, 114, 164, 0.3);
+
   --text-primary: #f8f8f2;
   --text-secondary: #bfbfbf;
   --text-tertiary: #6272a4;
@@ -123,6 +138,11 @@
   --card-bg: #f4f4f5;
   --surface-hover: #e4e4e7;
 
+  --mesh-1: rgba(180, 195, 175, 0.5);
+  --mesh-2: var(--accent-subtle);
+  --mesh-3: rgba(212, 220, 210, 0.8);
+  --mesh-4: rgba(160, 175, 155, 0.4);
+
   --text-primary: #18181b;
   --text-secondary: #52525b;
   --text-tertiary: #a1a1aa;
@@ -144,6 +164,11 @@
   --surface-3: #404040;
   --card-bg: #171717;
   --surface-hover: #262626;
+
+  --mesh-1: rgba(38, 38, 38, 0.5);
+  --mesh-2: rgba(64, 64, 64, 0.3);
+  --mesh-3: rgba(23, 23, 23, 0.8);
+  --mesh-4: rgba(82, 82, 82, 0.2);
 
   --text-primary: #ffffff;
   --text-secondary: #a3a3a3;
