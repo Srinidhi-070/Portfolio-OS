@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useOS } from '../../../context/OSContext';
 
 export const ClockWidget: React.FC = () => {
-  const { theme } = useOS();
-  const isLight = theme === 'vercel-light' || theme === 'arctic-light' || theme === 'neo-brutal';
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -14,33 +11,23 @@ export const ClockWidget: React.FC = () => {
   const hours = time.getHours().toString().padStart(2, '0');
   const minutes = time.getMinutes().toString().padStart(2, '0');
   const seconds = time.getSeconds().toString().padStart(2, '0');
-  const dateStr = time.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
+  const dateStr = time.toLocaleDateString(undefined, { weekday: 'short', day: 'numeric', month: 'short' });
 
   const hDeg = (time.getHours() % 12) * 30 + time.getMinutes() * 0.5;
   const mDeg = time.getMinutes() * 6;
   const sDeg = time.getSeconds() * 6;
 
-  const glassBg = isLight ? 'rgba(255,255,255,0.45)' : 'rgba(0,0,0,0.35)';
-
   return (
-    <div
-      className="w-full p-4 rounded-2xl flex items-center justify-between"
-      style={{
-        background: glassBg,
-        backdropFilter: 'blur(16px)',
-        WebkitBackdropFilter: 'blur(16px)',
-        border: '1px solid var(--glass-border)',
-      }}
-    >
+    <div className="w-full p-4 glass-card flex items-center justify-between">
       <div className="flex flex-col gap-0.5">
-        <span className="text-[9px] uppercase font-bold tracking-[0.15em] opacity-50" style={{ color: 'var(--text-secondary)' }}>
+        <span className="text-[9px] uppercase font-bold tracking-[0.15em]" style={{ color: 'var(--text-tertiary)' }}>
           Local Time
         </span>
         <div className="flex items-baseline gap-1">
           <span className="text-2xl font-semibold tabular-nums" style={{ color: 'var(--text-primary)' }}>
             {hours}:{minutes}
           </span>
-          <span className="text-sm font-medium tabular-nums opacity-40" style={{ color: 'var(--text-secondary)' }}>
+          <span className="text-sm tabular-nums" style={{ color: 'var(--text-tertiary)' }}>
             {seconds}
           </span>
         </div>
@@ -49,8 +36,7 @@ export const ClockWidget: React.FC = () => {
 
       {/* Mini Analog Clock */}
       <div
-        className="relative w-12 h-12 rounded-full flex items-center justify-center shrink-0"
-        style={{ border: '1.5px solid var(--glass-border)' }}
+        className="relative w-12 h-12 rounded-full flex items-center justify-center shrink-0 glass-surface"
       >
         <div className="absolute w-1 h-1 rounded-full z-10" style={{ backgroundColor: 'var(--accent)' }} />
         <div

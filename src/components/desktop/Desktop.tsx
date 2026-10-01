@@ -107,37 +107,29 @@ export const Desktop: React.FC = () => {
         </div>
 
         {/* Right Desktop Floating Widgets */}
-        <div className="hidden lg:flex flex-col gap-3 items-end justify-start pr-4 pointer-events-none w-80 ml-auto overflow-y-auto max-h-[calc(100dvh-80px)] os-scrollbar pb-10">
+        <div className="hidden lg:flex flex-col gap-3 items-end justify-start pr-4 pointer-events-none w-80 ml-auto overflow-y-auto max-h-[calc(100dvh-80px)] os-scrollbar pb-10 pt-2">
           {/* User Profile Card */}
-          <div className="w-full widget-3d pointer-events-auto animate-fade-in">
+          <div className="w-full widget-3d pointer-events-auto animate-fade-in shrink-0">
             <UserProfileCard compact={false} />
           </div>
 
           {/* Clock */}
-          <div className="w-full pointer-events-auto animate-fade-in">
+          <div className="w-full widget-3d pointer-events-auto animate-fade-in shrink-0">
             <ClockWidget />
           </div>
 
           {/* System Monitor */}
-          <div className="w-full pointer-events-auto animate-fade-in">
+          <div className="w-full widget-3d pointer-events-auto animate-fade-in shrink-0">
             <SystemMonitorWidget />
           </div>
 
           {/* GitHub */}
-          <div className="w-full pointer-events-auto animate-fade-in">
+          <div className="w-full widget-3d pointer-events-auto animate-fade-in shrink-0">
             <GitHubWidget />
           </div>
 
           {/* Sticky Notes */}
-          <div
-            className="w-full p-3.5 rounded-2xl pointer-events-auto animate-fade-in"
-            style={{
-              background: isLight ? 'rgba(255,255,255,0.45)' : 'rgba(0,0,0,0.35)',
-              backdropFilter: 'blur(16px)',
-              WebkitBackdropFilter: 'blur(16px)',
-              border: '1px solid var(--glass-border)',
-            }}
-          >
+          <div className="w-full p-3.5 widget-3d pointer-events-auto animate-fade-in shrink-0">
             <div className="flex items-center justify-between pb-2 border-b" style={{ borderColor: 'var(--glass-border)' }}>
               <div className="flex items-center gap-1.5 font-bold text-[10px]" style={{ color: 'var(--accent)' }}>
                 <Pin className="w-3 h-3" style={{ color: 'var(--accent)' }} /> Scratchpad
