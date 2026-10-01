@@ -558,9 +558,9 @@ export const EXPERIENCES: ExperienceItem[] = [
   {
     id: 'exp-namaah-atlas',
     role: 'Product Operations Lead Intern',
-    company: 'Namaah ATLAS',
-    type: 'Internship',
-    period: 'May 2026 - Present',
+      company: 'Namaah ATLAS',
+      type: 'Internship',
+      period: 'May 2026 - Sep 2026',
     location: 'Bengaluru, India (Remote)',
     description: 'Established foundational product-operations workflows and designed cross-functional team structures, leading technical onboarding and architectural knowledge transfer.',
     responsibilities: [
