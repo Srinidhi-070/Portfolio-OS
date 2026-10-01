@@ -135,7 +135,7 @@ export const SettingsApp: React.FC = () => {
                 boxShadow: currentAccent === acc.id ? '0 0 12px var(--accent-subtle)' : 'none'
               }}
             >
-              <div className={`w-8 h-8 rounded-full ${acc.bg} flex items-center justify-center`}>
+              <div className="w-8 h-8 rounded-full flex items-center justify-center shadow-inner" style={{ backgroundColor: acc.bg }}>
                 {currentAccent === acc.id && <Check className="w-4 h-4 text-white drop-shadow-md font-bold" />}
               </div>
               <span className="text-xs font-medium" style={{ color: 'var(--text-primary)' }}>{acc.name}</span>
