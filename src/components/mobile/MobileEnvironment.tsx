@@ -71,7 +71,7 @@ export const MobileEnvironment: React.FC = () => {
       </div>
 
       {/* Main Container */}
-      <div className="relative z-10 w-full h-full flex flex-col">
+      <div className="relative z-10 w-full h-full flex flex-col pointer-events-none">
         {/* Base Home Screen */}
         {!activeApp && (
           <motion.div 
@@ -120,7 +120,7 @@ export const MobileEnvironment: React.FC = () => {
               animate={{ y: 0 }}
               exit={{ y: '100%' }}
               transition={{ type: 'spring', damping: 28, stiffness: 240 }}
-              className="absolute top-12 bottom-0 left-0 right-0 z-30 flex flex-col rounded-t-[2.5rem] border-t border-[var(--glass-border)] shadow-[0_-10px_40px_rgba(0,0,0,0.15)]"
+              className="absolute top-12 bottom-0 left-0 right-0 z-30 flex flex-col rounded-t-[2.5rem] border-t border-[var(--glass-border)] shadow-[0_-10px_40px_rgba(0,0,0,0.15)] pointer-events-auto"
               style={{ backgroundColor: 'var(--glass-bg-heavy)', backdropFilter: 'blur(var(--glass-blur-heavy))' }}
               drag="y"
               dragConstraints={{ top: 0, bottom: 0 }}
@@ -164,7 +164,7 @@ export const MobileEnvironment: React.FC = () => {
               animate={{ y: 0 }}
               exit={{ y: '100%' }}
               transition={{ type: 'spring', damping: 26, stiffness: 220 }}
-              className="absolute top-10 bottom-0 left-0 right-0 z-40 flex flex-col rounded-t-[2rem] overflow-hidden border-t border-[var(--glass-border)] shadow-2xl glass-panel-heavy"
+              className="absolute top-10 bottom-0 left-0 right-0 z-40 flex flex-col rounded-t-[2rem] overflow-hidden border-t border-[var(--glass-border)] shadow-2xl glass-panel-heavy pointer-events-auto"
             >
               {/* App Header */}
               <div className="h-14 px-2 flex items-center justify-between border-b border-[var(--glass-border)] z-50 shrink-0" style={{ backgroundColor: 'var(--surface-1)' }}>
