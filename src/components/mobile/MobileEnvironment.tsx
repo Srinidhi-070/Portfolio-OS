@@ -79,7 +79,7 @@ export const MobileEnvironment: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute inset-0 z-10 flex flex-col pt-24 pb-6 px-4"
+            className="absolute inset-0 z-10 flex flex-col pt-24 pb-6 px-4 pointer-events-none"
           >
             {/* Clock Widget on Home */}
             <div className="flex flex-col items-center mt-12 gap-1">
@@ -93,7 +93,7 @@ export const MobileEnvironment: React.FC = () => {
 
             {/* Swipe Up Animation for App Drawer */}
             <motion.div 
-              className="absolute bottom-16 left-0 right-0 flex flex-col items-center justify-center gap-2 cursor-pointer z-20 touch-none"
+              className="absolute bottom-16 left-0 right-0 flex flex-col items-center justify-center gap-2 cursor-pointer z-20 touch-none pointer-events-auto"
               animate={{ y: [0, -12, 0] }}
               transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
               onClick={() => setIsDrawerOpen(true)}

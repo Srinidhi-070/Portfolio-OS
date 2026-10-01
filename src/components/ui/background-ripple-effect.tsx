@@ -1,5 +1,5 @@
 "use client";
-import React, { useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { cn } from "../../lib/utils";
 
 export const BackgroundRippleEffect = ({
@@ -17,6 +17,18 @@ export const BackgroundRippleEffect = ({
   } | null>(null);
   const [rippleKey, setRippleKey] = useState(0);
   const ref = useRef<any>(null);
+
+  useEffect(() => {
+    // Idle animation: randomly ripple squares every few seconds so it looks alive!
+    const interval = setInterval(() => {
+      setClickedCell({
+        row: Math.floor(Math.random() * (rows || 14)),
+        col: Math.floor(Math.random() * (cols || 24)),
+      });
+      setRippleKey((k) => k + 1);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, [rows, cols]);
 
   return (
     <div
