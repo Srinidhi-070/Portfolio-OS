@@ -63,7 +63,7 @@ export const Desktop: React.FC = () => {
     setContextMenu({ x: e.pageX, y: e.pageY });
   };
 
-  const widgetBaseClass = "absolute w-80 bg-[var(--surface-0)] rounded-[1.25rem] border border-[var(--glass-border)] pointer-events-auto shadow-sm cursor-grab active:cursor-grabbing overflow-hidden";
+  const widgetBaseClass = "absolute w-80 bg-[var(--glass-bg)] rounded-[1.25rem] border border-[var(--glass-border)] pointer-events-auto shadow-sm cursor-grab active:cursor-grabbing overflow-hidden";
   const dragProps = { drag: true, dragMomentum: false, whileDrag: { scale: 1.02, zIndex: 50 } };
 
   return (
