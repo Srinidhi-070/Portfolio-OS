@@ -4,7 +4,7 @@ import { APPS_METADATA } from '../../data/portfolioData';
 import { getAccentClasses } from '../../lib/theme';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
-  LayoutDashboard, User, FolderGit2, Cpu, Terminal, Github, Briefcase, GraduationCap, FileText, Mail, Sliders, Battery, Wifi, ChevronLeft, AppWindow, GripHorizontal
+  LayoutDashboard, User, FolderGit2, Cpu, Terminal, Github, Briefcase, GraduationCap, FileText, Mail, Sliders, Battery, Wifi, ChevronLeft, AppWindow, ChevronUp
 } from 'lucide-react';
 import { HomeApp } from '../apps/HomeApp';
 import { AboutApp } from '../apps/AboutApp';
@@ -33,6 +33,7 @@ export const MobileEnvironment: React.FC = () => {
   const { theme, wallpaper, accentColor, openApp, windows, activeWindowId, closeWindow } = useOS();
   const accent = getAccentClasses(accentColor);
   const [time, setTime] = useState(new Date());
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000);
@@ -50,9 +51,6 @@ export const MobileEnvironment: React.FC = () => {
       closeWindow(activeWindow.id);
     }
   };
-
-  const dockApps = APPS_METADATA.slice(0, 4);
-  const gridApps = APPS_METADATA.slice(4);
 
   return (
     <div className={`relative w-screen h-[100dvh] overflow-hidden select-none font-sans ${theme}`} style={{ background: 'var(--surface-0)', color: 'var(--text-primary)' }}>
@@ -75,56 +73,92 @@ export const MobileEnvironment: React.FC = () => {
 
       {/* Main Container */}
       <div className="relative z-10 w-full h-full flex flex-col">
-        <AnimatePresence mode="wait">
-          {!activeApp ? (
-            /* Home Screen */
-            <motion.div 
-              key="home-screen"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              className="flex-1 flex flex-col relative w-full h-full pt-16 pb-6 px-4"
-            >
-              {/* App Grid */}
-              <div className="flex-1 grid grid-cols-4 gap-y-8 gap-x-2 content-start pt-4">
-                {gridApps.map(app => {
-                  const Icon = ICON_MAP[app.icon] || AppWindow;
-                  return (
-                    <div key={app.id} className="flex flex-col items-center gap-1.5">
-                      <button 
-                        onClick={() => openApp(app.id)}
-                        className="w-[60px] h-[60px] rounded-[1.25rem] flex items-center justify-center shadow-sm active:opacity-60 transition-opacity touch-manipulation border border-[var(--glass-border)]"
-                        style={{ backgroundColor: 'var(--card-bg)' }}
-                      >
-                        <Icon className="w-7 h-7" style={{ color: 'var(--text-primary)' }} />
-                      </button>
-                      <span className="text-[10px] font-medium tracking-wide truncate w-full text-center" style={{ color: 'var(--text-primary)' }}>
-                        {app.shortTitle || app.title}
-                      </span>
-                    </div>
-                  );
-                })}
+        {/* Base Home Screen */}
+        {!activeApp && (
+          <motion.div 
+            key="home-base"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 z-10 flex flex-col pt-24 pb-6 px-4"
+          >
+            {/* Clock Widget on Home */}
+            <div className="flex flex-col items-center mt-12 gap-1">
+              <div className="text-[4rem] font-light tracking-tighter" style={{ color: 'var(--text-primary)' }}>
+                {time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false })}
               </div>
+              <div className="text-sm font-medium opacity-70 tracking-wide" style={{ color: 'var(--text-primary)' }}>
+                {time.toLocaleDateString([], { weekday: 'long', month: 'long', day: 'numeric' })}
+              </div>
+            </div>
 
-              {/* Bottom Dock */}
-              <div className="w-full h-[88px] rounded-[2rem] flex items-center justify-around px-2 mb-2 border border-[var(--glass-border)] shadow-xl shrink-0" style={{ backgroundColor: 'var(--glass-bg)' }}>
-                {dockApps.map(app => {
-                  const Icon = ICON_MAP[app.icon] || AppWindow;
-                  return (
-                    <button 
-                      key={app.id}
-                      onClick={() => openApp(app.id)}
-                      className="w-[64px] h-[64px] rounded-[1.25rem] flex items-center justify-center shadow-sm active:opacity-60 transition-opacity touch-manipulation border border-[var(--glass-border)]"
-                      style={{ backgroundColor: 'var(--card-bg)' }}
-                    >
-                      <Icon className="w-8 h-8" style={{ color: 'var(--text-primary)' }} />
-                    </button>
-                  );
-                })}
+            {/* Swipe Up Animation for App Drawer */}
+            <motion.div 
+              className="absolute bottom-16 left-0 right-0 flex flex-col items-center justify-center gap-2 cursor-pointer z-20 touch-none"
+              animate={{ y: [0, -12, 0] }}
+              transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+              onClick={() => setIsDrawerOpen(true)}
+              drag="y"
+              dragConstraints={{ top: 0, bottom: 0 }}
+              onDragEnd={(e, info) => { if (info.offset.y < -20) setIsDrawerOpen(true) }}
+            >
+              <div className="p-3 rounded-full shadow-lg border border-[var(--glass-border)]" style={{ backgroundColor: 'var(--surface-0)' }}>
+                <ChevronUp className="w-6 h-6 opacity-80" style={{ color: 'var(--accent)' }} />
+              </div>
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-60" style={{ color: 'var(--text-primary)' }}>
+                Apps
+              </span>
+            </motion.div>
+          </motion.div>
+        )}
+
+        <AnimatePresence mode="wait">
+          {/* App Drawer Overlay */}
+          {isDrawerOpen && !activeApp && (
+            <motion.div
+              key="app-drawer"
+              initial={{ y: '100%' }}
+              animate={{ y: 0 }}
+              exit={{ y: '100%' }}
+              transition={{ type: 'spring', damping: 28, stiffness: 240 }}
+              className="absolute top-12 bottom-0 left-0 right-0 z-30 flex flex-col rounded-t-[2.5rem] border-t border-[var(--glass-border)] shadow-[0_-10px_40px_rgba(0,0,0,0.15)]"
+              style={{ backgroundColor: 'var(--glass-bg-heavy)', backdropFilter: 'blur(var(--glass-blur-heavy))' }}
+              drag="y"
+              dragConstraints={{ top: 0, bottom: 0 }}
+              dragElastic={0.2}
+              onDragEnd={(e, info) => { if (info.offset.y > 50) setIsDrawerOpen(false) }}
+            >
+              {/* Drawer Handle */}
+              <div className="w-full flex justify-center py-4 cursor-grab active:cursor-grabbing">
+                <div className="w-12 h-1.5 rounded-full opacity-20" style={{ backgroundColor: 'var(--text-primary)' }} />
+              </div>
+              
+              <div className="flex-1 px-4 overflow-y-auto os-scrollbar pb-12">
+                <div className="grid grid-cols-4 gap-y-8 gap-x-2 content-start pt-2">
+                  {APPS_METADATA.map(app => {
+                    const Icon = ICON_MAP[app.icon] || AppWindow;
+                    return (
+                      <div key={app.id} className="flex flex-col items-center gap-1.5">
+                        <button 
+                          onClick={() => { openApp(app.id); setIsDrawerOpen(false); }}
+                          className="w-[60px] h-[60px] rounded-[1.25rem] flex items-center justify-center shadow-sm active:opacity-60 transition-opacity touch-manipulation border border-[var(--glass-border)]"
+                          style={{ backgroundColor: 'var(--card-bg)' }}
+                        >
+                          <Icon className="w-7 h-7" style={{ color: 'var(--text-primary)' }} />
+                        </button>
+                        <span className="text-[10px] font-medium tracking-wide truncate w-full text-center" style={{ color: 'var(--text-primary)' }}>
+                          {app.shortTitle || app.title}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </motion.div>
-          ) : (
-            /* Active Full-Screen App - iOS Style Sheet */
+          )}
+
+          {/* Active Full-Screen App - iOS Style Sheet */}
+          {activeApp && (
             <motion.div 
               key="active-app"
               initial={{ y: '100%' }}
