@@ -241,7 +241,7 @@ export const Desktop: React.FC = () => {
               </div>
 
               <div className="relative rounded-[1.25rem]">
-                <motion.div {...dragProps} className={`w-full relative rounded-[1.25rem] border border-[var(--glass-border)] pointer-events-auto shadow-sm cursor-grab active:cursor-grabbing overflow-hidden p-3.5`} style={{ backgroundColor: noteColors[noteColorIndex], transition: 'background-color 0.3s' }}>
+                <motion.div {...getDragProps("scratchpad")} className={`w-full relative rounded-[1.25rem] border border-[var(--glass-border)] pointer-events-auto shadow-sm cursor-grab active:cursor-grabbing overflow-hidden p-3.5`} style={{ backgroundColor: noteColors[noteColorIndex], transition: 'background-color 0.3s' }}>
                   <div className="flex items-center justify-between pb-2 border-b" style={{ borderColor: 'var(--glass-border)' }}>
                     <div className="flex items-center gap-1.5 font-bold text-[10px]" style={{ color: 'var(--accent)' }}>
                       <Pin className="w-3 h-3" style={{ color: 'var(--accent)' }} /> Scratchpad
