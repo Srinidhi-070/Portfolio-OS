@@ -128,11 +128,15 @@ export const Desktop: React.FC = () => {
   
   const dragProps = { 
     drag: true, 
-    dragSnapToOrigin: true,
     onDragStart: () => setIsDraggingWidget(true),
     onDragEnd: () => setIsDraggingWidget(false),
     whileDrag: { scale: 1.04, zIndex: 50, cursor: 'grabbing', rotate: 2 }, 
-    transition: { type: "spring", stiffness: 450, damping: 25 }
+    dragTransition: { 
+      power: 0, 
+      bounceStiffness: 450, 
+      bounceDamping: 25,
+      modifyTarget: (target: number) => Math.round(target / 40) * 40
+    }
   };
 
   return (
@@ -185,28 +189,39 @@ export const Desktop: React.FC = () => {
           {/* Dynamic Grid Layout for Widgets */}
           <div className="hidden lg:flex absolute top-6 right-6 bottom-16 gap-6 pointer-events-none z-0 items-start">
             
-            {/* Left Widget Column */}
+            {/* Universal Snap Grid Background (Only visible while dragging) */}
+          <div 
+            className={`absolute inset-0 pointer-events-none transition-opacity duration-300 ${isDraggingWidget ? 'opacity-30' : 'opacity-0'}`}
+            style={{
+              backgroundImage: 'radial-gradient(var(--text-tertiary) 2px, transparent 2px)',
+              backgroundSize: '40px 40px',
+              backgroundPosition: '24px 24px',
+              zIndex: 0
+            }}
+          />
+          
+          {/* Left Widget Column */}
             <div className="w-80 flex flex-col gap-4">
               
-              <div className={`relative rounded-[1.25rem] border-2 border-dashed transition-colors duration-300 ${isDraggingWidget ? 'border-[var(--glass-border)] bg-[var(--surface-hover)]' : 'border-transparent bg-transparent'}`}>
+              <div className="relative rounded-[1.25rem]">
                 <motion.div {...dragProps} className={widgetBaseClass}>
                   <ClockWidget />
                 </motion.div>
               </div>
 
-              <div className={`relative rounded-[1.25rem] border-2 border-dashed transition-colors duration-300 ${isDraggingWidget ? 'border-[var(--glass-border)] bg-[var(--surface-hover)]' : 'border-transparent bg-transparent'}`}>
+              <div className="relative rounded-[1.25rem]">
                 <motion.div {...dragProps} className={widgetBaseClass}>
                   <SystemMonitorWidget />
                 </motion.div>
               </div>
 
-              <div className={`relative rounded-[1.25rem] border-2 border-dashed transition-colors duration-300 ${isDraggingWidget ? 'border-[var(--glass-border)] bg-[var(--surface-hover)]' : 'border-transparent bg-transparent'}`}>
+              <div className="relative rounded-[1.25rem]">
                 <motion.div {...dragProps} className={widgetBaseClass}>
                   <GitHubWidget />
                 </motion.div>
               </div>
 
-              <div className={`relative rounded-[1.25rem] border-2 border-dashed transition-colors duration-300 ${isDraggingWidget ? 'border-[var(--glass-border)] bg-[var(--surface-hover)]' : 'border-transparent bg-transparent'}`}>
+              <div className="relative rounded-[1.25rem]">
                 <motion.div {...dragProps} className={`w-full relative rounded-[1.25rem] border border-[var(--glass-border)] pointer-events-auto shadow-sm cursor-grab active:cursor-grabbing overflow-hidden p-3.5`} style={{ backgroundColor: noteColors[noteColorIndex], transition: 'background-color 0.3s' }}>
                   <div className="flex items-center justify-between pb-2 border-b" style={{ borderColor: 'var(--glass-border)' }}>
                     <div className="flex items-center gap-1.5 font-bold text-[10px]" style={{ color: 'var(--accent)' }}>
@@ -243,7 +258,7 @@ export const Desktop: React.FC = () => {
 
             {/* Right Widget Column */}
             <div className="w-80 flex flex-col gap-4">
-              <div className={`relative h-full rounded-[1.25rem] border-2 border-dashed transition-colors duration-300 ${isDraggingWidget ? 'border-[var(--glass-border)] bg-[var(--surface-hover)]' : 'border-transparent bg-transparent'}`}>
+              <div className="relative h-full rounded-[1.25rem]">
                 <motion.div {...dragProps} className={widgetBaseClass + ' h-full'}>
                   <UserProfileCard compact={false} />
                 </motion.div>
