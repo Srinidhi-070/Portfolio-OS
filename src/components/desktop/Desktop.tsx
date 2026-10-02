@@ -63,6 +63,25 @@ export const Desktop: React.FC = () => {
   );
   const [contextMenu, setContextMenu] = useState<{ x: number; y: number } | null>(null);
   const [isDraggingWidget, setIsDraggingWidget] = useState(false);
+  const [positions, setPositions] = useState<Record<string, { x: number; y: number }>>({
+    clock: { x: 0, y: 0 },
+    system: { x: 0, y: 0 },
+    github: { x: 0, y: 0 },
+    scratchpad: { x: 0, y: 0 },
+    profile: { x: 0, y: 0 }
+  });
+
+  const handleDragEnd = (id: string, info: any) => {
+    setIsDraggingWidget(false);
+    setPositions(prev => ({
+      ...prev,
+      [id]: {
+        x: Math.round((prev[id].x + info.offset.x) / 40) * 40,
+        y: Math.round((prev[id].y + info.offset.y) / 40) * 40
+      }
+    }));
+  };
+
 
   const noteRef = useRef<HTMLTextAreaElement>(null);
 
@@ -127,18 +146,17 @@ export const Desktop: React.FC = () => {
 
   const widgetBaseClass = "w-full relative bg-[var(--glass-bg)] rounded-[1.25rem] border border-[var(--glass-border)] pointer-events-auto shadow-sm cursor-grab active:cursor-grabbing overflow-hidden";
   
-  const dragProps = { 
-    drag: true, 
+  
+  const getDragProps = (id: string) => ({
+    drag: true,
+    dragMomentum: false,
+    animate: positions[id],
     onDragStart: () => setIsDraggingWidget(true),
-    onDragEnd: () => setIsDraggingWidget(false),
-    whileDrag: { scale: 1.04, zIndex: 50, cursor: 'grabbing', rotate: 2 }, 
-    dragTransition: { 
-      power: 0, 
-      bounceStiffness: 450, 
-      bounceDamping: 25,
-      modifyTarget: (target: number) => Math.round(target / 40) * 40
-    }
-  };
+    onDragEnd: (e: any, info: any) => handleDragEnd(id, info),
+    whileDrag: { scale: 1.04, zIndex: 50, cursor: 'grabbing', rotate: 2 },
+    transition: { type: "spring", stiffness: 400, damping: 25 }
+  });
+
 
   return (
     <div 
@@ -205,19 +223,19 @@ export const Desktop: React.FC = () => {
             <div className="w-80 flex flex-col gap-4">
               
               <div className="relative rounded-[1.25rem]">
-                <motion.div {...dragProps} className={widgetBaseClass}>
+                <motion.div {...getDragProps("clock")} className={widgetBaseClass}>
                   <ClockWidget />
                 </motion.div>
               </div>
 
               <div className="relative rounded-[1.25rem]">
-                <motion.div {...dragProps} className={widgetBaseClass}>
+                <motion.div {...getDragProps("system")} className={widgetBaseClass}>
                   <SystemMonitorWidget />
                 </motion.div>
               </div>
 
               <div className="relative rounded-[1.25rem]">
-                <motion.div {...dragProps} className={widgetBaseClass}>
+                <motion.div {...getDragProps("github")} className={widgetBaseClass}>
                   <GitHubWidget />
                 </motion.div>
               </div>
@@ -260,7 +278,7 @@ export const Desktop: React.FC = () => {
             {/* Right Widget Column */}
             <div className="w-80 flex flex-col gap-4">
               <div className="relative h-full rounded-[1.25rem]">
-                <motion.div {...dragProps} className={widgetBaseClass + ' h-full'}>
+                <motion.div {...getDragProps("profile")} className={widgetBaseClass + ' h-full'}>
                   <UserProfileCard compact={false} />
                 </motion.div>
               </div>
