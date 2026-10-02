@@ -18,6 +18,7 @@ import {
   Github,
   Briefcase,
   GraduationCap,
+  Award,
   FileText,
   Mail,
   Sliders,
@@ -36,6 +37,7 @@ import { ResumeApp } from '../apps/ResumeApp';
 import { ContactApp } from '../apps/ContactApp';
 import { TerminalApp } from '../apps/TerminalApp';
 import { SettingsApp } from '../apps/SettingsApp';
+import { CertificationsApp } from '../apps/CertificationsApp';
 
 const ICON_MAP: Record<string, React.FC<{ className?: string }>> = {
   LayoutDashboard,
@@ -181,7 +183,9 @@ export const Window: React.FC<WindowProps> = ({ windowState }) => {
       case 'terminal':
         return <TerminalApp />;
       case 'settings':
-        return <SettingsApp />;
+          return <SettingsApp />;
+        case 'certifications':
+          return <CertificationsApp />;
       default:
         return <div className="p-6 text-[var(--text-secondary)]">App instance loading...</div>;
     }

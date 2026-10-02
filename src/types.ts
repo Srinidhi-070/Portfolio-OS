@@ -9,7 +9,8 @@ export type AppID =
   | 'resume'
   | 'contact'
   | 'terminal'
-  | 'settings';
+  | 'settings'
+  | 'certifications';
 
 export interface AppMetadata {
   id: AppID;
@@ -116,4 +117,15 @@ export interface WallpaperOption {
   type: 'mesh' | 'waves' | 'particles' | 'dark-gradient' | 'minimal-light';
   previewBg: string;
   bgClass: string;
+}
+
+export interface CertificationItem {
+  id: string;
+  title: string;
+  issuer: string;
+  date: string;
+  description?: string;
+  credentialUrl?: string;
+  type: 'Degree' | 'Diploma' | 'Certificate' | 'Award';
+  icon?: string;
 }

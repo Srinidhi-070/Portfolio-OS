@@ -18,6 +18,7 @@ import {
   Github,
   Briefcase,
   GraduationCap,
+  Award,
   FileText,
   Mail,
   Sliders,

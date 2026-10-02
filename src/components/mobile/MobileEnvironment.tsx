@@ -4,7 +4,8 @@ import { APPS_METADATA } from '../../data/portfolioData';
 import { getAccentClasses } from '../../lib/theme';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
-  LayoutDashboard, User, FolderGit2, Cpu, Terminal, Github, Briefcase, GraduationCap, FileText, Mail, Sliders, Battery, Wifi, ChevronLeft, AppWindow, ChevronUp
+  LayoutDashboard, User, FolderGit2, Cpu, Terminal, Github, Briefcase, GraduationCap,
+  Award, FileText, Mail, Sliders, Battery, Wifi, ChevronLeft, AppWindow, ChevronUp
 } from 'lucide-react';
 import { HomeApp } from '../apps/HomeApp';
 import { AboutApp } from '../apps/AboutApp';
@@ -17,6 +18,7 @@ import { EducationApp } from '../apps/EducationApp';
 import { ResumeApp } from '../apps/ResumeApp';
 import { ContactApp } from '../apps/ContactApp';
 import { SettingsApp } from '../apps/SettingsApp';
+import { CertificationsApp } from '../apps/CertificationsApp';
 import { InteractiveBackground } from '../desktop/InteractiveBackground';
 
 const ICON_MAP: Record<string, React.FC<{ className?: string }>> = {
@@ -26,7 +28,8 @@ const ICON_MAP: Record<string, React.FC<{ className?: string }>> = {
 const APP_COMPONENTS: Record<string, React.FC<{ windowState: any }>> = {
   home: HomeApp, about: AboutApp, projects: ProjectsApp, skills: SkillsApp, terminal: TerminalApp,
   github: GitHubApp, experience: ExperienceApp, education: EducationApp, resume: ResumeApp,
-  contact: ContactApp, settings: SettingsApp
+  contact: ContactApp, settings: SettingsApp,
+  certifications: CertificationsApp
 };
 
 export const MobileEnvironment: React.FC = () => {

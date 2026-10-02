@@ -1,4 +1,4 @@
-import { AppMetadata, Project, SkillCategory, ExperienceItem, EducationItem, WallpaperOption } from '../types';
+import { AppMetadata, Project, SkillCategory, ExperienceItem, EducationItem, WallpaperOption, CertificationItem } from '../types';
 import srinidhiPhoto from '../assets/srinidhi_headshot.jpg';
 
 export const PERSONAL_INFO = {
@@ -28,6 +28,15 @@ export const PERSONAL_INFO = {
 };
 
 export const APPS_METADATA: AppMetadata[] = [
+  {
+    id: 'certifications',
+    title: 'Certifications & Degrees',
+    shortTitle: 'Certs',
+    icon: 'Award',
+    color: 'bg-yellow-500/10 text-yellow-500 border-yellow-500/20',
+    description: 'Degrees, Diplomas, and Professional Certifications.',
+    category: 'core'
+  },
   {
     id: 'home',
     title: 'Dashboard',
@@ -691,3 +700,43 @@ Being a recent graduate of AI & Data Science, I consider myself a builder by nat
 5. GuardianVoice - AI Voice Scam Detection System (PyTorch, FastAPI, WebSockets)
 6. Portfolio OS - Interactive Desktop Operating System Portfolio (React 19, Express)`
 };
+
+
+export const CERTIFICATIONS: CertificationItem[] = [
+  {
+    id: 'deg-bachelor',
+    title: 'B.E. in Artificial Intelligence & Data Science',
+    issuer: 'VTU',
+    date: 'Expected 2026',
+    description: 'Core focus on machine learning, deep learning, computer vision, data pipelines, and intelligent systems architecture. GPA: 7.8.',
+    type: 'Degree',
+    icon: 'GraduationCap'
+  },
+  {
+    id: 'dip-cs',
+    title: 'Diploma in Computer Science & Engineering',
+    issuer: 'State Board of Technical Education',
+    date: '2023',
+    description: 'Foundation in programming, data structures, algorithms, and software engineering principles. CGPA: 9.14.',
+    type: 'Diploma',
+    icon: 'BookOpen'
+  },
+  {
+    id: 'cert-1',
+    title: 'Deep Learning Specialization',
+    issuer: 'Coursera (DeepLearning.AI)',
+    date: '2024',
+    description: 'Completed comprehensive coursework on neural networks, hyperparameter tuning, convolutional networks, and sequence models.',
+    type: 'Certificate',
+    icon: 'BrainCircuit'
+  },
+  {
+    id: 'cert-2',
+    title: 'Full-Stack Web Development',
+    issuer: 'Udemy',
+    date: '2023',
+    description: 'Extensive training in modern web stack including React, Node.js, Express, and MongoDB.',
+    type: 'Certificate',
+    icon: 'Code'
+  }
+];
