@@ -124,7 +124,21 @@ export const Desktop: React.FC = () => {
   };
 
   const widgetBaseClass = "absolute w-80 bg-[var(--glass-bg)] rounded-[1.25rem] border border-[var(--glass-border)] pointer-events-auto shadow-sm cursor-grab active:cursor-grabbing overflow-hidden";
-  const dragProps = { drag: true, dragMomentum: false, whileDrag: { scale: 1.02, zIndex: 50 } };
+  const dragProps = { 
+    drag: true, 
+    dragMomentum: false, 
+    whileDrag: { scale: 1.02, zIndex: 50 }, 
+    dragTransition: { 
+      bounceStiffness: 600, 
+      bounceDamping: 20, 
+      modifyTarget: (target: number) => {
+        // Magnetic snap to origin (guide shadow) if within 100px
+        if (Math.abs(target) < 100) return 0;
+        // Otherwise snap to a 80px grid
+        return Math.round(target / 80) * 80;
+      }
+    } 
+  };
 
   return (
     <div 
@@ -171,7 +185,17 @@ export const Desktop: React.FC = () => {
           })}
         </div>
 
-        {/* Free-Floating Draggable Widgets */}
+        
+          {/* Guide Shadows (Drop Zones) */}
+          <div className="hidden lg:block absolute inset-0 pointer-events-none z-0">
+            <div className="absolute w-80 h-[28rem] rounded-[1.25rem] border-2 border-dashed top-[1.5rem] right-[1.5rem]" style={{ borderColor: 'var(--glass-border)', opacity: 0.3 }} />
+            <div className="absolute w-80 h-[6.5rem] rounded-[1.25rem] border-2 border-dashed top-[1.5rem] right-[23rem]" style={{ borderColor: 'var(--glass-border)', opacity: 0.3 }} />
+            <div className="absolute w-80 h-[8.5rem] rounded-[1.25rem] border-2 border-dashed top-[9rem] right-[23rem]" style={{ borderColor: 'var(--glass-border)', opacity: 0.3 }} />
+            <div className="absolute w-80 h-[8.5rem] rounded-[1.25rem] border-2 border-dashed top-[18.5rem] right-[23rem]" style={{ borderColor: 'var(--glass-border)', opacity: 0.3 }} />
+            <div className="absolute w-80 h-[10rem] rounded-[1.25rem] border-2 border-dashed top-[28rem] right-[23rem]" style={{ borderColor: 'var(--glass-border)', opacity: 0.3 }} />
+          </div>
+
+          {/* Free-Floating Draggable Widgets */}
         <div className="hidden lg:block absolute inset-0 pointer-events-none z-0">
           
           <motion.div {...dragProps} className={`${widgetBaseClass} top-[1.5rem] right-[1.5rem]`}>
