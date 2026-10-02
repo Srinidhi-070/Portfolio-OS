@@ -241,7 +241,29 @@ export const Desktop: React.FC = () => {
                 </motion.div>
               </div>
 
+              
+
+            </div>
+
+            {/* Right Widget Column */}
+            <div className="w-80 flex flex-col gap-4">
               <div className="relative rounded-[1.25rem]">
+                <motion.div {...getDragProps("profile")} className={widgetBaseClass}>
+                  
+  <UserProfileCard compact={false} />
+  <motion.div 
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: [0, 1, 1, 0], y: [10, 0, 0, -10] }}
+    transition={{ duration: 4, delay: 2, ease: "easeInOut" }}
+    className="absolute -top-3 -right-3 bg-[var(--accent)] text-[var(--surface-0)] px-3 py-1 rounded-full text-[10px] font-bold shadow-lg pointer-events-none z-50 flex items-center gap-1"
+  >
+    <Move className="w-3 h-3" /> Drag me!
+  </motion.div>
+
+                </motion.div>
+              </div>
+
+<div className="relative rounded-[1.25rem]">
                 <motion.div {...getDragProps("scratchpad")} className={`w-full relative rounded-[1.25rem] border border-[var(--glass-border)] pointer-events-auto shadow-sm cursor-grab active:cursor-grabbing overflow-hidden p-3.5`} style={{ backgroundColor: noteColors[noteColorIndex], transition: 'background-color 0.3s' }}>
                   <div className="flex items-center justify-between pb-2 border-b" style={{ borderColor: 'var(--glass-border)' }}>
                     <div className="flex items-center gap-1.5 font-bold text-[10px]" style={{ color: 'var(--accent)' }}>
@@ -271,26 +293,6 @@ export const Desktop: React.FC = () => {
                     placeholder="Type desktop notes here..."
                     onPointerDown={(e) => e.stopPropagation()}
                   />
-                </motion.div>
-              </div>
-
-            </div>
-
-            {/* Right Widget Column */}
-            <div className="w-80 flex flex-col gap-4">
-              <div className="relative h-full rounded-[1.25rem]">
-                <motion.div {...getDragProps("profile")} className={widgetBaseClass + ' h-full'}>
-                  
-  <UserProfileCard compact={false} />
-  <motion.div 
-    initial={{ opacity: 0, y: 10 }}
-    animate={{ opacity: [0, 1, 1, 0], y: [10, 0, 0, -10] }}
-    transition={{ duration: 4, delay: 2, ease: "easeInOut" }}
-    className="absolute -top-3 -right-3 bg-[var(--accent)] text-[var(--surface-0)] px-3 py-1 rounded-full text-[10px] font-bold shadow-lg pointer-events-none z-50 flex items-center gap-1"
-  >
-    <Move className="w-3 h-3" /> Drag me!
-  </motion.div>
-
                 </motion.div>
               </div>
             </div>
