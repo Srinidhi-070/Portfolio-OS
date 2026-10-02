@@ -48,6 +48,7 @@ const ICON_MAP: Record<string, React.FC<{ className?: string }>> = {
   Github,
   Briefcase,
   GraduationCap,
+  Award,
   FileText,
   Mail,
   Sliders

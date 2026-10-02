@@ -3,11 +3,10 @@ import { useOS } from '../../context/OSContext';
 import { APPS_METADATA } from '../../data/portfolioData';
 import { FloatingDock } from '../ui/floating-dock';
 import {
-  LayoutDashboard, User, FolderGit2, Cpu, Terminal, Github, Briefcase, GraduationCap, FileText, Mail, Sliders
-} from 'lucide-react';
+  LayoutDashboard, User, FolderGit2, Cpu, Terminal, Github, Briefcase, GraduationCap, Award, FileText, Mail, Sliders } from 'lucide-react';
 
 const ICON_MAP: Record<string, React.FC<{ className?: string }>> = {
-  LayoutDashboard, User, FolderGit2, Cpu, Terminal, Github, Briefcase, GraduationCap, FileText, Mail, Sliders
+  LayoutDashboard, User, FolderGit2, Cpu, Terminal, Github, Briefcase, GraduationCap, Award, FileText, Mail, Sliders
 };
 
 export const Dock: React.FC = () => {

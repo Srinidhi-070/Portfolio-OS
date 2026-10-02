@@ -704,39 +704,53 @@ Being a recent graduate of AI & Data Science, I consider myself a builder by nat
 
 export const CERTIFICATIONS: CertificationItem[] = [
   {
+    id: 'cert-sap-genai',
+    title: 'SAP Certified - SAP Generative AI Developer',
+    issuer: 'SAP',
+    date: '2024',
+    description: 'Validating enterprise expertise in LLMs, Prompt Engineering, and advanced AI data modeling.',
+    type: 'Certificate',
+    icon: 'BrainCircuit',
+    credentialUrl: 'https://drive.google.com/file/d/1OzRv82AImLkUVN58L-ypD65PL4UYaPP0/view?usp=sharing'
+  },
+  {
+    id: 'cert-sap-data',
+    title: 'SAP Certified - Data Analyst - SAP Analytics Cloud',
+    issuer: 'SAP',
+    date: '2024',
+    description: 'Enterprise data modeling, visualization, and advanced analytics in SAP Analytics Cloud.',
+    type: 'Certificate',
+    icon: 'BarChart3',
+    credentialUrl: 'https://drive.google.com/file/d/13LEjE-MLQF7WqnCz66yclFd5laejGyAR/view?usp=sharing'
+  },
+  {
+    id: 'cert-uipath',
+    title: 'UiPath Academy Automation Developer',
+    issuer: 'UiPath',
+    date: '2024',
+    description: 'Proving practical skills in building scalable robotic process automation (RPA) workflows.',
+    type: 'Certificate',
+    icon: 'Bot',
+    credentialUrl: 'https://drive.google.com/file/d/1U_JP3JyTLi10Mdfvs3AxRqksz5TqQ5C4/view?usp=sharing'
+  },
+  {
     id: 'deg-bachelor',
     title: 'B.E. in Artificial Intelligence & Data Science',
-    issuer: 'VTU',
-    date: 'Expected 2026',
+    issuer: 'M.S. Ramaiah Institute of Technology',
+    date: '2023 - 2026',
     description: 'Core focus on machine learning, deep learning, computer vision, data pipelines, and intelligent systems architecture. GPA: 7.8.',
     type: 'Degree',
-    icon: 'GraduationCap'
+    icon: 'GraduationCap',
+    credentialUrl: 'https://drive.google.com/file/d/1NXaSCoJ4dV-3XZweipG3e7WunY0vkiqo/view?usp=sharing'
   },
   {
     id: 'dip-cs',
     title: 'Diploma in Computer Science & Engineering',
-    issuer: 'State Board of Technical Education',
-    date: '2023',
+    issuer: 'Acharya Patashala Polytechnic',
+    date: '2020 - 2023',
     description: 'Foundation in programming, data structures, algorithms, and software engineering principles. CGPA: 9.14.',
     type: 'Diploma',
-    icon: 'BookOpen'
-  },
-  {
-    id: 'cert-1',
-    title: 'Deep Learning Specialization',
-    issuer: 'Coursera (DeepLearning.AI)',
-    date: '2024',
-    description: 'Completed comprehensive coursework on neural networks, hyperparameter tuning, convolutional networks, and sequence models.',
-    type: 'Certificate',
-    icon: 'BrainCircuit'
-  },
-  {
-    id: 'cert-2',
-    title: 'Full-Stack Web Development',
-    issuer: 'Udemy',
-    date: '2023',
-    description: 'Extensive training in modern web stack including React, Node.js, Express, and MongoDB.',
-    type: 'Certificate',
-    icon: 'Code'
+    icon: 'BookOpen',
+    credentialUrl: 'https://drive.google.com/file/d/1mU64m8PD9xyCqAY4w9jM3vB8IesmdxGR/view?usp=sharing'
   }
 ];

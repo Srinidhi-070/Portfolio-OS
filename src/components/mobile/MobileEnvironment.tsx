@@ -22,7 +22,7 @@ import { CertificationsApp } from '../apps/CertificationsApp';
 import { InteractiveBackground } from '../desktop/InteractiveBackground';
 
 const ICON_MAP: Record<string, React.FC<{ className?: string }>> = {
-  LayoutDashboard, User, FolderGit2, Cpu, Terminal, Github, Briefcase, GraduationCap, FileText, Mail, Sliders
+  LayoutDashboard, User, FolderGit2, Cpu, Terminal, Github, Briefcase, GraduationCap, Award, FileText, Mail, Sliders
 };
 
 const APP_COMPONENTS: Record<string, React.FC<{ windowState: any }>> = {
