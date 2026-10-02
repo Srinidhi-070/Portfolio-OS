@@ -61,6 +61,7 @@ export const Desktop: React.FC = () => {
     "Portfolio OS Quick Notes:\n\u2022 Check out GuardianVoice (AI Voice Scam Detector)\n\u2022 Try 'sudo hire-me' in Warp Terminal!\n\u2022 Explore 16+ GitHub Repositories"
   );
   const [contextMenu, setContextMenu] = useState<{ x: number; y: number } | null>(null);
+  const [isDraggingWidget, setIsDraggingWidget] = useState(false);
 
   const noteRef = useRef<HTMLTextAreaElement>(null);
 
@@ -124,20 +125,14 @@ export const Desktop: React.FC = () => {
   };
 
   const widgetBaseClass = "absolute w-80 bg-[var(--glass-bg)] rounded-[1.25rem] border border-[var(--glass-border)] pointer-events-auto shadow-sm cursor-grab active:cursor-grabbing overflow-hidden";
+  
   const dragProps = { 
     drag: true, 
-    dragMomentum: false, 
-    whileDrag: { scale: 1.02, zIndex: 50 }, 
-    dragTransition: { 
-      bounceStiffness: 600, 
-      bounceDamping: 20, 
-      modifyTarget: (target: number) => {
-        // Magnetic snap to origin (guide shadow) if within 100px
-        if (Math.abs(target) < 100) return 0;
-        // Otherwise snap to a 80px grid
-        return Math.round(target / 80) * 80;
-      }
-    } 
+    dragSnapToOrigin: true,
+    onDragStart: () => setIsDraggingWidget(true),
+    onDragEnd: () => setIsDraggingWidget(false),
+    whileDrag: { scale: 1.04, zIndex: 50, cursor: 'grabbing', rotate: 2 }, 
+    transition: { type: "spring", stiffness: 450, damping: 25 }
   };
 
   return (
@@ -186,13 +181,15 @@ export const Desktop: React.FC = () => {
         </div>
 
         
+          
           {/* Guide Shadows (Drop Zones) */}
-          <div className="hidden lg:block absolute inset-0 pointer-events-none z-0">
-            <div className="absolute w-80 h-[28rem] rounded-[1.25rem] border-2 border-dashed top-[1.5rem] right-[1.5rem]" style={{ borderColor: 'var(--glass-border)', opacity: 0.3 }} />
-            <div className="absolute w-80 h-[6.5rem] rounded-[1.25rem] border-2 border-dashed top-[1.5rem] right-[23rem]" style={{ borderColor: 'var(--glass-border)', opacity: 0.3 }} />
-            <div className="absolute w-80 h-[8.5rem] rounded-[1.25rem] border-2 border-dashed top-[9rem] right-[23rem]" style={{ borderColor: 'var(--glass-border)', opacity: 0.3 }} />
-            <div className="absolute w-80 h-[8.5rem] rounded-[1.25rem] border-2 border-dashed top-[18.5rem] right-[23rem]" style={{ borderColor: 'var(--glass-border)', opacity: 0.3 }} />
-            <div className="absolute w-80 h-[10rem] rounded-[1.25rem] border-2 border-dashed top-[28rem] right-[23rem]" style={{ borderColor: 'var(--glass-border)', opacity: 0.3 }} />
+          <div className={`hidden lg:block absolute inset-0 pointer-events-none z-0 transition-opacity duration-300 ${isDraggingWidget ? 'opacity-100' : 'opacity-0'}`}>
+            {/* Dashed drop zones */}
+            <div className="absolute w-80 h-[28rem] rounded-[1.25rem] border-2 border-dashed top-[1.5rem] right-[1.5rem]" style={{ borderColor: 'var(--glass-border)', backgroundColor: 'var(--surface-hover)' }} />
+            <div className="absolute w-80 h-[6.5rem] rounded-[1.25rem] border-2 border-dashed top-[1.5rem] right-[23rem]" style={{ borderColor: 'var(--glass-border)', backgroundColor: 'var(--surface-hover)' }} />
+            <div className="absolute w-80 h-[8.5rem] rounded-[1.25rem] border-2 border-dashed top-[9rem] right-[23rem]" style={{ borderColor: 'var(--glass-border)', backgroundColor: 'var(--surface-hover)' }} />
+            <div className="absolute w-80 h-[8.5rem] rounded-[1.25rem] border-2 border-dashed top-[18.5rem] right-[23rem]" style={{ borderColor: 'var(--glass-border)', backgroundColor: 'var(--surface-hover)' }} />
+            <div className="absolute w-80 h-[10rem] rounded-[1.25rem] border-2 border-dashed top-[28rem] right-[23rem]" style={{ borderColor: 'var(--glass-border)', backgroundColor: 'var(--surface-hover)' }} />
           </div>
 
           {/* Free-Floating Draggable Widgets */}
