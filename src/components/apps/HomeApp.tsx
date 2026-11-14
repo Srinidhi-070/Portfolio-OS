@@ -102,8 +102,8 @@ export const HomeApp: React.FC = () => {
           {/* Quick Info Badges */}
           <div className="w-full md:w-auto flex md:flex-col gap-3 shrink-0">
             <div className="flex-1 p-3.5 rounded-xl glass-card text-center">
-              <div className="text-2xl font-black" style={{ color: 'var(--accent)' }}>7.8</div>
-              <div className="text-[10px] font-medium" style={{ color: 'var(--text-secondary)' }}>B.E. GPA</div>
+              <div className="text-2xl font-black" style={{ color: 'var(--accent)' }}>7.60</div>
+              <div className="text-[10px] font-medium" style={{ color: 'var(--text-secondary)' }}>B.E. CGPA</div>
             </div>
             <div className="flex-1 p-3.5 rounded-xl glass-card text-center">
               <div className="text-2xl font-black" style={{ color: 'var(--accent)' }}>16+</div>

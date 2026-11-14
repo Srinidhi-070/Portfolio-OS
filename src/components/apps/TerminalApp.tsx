@@ -179,7 +179,7 @@ export const TerminalApp: React.FC = () => {
       } else if (q.includes('projects') || q.includes('portfolio')) {
         responseText = "Srinidhi has built everything from AI Courtroom Simulators to AR Campus Navigation! Type 'open projects' to check out the portfolio gallery.";
       } else if (q.includes('education') || q.includes('degree')) {
-        responseText = "Srinidhi holds a B.E. in Artificial Intelligence and Data Science from Dayananda Sagar Academy of Technology and Management (CGPA: 7.82).";
+        responseText = "Srinidhi holds a B.E. in Artificial Intelligence and Data Science from M.S. Ramaiah Institute of Technology, Bengaluru (CGPA: 7.60).";
       } else if (q.includes('music') || q.includes('spotify')) {
         responseText = "I'm not equipped with speakers, but I can recommend some lo-fi beats to code to while you explore the portfolio! 🎧";
       } else if (q.includes('secret') || q.includes('easter egg')) {

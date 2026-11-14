@@ -20,7 +20,7 @@ export const PERSONAL_INFO = {
   bio: "Hands-on experience across software development, AI, data, and backend systems, with projects spanning machine learning, API development, data pipelines, databases, and application development. Experienced in taking ideas from exploration and experimentation through implementation, working with different technologies and approaches to solve practical technical problems. Comfortable moving across domains, learning unfamiliar tools when required, and applying a broad technical foundation to build reliable, useful software.",
   mission: "To engineer empathetic, high-throughput AI systems that seamlessly solve complex real-world challenges in safety, healthcare, accessibility, and automated reasoning.",
   quickStats: [
-    { label: "B.E. GPA", value: "7.8" },
+    { label: "B.E. CGPA", value: "7.60" },
     { label: "Diploma CGPA", value: "9.14" },
     { label: "GitHub Repos", value: "16+" },
     { label: "Primary Stack", value: "Python, Java, TensorFlow, React, SQL" }
@@ -618,7 +618,7 @@ export const EDUCATION: EducationItem[] = [
     degree: 'B.E. in Artificial Intelligence & Data Science',
     institution: 'M.S. Ramaiah Institute of Technology, Bengaluru',
     period: '2023 – 2026',
-    grade: 'GPA: 7.8',
+    grade: 'CGPA: 7.60',
     description: 'Specialization in Artificial Intelligence, Machine Learning algorithms, Data Science, Neural Networks, Database Systems, and Software Development.',
     coursework: [
       'Artificial Intelligence & Data Science',
@@ -738,7 +738,7 @@ export const CERTIFICATIONS: CertificationItem[] = [
     title: 'B.E. in Artificial Intelligence & Data Science',
     issuer: 'M.S. Ramaiah Institute of Technology',
     date: '2023 - 2026',
-    description: 'Core focus on machine learning, deep learning, computer vision, data pipelines, and intelligent systems architecture. GPA: 7.8.',
+    description: 'Core focus on machine learning, deep learning, computer vision, data pipelines, and intelligent systems architecture. CGPA: 7.60.',
     type: 'Degree',
     icon: 'GraduationCap',
     credentialUrl: 'https://drive.google.com/file/d/1NXaSCoJ4dV-3XZweipG3e7WunY0vkiqo/view?usp=sharing'
